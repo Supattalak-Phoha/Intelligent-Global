@@ -1,0 +1,33 @@
+==================================== ขั้นตอนการสร้างโปรเจค Angular + Node.Js ====================================
+1. ติดตั้งเครื่องมือต่าง ๆ
+    - ติดตั้ง Node.js, npm, Visual Code
+    - สร้าง Repository บน GitHub
+    - git clone https://github.com/Supattalak-Phoha/MyRepository.git
+
+2. สร้างโปรเจค Angular
+    - cd MyRepository
+    - ng new client --no-standalone
+    - เลือก Sass (SCSS)     [ https://sass-lang.com/documentation/syntax#scss                ]
+    - เลือก N เมื่อถาม Do you want to enable Server-Side Rendering (SSR) and Static Site Generation (SSG/Prerendering)? (y/N) 
+    - cd client
+    - npm install -g @angular/cli
+    - สั่ง run project ด้วย ng serve
+    - เลือก N เมื่อถาม Would you like to share pseudonymous usage data about this project with the Angular Team at Google under Google's Privacy Policy at https://policies.google.com/privacy. For more details and how to change this setting, see https://angular.dev/cli/analytics. 
+    - ทดสอบด้วย http://localhost:4200/
+
+3. สร้างโปรเจค Node.Js
+    - mkdir server
+    - cd server
+    - npm init -y
+    - npm install express
+    - สร้างไฟล์ index.js
+    - ทดสอบด้วย http://localhost:3000/
+
+4. ผสาน Node.Js กับ Angular เข้าด้วยกัน เพื่อให้เรียกผ่าน Node.Js เท่านั้น
+    - cd client 
+    - สั่ง build Angular ด้วย ng build เพื่อใช้สำหรับอ้างอิงใน Node.Js
+    - cd server
+    - แก้ไฟล์ insex.js ให้เรียก client ได้
+    - ทดสอบด้วย http://localhost:3000/ ก็จะเรียก client ได้ด้วย nodejs เเล้ว
+
+5. Push ขึ้น Git อย่างลืม .gitignore
