@@ -4,7 +4,7 @@ import { DataService } from '../data.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss', './../../styles.scss']
+  styleUrls: ['./home.component.scss', '../../../public/assets/css/styles.scss']
 })
 export class HomeComponent {
   data: any[] = [];
@@ -22,13 +22,13 @@ export class HomeComponent {
   }
 
   ngOnInit() {
-    this.dataService.getData().subscribe(
-      (response: any) => {
-        this.data = response;
-      },
-      (error: any) => {
-        console.error('Error fetching data', error);
-      }
-    );
+    // this.dataService.getData().subscribe(
+    //   (response: any) => {
+    //     this.data = response;
+    //   },
+    //   (error: any) => {
+    //     console.error('Error fetching data', error);
+    //   }
+    // );
   }
 }

@@ -1,254 +1,83 @@
 <!-- app.component.html -->
-<div *ngIf="!isLoginPage">
-  <div class="row header-bar" style="width: 100%;">
-      <div class="isNotMobile">
-          <div class="col-8">
-              <img src="assets/images/logo-01.png" class="header-logo" alt="Intellegent Global">
-              <button *ngIf="showEditButton()" class="edit-button" (click)="showPage('edit')"
-                  [ngClass]="{ 'header-button-active': currentPage === 'edit' }">
-                  จัดการข้อมูล
-              </button>
-          </div>
-          <div class="col-1" style="display: grid;" [ngClass]="{ 'header-button-active': currentPage === '' }">
-              <button class="header-button" (click)="showPage('')">
-                  หน้าเเรก
-              </button>
-          </div>
-          <div class="col-1" style="display: grid;"
-              [ngClass]="{ 'header-button-active': currentPage === 'about-us' }">
-              <button class="header-button" (click)="showPage('about-us')">
-                  เกี่ยวกับเรา
-              </button>
-          </div>
-          <div class="col-1" style="display: grid;"
-              [ngClass]="{ 'header-button-active': currentPage === 'services' || currentPage === 'service-detail' }">
-              <button class="header-button" [matMenuTriggerFor]="menu">
-                  บริการของเรา
-              </button>
-              <mat-menu #menu="matMenu">
-                  <button mat-menu-item (click)="showPage('service-detail/fda')">
-                      <span>อย.</span>
-                  </button>
-                  <button mat-menu-item (click)="showPage('service-detail/mok')">
-                      <span>มอก</span>
-                  </button>
-                  <button mat-menu-item>
-                      <span>นวัตกรรม</span>
-                  </button>
-                  <button mat-menu-item>
-                      <span>กรมทรัพสินทางปัญญา</span>
-                  </button>
-                  <button mat-menu-item>
-                      <span>บาร์โค้ด</span>
-                  </button>
-              </mat-menu>
-          </div>
-          <div class="col-1" style="display: grid;"
-              [ngClass]="{ 'header-button-active': currentPage === 'contact-us' }">
-              <button class="header-button" (click)="showPage('contact-us')">
-                  ติดต่อเรา
-              </button>
-          </div>
-      </div>
-      <div class="isMobile">
-          <div class="col-12 header-logo-center">
-              <!-- <span>
-                  <button mat-icon-button class="example-icon isMobile" (click)="drawer.toggle()" style="border-color: transparent;">
-                      <mat-icon>menu</mat-icon>
-                  </button>
-              </span> -->
-              <span>
-                  <img src="assets/images/logo-01.png" class="header-logo" alt="Intellegent Global"
-                      (click)="drawer.toggle()">
-              </span>
-          </div>
-      </div>
-  </div>
+<div>
+    <div *ngIf="!isLoginPage">
+        <div id="page-top">
+            <!-- Navigation-->
+            <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+                <div class="container">
+                    <a class="navbar-brand" href="#page-top"><img src="assets/images/navbar-logo.svg" alt="..." /></a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        Menu
+                        <i class="fas fa-bars ms-1"></i>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarResponsive">
+                        <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+                            <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <router-outlet></router-outlet>
+        <app-scroll-to-top></app-scroll-to-top>
+    </div>
 
-  <mat-drawer-container autosize>
-      <mat-drawer #drawer mode="side">
-          <div class="row">
-              <div class="col-12" style="display: inline-grid;">
-                  <button class="side-button" (click)="drawer.toggle(); showPage('')">
-                      <span>หน้าเเรก</span>
-                  </button>
-                  <button class="side-button" (click)="drawer.toggle(); showPage('about-us')">
-                      <span>เกี่ยวกับเรา</span>
-                  </button>
-                  <button class="side-button" (click)="drawer.toggle(); showPage('services')">
-                      <span>บริการของเรา</span>
-                  </button>
-                  <button class="side-button" (click)="drawer.toggle(); showPage('contact-us')">
-                      <span>ติดต่อเรา</span>
-                  </button>
-              </div>
-          </div>
-      </mat-drawer>
-
-      <div class="row">
-          <router-outlet></router-outlet>
-      </div>
-
-      <div class="row">
-          <div class="col-3 footer-bar-detail">
-              <div class="row" style="margin-bottom: 10%;">
-                  <div class="col-121">
-                      <b>ติดต่อเรา</b>
-                  </div>
-              </div>
-              <div class="row" style="margin-bottom: 10%;">
-                  <div class="col-121">
-                      TGC International Company Limited
-                      360 อาคารประเสริฐสุทธิ์ ชั้นที่ 2
-                      ถนนสนามบินน้ำ-นนทบุรี ตำบลบางกระสอ
-                      อำเภอเมืองนนทบุรี จังหวัดนนทบุรี 11000
-                  </div>
-              </div>
-              <div class="row" style="margin-bottom: 10%;">
-                  <div class="col-121">
-                      โทรศัพท์ 02-527-8228<br>
-                      มือถือ 081-542-5544<br>
-                      โทรสาร 0-2967-1372
-                  </div>
-              </div>
-              <div class="row" style="margin-bottom: 10%;">
-                  <div class="col-121">
-                      ip&#64;tgcthailand.com<br>
-                      tgcthailand&#64;gmail.com
-                  </div>
-              </div>
-          </div>
-          <div class="col-3 footer-bar-detail">
-              <div class="row" style="margin-bottom: 10%;">
-                  <div class="col-121">
-                      <b>เวลาทำการ</b>
-                  </div>
-              </div>
-              <div class="row" style="margin-bottom: 10%;">
-                  <div class="col-121">
-                      Opening Day:<br>
-                      วันจันทร์ – วันศุกร์: 8am to 6pm<br>
-                      Saturday: 9am to 5pm
-                  </div>
-              </div>
-              <div class="row" style="margin-bottom: 10%;">
-                  <div class="col-121">
-                      Vacation:<br>
-                      All Sunday Day<br>
-                      All Vacation Holiday
-                  </div>
-              </div>
-          </div>
-          <div class="col-3 footer-bar-detail">
-              <div class="row" style="margin-bottom: 10%;">
-                  <div class="col-121">
-                      <b>บริการของเรา
-                      </b>
-                  </div>
-              </div>
-              <div class="row" style="margin-bottom: 10%;">
-                  <div class="col-121">
-                      รับจดเครื่องหมายการค้า<br>
-                      รับว่าความ รับจ้างเป็นทนายความ<br>
-                      รับขึ้นทะเบียนและจดบัญชีนวัตกรรมไทย<br>
-                      รับจดสิทธิบัตร<br>
-                      รับจดเครื่องหมายการค้าต่างประเทศ<br>
-                      รับจดทะเบียนและขอใบอนุญาต มอก. สมอ.<br>
-                      รับจดลิขสิทธิ์<br>
-                      รับจดสิทธิบัตรต่างประเทศ<br>
-                      รับจดทะเบียนและขอใบอนุญาต อย.<br>
-                  </div>
-              </div>
-          </div>
-          <div class="col-3 footer-bar-detail">
-              <div class="row" style="margin-bottom: 10%;">
-                  <div class="col-121">
-                      <b>our attorneys
-                      </b>
-                  </div>
-              </div>
-              <div class="row" style="margin-bottom: 10%;">
-                  <div class="col-121">
-                      จิรโรจน์ สีสรรพ์<br>
-                      เอกราช สุชาติวัฒนะ<br>
-                      ชรินรัตน์ เชี่ยวชาญผล<br>
-                      สมชาย วงศ์สุริยศักดิ์
-                  </div>
-              </div>
-              <div class="row" style="margin-bottom: 10%;">
-                  <div class="col-121">
-                      <b>เพิ่มเราเป็นเพื่อน Line: &#64;tgcthailand
-                      </b>
-                  </div>
-              </div>
-              <div class="row" style="margin-bottom: 10%;">
-                  <div class="col-121">
-                      <img mat-card-image src="assets/images/line-button.png" style="width: 50%;" (click)="addLINE()">
-                  </div>
-              </div>
-          </div>
-      </div>
-
-      <div class="row">
-          <div class="col-12 custom-css footer-bar" style="background-color: #01235e;">
-              2023 TGC International Co., Ltd.<br>
-              All rights reserved.
-          </div>
-      </div>
-
-  </mat-drawer-container>
-</div>
-<app-scroll-to-top></app-scroll-to-top>
-
-<div *ngIf="isLoginPage" class="login">
-  <br><br><br><br><br><br><br>
-  <div class="row" style="text-align: center;">
-      <div class="col-4"></div>
-      <div class="col-4">
-          <img src="assets/images/logo-01.png" class="header-logo" alt="Intellegent Global" style="height: 100%;">
-      </div>
-      <div class="col-4"></div>
-  </div>
-  <br>
-  <div class="row" style="text-align: center;">
-      <div class="col-4"></div>
-      <div class="col-4">
-          <mat-form-field appearance="outline" style="width: 80%;">
-              <mat-label>Username</mat-label>
-              <input matInput [(ngModel)]="username">
-          </mat-form-field>
-      </div>
-      <div class="col-4"></div>
-  </div>
-  <div class="row" style="text-align: center;">
-      <div class="col-4"></div>
-      <div class="col-4">
-          <mat-form-field appearance="outline" style="width: 80%;">
-              <mat-label>Password</mat-label>
-              <input matInput [type]="hide() ? 'password' : 'text'" [(ngModel)]="password" />
-              <button mat-icon-button matSuffix (click)="clickEvent($event)" [attr.aria-label]="'Hide password'"
-                  [attr.aria-pressed]="hide()">
-                  <mat-icon>{{hide() ? 'visibility_off' : 'visibility'}}</mat-icon>
-              </button>
-          </mat-form-field>
-      </div>
-      <div class="col-4"></div>
-  </div>
-  <div class="row" style="text-align: center;">
-      <div class="col-4"></div>
-      <div class="col-4">
-          <button class="login-button" (click)="login()">
-              <span>Login</span>
-          </button>
-      </div>
-      <div class="col-4"></div>
-  </div>
-  <br>
-  <div class="row" style="text-align: center;">
-      <div class="col-4"></div>
-      <div class="col-4" style="color: red;">
-          {{ this.loginError }}
-      </div>
-      <div class="col-4"></div>
-  </div>
+    <div *ngIf="isLoginPage" class="login">
+        <br><br><br><br><br><br><br>
+        <div class="row" style="text-align: center;">
+            <div class="col-4"></div>
+            <div class="col-4">
+                <img src="assets/images/logo-01.png" class="header-logo" alt="Intellegent Global" style="height: 100%;">
+            </div>
+            <div class="col-4"></div>
+        </div>
+        <br>
+        <div class="row" style="text-align: center;">
+            <div class="col-4"></div>
+            <div class="col-4">
+                <mat-form-field appearance="outline" style="width: 80%;">
+                    <mat-label>Username</mat-label>
+                    <input matInput [(ngModel)]="username">
+                </mat-form-field>
+            </div>
+            <div class="col-4"></div>
+        </div>
+        <div class="row" style="text-align: center;">
+            <div class="col-4"></div>
+            <div class="col-4">
+                <mat-form-field appearance="outline" style="width: 80%;">
+                    <mat-label>Password</mat-label>
+                    <input matInput [type]="hide() ? 'password' : 'text'" [(ngModel)]="password" />
+                    <button mat-icon-button matSuffix (click)="clickEvent($event)" [attr.aria-label]="'Hide password'"
+                        [attr.aria-pressed]="hide()">
+                        <mat-icon>{{hide() ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </button>
+                </mat-form-field>
+            </div>
+            <div class="col-4"></div>
+        </div>
+        <div class="row" style="text-align: center;">
+            <div class="col-4"></div>
+            <div class="col-4">
+                <button class="login-button" (click)="login()">
+                    <span>Login</span>
+                </button>
+            </div>
+            <div class="col-4"></div>
+        </div>
+        <br>
+        <div class="row" style="text-align: center;">
+            <div class="col-4"></div>
+            <div class="col-4" style="color: red;">
+                {{ this.loginError }}
+            </div>
+            <div class="col-4"></div>
+        </div>
+    </div>
 </div>

@@ -5,7 +5,7 @@ import { DataService } from './data.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss', '../styles.scss'],
+  styleUrls: ['./app.component.scss', '../../public/assets/css/styles.scss'],
 })
 export class AppComponent {
   isLoginPage: boolean = false
