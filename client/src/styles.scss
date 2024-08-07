@@ -1,1 +1,147 @@
 /* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: 'Mitr-Light';
+    src: url('../public/assets/fonts/Mitr-Light.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: "Mitr-Light", Roboto, "Helvetica Neue", sans-serif !important;
+}
+
+.image-container {
+    position: relative;
+    display: inline-block;
+}
+
+.image-container img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.overlay-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 80px;
+    text-align: center;
+    padding: 10px;
+    background-color: transparent;
+    border-radius: 5px;
+}
+
+.topic-bar {
+    height: 90px;
+    background-color: #01235e;
+    text-align: center;
+    color: #ffffff;
+    font-size: 30px;
+    padding-top: 35px;
+}
+
+.image-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+    /* Transition effect for fade-in */
+}
+
+.image-container img.loaded {
+    opacity: 1;
+}
+
+/* สำหรับมือถือ */
+@media (max-width: 480px) {
+    .col-3 {
+        width: 100%;
+    }
+
+    .col-4 {
+        width: 100%;
+    }
+
+    .col-6 {
+        width: 100%;
+    }
+
+    .overlay-text {
+        font-size: 30px !important;
+    }
+
+    .topic-bar {
+        height: 65px;
+        font-size: 25px;
+        padding-top: 25px;
+    }
+}
+
+/* สำหรับแท็บเล็ต */
+@media (min-width: 481px) and (max-width: 768px) {
+    .col-1 {
+        width: 12.5%;
+    }
+
+    .col-3 {
+        width: 50%;
+    }
+
+    .col-4 {
+        width: 50%;
+    }
+
+    .col-6 {
+        width: 50%;
+    }
+
+    .col-8 {
+        width: 50%;
+    }
+}
+
+/* สำหรับเดสก์ท็อปขนาดกลาง */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .col-1 {
+        width: 12.5%;
+    }
+
+    .col-3 {
+        width: 50%;
+    }
+
+    .col-4 {
+        width: 50%;
+    }
+
+    .col-6 {
+        width: 50%;
+    }
+
+
+    .col-8 {
+        width: 50%;
+    }
+}
+
+/* สำหรับเดสก์ท็อปขนาดใหญ่ */
+@media (min-width: 1025px) and (max-width: 1440px) {}
+
+/* สำหรับหน้าจอขนาดใหญ่พิเศษ */
+@media (min-width: 1441px) {}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
