@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { DataService } from '../data.service';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-home',
@@ -7,11 +8,17 @@ import { DataService } from '../data.service';
   styleUrls: ['./home.component.scss', '../../../public/assets/css/styles.scss']
 })
 export class HomeComponent {
+  content = {
+    text01: " บริการรับจดเค",
+    text02: "บริการรับจดเครื่องหมายการค้า บริการขอใบ "
+  }
   data: any[] = [];
   isImageLoaded01 = false;
   isImageLoaded02 = false;
 
-  constructor(private dataService: DataService) { }
+
+  constructor(private dataService: DataService) {
+   }
 
   onImageLoad(picture: string) {
     if (picture === 'isImageLoaded01') {
