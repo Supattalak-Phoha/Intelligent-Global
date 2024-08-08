@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { DataService } from '../data.service';
-import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-home',
@@ -8,9 +7,14 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
   styleUrls: ['./home.component.scss', '../../../public/assets/css/styles.scss']
 })
 export class HomeComponent {
-  content = {
-    text01: " บริการรับจดเค",
-    text02: "บริการรับจดเครื่องหมายการค้า บริการขอใบ "
+  contents = {
+    content001: "Welcome To Our Company",
+    content002: "Intelligent Global Co, Ltd.",
+    content003: "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Intelligent Global Co, Ltd. บริการรับจดเครื่องหมายการค้า บริการขอใบอนุญาต มอก. สมอ. รับจด อย.อาหารและยา รับขึ้นทะเบียนนวัตกรรม จดสิทธิบัตร จดลิขสิทธิ์ จดแบรนด์ จดลิขสิทธิ์โลโก้ รับจ้างเป็นทนายและว่าความ แบบครบวงจร ที่มีประสบการณ์งานด้านทรัพย์สินทางปัญญามายาวนานมากกว่า 3 ปี เราก่อตั้งขึ้นโดยทีมงาน ซึ่งทำงานและมีประสบการณ์งานด้านทรัพย์สินทางปัญญา โดยเฉพาะอย่างยิ่งงานเขียนสิทธิบัตรซึ่งถือเป็นงานที่จะต้องใช้ประสบการณ์ และ ความสามารถเป็นอย่างมาก ในการเขียนให้ถูกต้องตามหลักสากล และ สามารถใช้บังคับได้ โดยเชื่อมั่นว่าจะสามารถทำให้คุณได้ความพึงพอใจสูงสุด "
+  }
+
+  images = {
+    image001: "assets/images/home/home-002.jpg"
   }
   data: any[] = [];
   isImageLoaded01 = false;
@@ -18,7 +22,7 @@ export class HomeComponent {
 
 
   constructor(private dataService: DataService) {
-   }
+  }
 
   onImageLoad(picture: string) {
     if (picture === 'isImageLoaded01') {

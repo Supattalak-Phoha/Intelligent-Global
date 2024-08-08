@@ -1,8 +1,8 @@
 <!-- Masthead-->
 <header class="masthead">
     <div class="container">
-        <div class="masthead-subheading">Welcome To Our Company</div>
-        <div class="masthead-heading text-uppercase">Intelligent Global Co, Ltd.</div>
+        <div class="masthead-subheading">{{ contents.content001 }}</div>
+        <div class="masthead-heading text-uppercase">{{ contents.content002 }}</div>
     </div>
 </header>
 
@@ -10,17 +10,13 @@
 
 <!-- Portfolio Grid-->
 <div class="container">
-    <div class="text-center">
-        <h2 class="section-heading text-uppercase">Portfolio</h2>
-        <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
-    </div>
     <div class="custom-01">
         <div class="col-xxl-7 col-xl-7 col-lg-7 col-md-7 col-sm-6 col-xs-12">
-            <div [innerHTML]="content.text01"></div>
+            <div [innerHTML]="contents.content003" style="padding: 2%;"></div>
         </div>
         <div class="col-xxl-5 col-xl-5 col-lg-5 col-md-5 col-sm-6 col-xs-12">
             <div>
-                <img style="width: 100%;" src="assets/images/portfolio/1.jpg" alt="..." />
+                <img style="width: 100%; border-radius: 10px;" [src]="images.image001" alt="..." />
             </div>
         </div>
     </div>
@@ -35,7 +31,7 @@
     </div>
     <div class="custom-01">
         <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-12">
-            <div [innerHTML]="content.text01"></div>
+            <div [innerHTML]="contents.content001"></div>
         </div>
         <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-12">
             <div>
@@ -315,14 +311,6 @@
                 <img class="mx-auto rounded-circle" src="assets/images/team/2.jpg" alt="..." />
                 <h4>Diana Petersen</h4>
                 <p class="text-muted">Lead Marketer</p>
-                <p class="large text-muted">---------------------------------------------------</p>
-            </div>
-        </div>
-        <div class="col-md-6 col-lg-4">
-            <div class="team-member">
-                <img class="mx-auto rounded-circle" src="assets/images/team/3.jpg" alt="..." />
-                <h4>Larry Parker</h4>
-                <p class="text-muted">Lead Developer</p>
                 <p class="large text-muted">---------------------------------------------------</p>
             </div>
         </div>

@@ -8,6 +8,60 @@ import { DataService } from './data.service';
   styleUrls: ['./app.component.scss', '../../public/assets/css/styles.scss'],
 })
 export class AppComponent {
+  contents = {
+    content001: "หน้าหลัก",
+    content002: "เกี่ยวกับเรา",
+    content003: "บริการ",
+    content004: "ติดต่อเรา",
+    content005: "จัดการข้อมูล",
+    content006: "ติดต่อเรา",
+    content007: "เวลาทำการ",
+    content008: "บริการของเรา",
+    content009: "ทนายความของเรา",
+    content010: "บริษัท อินเทลลิเจ้นท์ โกลบอล จำกัด <br>909/275 ซอย25 ถนนรังสิต-นครนายก ตำบลประชาธิปัตย์ อำเภอธัญบุรี จ.ปทุมธานี 12130",
+    content011: "เบอร์โทร : 065-359-3544",
+    content012: "Email : support@intelligentglobal.com",
+    content013: "Opening Day: <br>วันจันทร์ – วันศุกร์: 8am to 6pm <br>Saturday: 9am to 5pm <br><br>Vacation:All <br>Sunday DayAll <br>Vacation Holiday",
+    content000: "",
+  }
+
+  images = {
+    image001: "assets/images/logo-01.png",
+    image002: "assets/images/line-button.png"
+  }
+
+  arrays = {
+    array001: [
+      {
+        name: "รับจดเครื่องหมายการค้า"
+      },
+      {
+        name: "รับจดสิทธิบัตร อนุสิทธิบัตร"
+      },
+      {
+        name: "รับจดลิขสิทธิ์"
+      },
+      {
+        name: "รับจดสิทธิบัตรต่างประเทศ"
+      },
+      {
+        name: "รับขึ้นทะเบียนและจดบัญชีนวัตกรรมไทย"
+      }
+    ],
+    array002: [
+      {
+        name: "ณัญชาภัทร แสนกาญจนา"
+      },
+      {
+        name: "สุภัทธลักษณ์ โพธิ์หา"
+      },
+      {
+        name: "ฐนธนินท์ พิมพ์ศิริ"
+      },
+    ]
+  }
+
+
   isLoginPage: boolean = false
   loginError: string = ""
   username: string = ""
