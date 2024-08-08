@@ -57,8 +57,8 @@
   --bs-body-font-size: 1rem;
   --bs-body-font-weight: 400;
   --bs-body-line-height: 1.5;
-  --bs-body-color: #212529;
-  --bs-body-bg: #F9F9F9;
+  --bs-body-color: #00225d;
+  --bs-body-bg: #ffc800;
   --bs-border-width: 1px;
   --bs-border-style: solid;
   --bs-border-color: #dee2e6;
@@ -9341,7 +9341,7 @@ fieldset:disabled .btn {
 
 .text-muted {
   --bs-text-opacity: 1;
-  color: #6c757d !important;
+  color: #fff !important;
 }
 
 .text-black-50 {
@@ -9408,6 +9408,8 @@ fieldset:disabled .btn {
 .bg-light {
   --bs-bg-opacity: 1;
   background-color: rgba(var(--bs-light-rgb), var(--bs-bg-opacity)) !important;
+  background-color: #ffe176 !important;
+  border-radius: 10px;
 }
 
 .bg-dark {
@@ -12927,11 +12929,11 @@ p {
 #mainNav {
   padding-top: 1rem;
   padding-bottom: 1rem;
-  background-color: #212529;
+  background-color: #00225d;
 }
 
 #mainNav .navbar-toggler {
-  padding: 0.75rem;
+  padding: 1rem;
   font-size: 0.75rem;
   font-family: "Mitr-Light", "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   text-transform: uppercase;
@@ -12947,7 +12949,8 @@ p {
 }
 
 #mainNav .navbar-brand img {
-  height: 1.5rem;
+  height: 2.5rem;
+  margin-left: 10%;
 }
 
 #mainNav .navbar-nav .nav-item .nav-link {
@@ -12993,7 +12996,7 @@ p {
 
   #mainNav.navbar-shrink .navbar-brand svg,
   #mainNav.navbar-shrink .navbar-brand img {
-    height: 1.5rem;
+    height: 2.5rem;
   }
 
   #mainNav .navbar-nav .nav-item {
@@ -13033,6 +13036,35 @@ header.masthead .masthead-heading {
   font-family: "Mitr-Light", "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
+
+header.about-us {
+  padding-top: 10.5rem;
+  padding-bottom: 6rem;
+  text-align: center;
+  color: #fff;
+  background-image: url("../images/about-us-001.jpg");
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: center center;
+  background-size: contain;
+}
+
+header.about-us .about-us-subheading {
+  font-size: 1.5rem;
+  font-style: italic;
+  line-height: 1.5rem;
+  margin-bottom: 25px;
+  font-family: "Mitr-Light", "Roboto Slab", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+header.about-us .about-us-heading {
+  font-size: 3.25rem;
+  font-weight: 700;
+  line-height: 3.25rem;
+  margin-bottom: 2rem;
+  font-family: "Mitr-Light", "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
 @media (min-width: 768px) {
   header.masthead {
     padding-top: 17rem;
@@ -13047,6 +13079,25 @@ header.masthead .masthead-heading {
   }
 
   header.masthead .masthead-heading {
+    font-size: 4.5rem;
+    font-weight: 700;
+    line-height: 4.5rem;
+    margin-bottom: 4rem;
+  }
+
+  header.about-us {
+    padding-top: 17rem;
+    padding-bottom: 12.5rem;
+  }
+
+  header.about-us .about-us-subheading {
+    font-size: 2.25rem;
+    font-style: italic;
+    line-height: 2.25rem;
+    margin-bottom: 2rem;
+  }
+
+  header.about-us .about-us-heading {
     font-size: 4.5rem;
     font-weight: 700;
     line-height: 4.5rem;
@@ -13090,7 +13141,7 @@ header.masthead .masthead-heading {
 #portfolio .portfolio-item .portfolio-caption {
   padding: 1.5rem;
   text-align: center;
-  background-color: #fff;
+  background-color: #00225d;
 }
 
 #portfolio .portfolio-item .portfolio-caption .portfolio-caption-heading {
@@ -13098,6 +13149,7 @@ header.masthead .masthead-heading {
   font-family: "Mitr-Light", "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-weight: 700;
   margin-bottom: 0;
+  color: #fff;
 }
 
 #portfolio .portfolio-item .portfolio-caption .portfolio-caption-subheading {
@@ -13451,4 +13503,6 @@ section#contact form#contactForm :-ms-input-placeholder {
   text-align: center;
   font-size: 0.9rem;
   font-family: "Mitr-Light", "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  background-color: #00225d;
+  color: white;
 }
