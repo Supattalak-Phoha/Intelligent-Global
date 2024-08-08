@@ -17,7 +17,8 @@
                             <li class="nav-item"><a class="nav-link" href="">{{ contents.content001 }}</a></li>
                             <li class="nav-item"><a class="nav-link" href="/about-us">{{ contents.content002 }}</a></li>
                             <li class="nav-item"><a class="nav-link" href="/services">{{ contents.content003 }}</a></li>
-                            <li class="nav-item"><a class="nav-link" href="/contact-us">{{ contents.content004 }}</a></li>
+                            <li class="nav-item"><a class="nav-link" href="/contact-us">{{ contents.content004 }}</a>
+                            </li>
                             <li class="nav-item"><a class="nav-link" href="/edit">{{ contents.content005 }}</a></li>
                         </ul>
                     </div>
@@ -61,9 +62,14 @@
                             <br>
                         </div>
                         <br>
-                        <img  style="width: 50%;" [src]="images.image002" alt="..." />
+                        <img style="width: 50%;" [src]="images.image002" alt="..." />
                     </div>
                 </div>
+            </div>
+        </footer>
+        <footer class="footer py-4" style="background-color: #00225d;">
+            <div class="container">
+                <div [innerHTML]="contents.content014"></div>
             </div>
         </footer>
 

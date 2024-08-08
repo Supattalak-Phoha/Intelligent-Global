@@ -22,6 +22,7 @@ export class AppComponent {
     content011: "เบอร์โทร : 065-359-3544",
     content012: "Email : support@intelligentglobal.com",
     content013: "Opening Day: <br>วันจันทร์ – วันศุกร์: 8am to 6pm <br>Saturday: 9am to 5pm <br><br>Vacation:All <br>Sunday DayAll <br>Vacation Holiday",
+    content014: "2024 Intelligent Global Co, Ltd.<br>All rights reserved.",
     content000: "",
   }
 
