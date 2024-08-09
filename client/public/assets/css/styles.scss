@@ -971,10 +971,6 @@ progress {
     background-color: transparent;
   }
 
-  .custom-01 {
-    display: block;
-  }
-
   .col-xs {
     flex: 1 0 0%;
   }
@@ -1191,10 +1187,6 @@ progress {
 @media (min-width: 576px) {
   .container {
     background-color: transparent;
-  }
-
-  .custom-01 {
-    display: flex !important;
   }
 
   .col-sm {
@@ -1415,10 +1407,6 @@ progress {
     background-color: transparent;
   }
 
-  .custom-01 {
-    display: flex !important;
-  }
-
   .col-md {
     flex: 1 0 0%;
   }
@@ -1635,10 +1623,6 @@ progress {
 @media (min-width: 992px) {
   .container {
     background-color: transparent;
-  }
-
-  .custom-01 {
-    display: flex !important;
   }
 
   .col-lg {
@@ -1859,10 +1843,6 @@ progress {
     background-color: transparent;
   }
 
-  .custom-01 {
-    display: flex !important;
-  }
-
   .col-xl {
     flex: 1 0 0%;
   }
@@ -2079,10 +2059,6 @@ progress {
 @media (min-width: 1400px) {
   .container {
     background-color: transparent;
-  }
-
-  .custom-01 {
-    display: flex !important;
   }
 
   .col-xxl {
@@ -13505,4 +13481,41 @@ section#contact form#contactForm :-ms-input-placeholder {
   font-family: "Mitr-Light", "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   background-color: #01296f;
   color: white;
+}
+
+.circle-frame {
+  width: 100%;
+  /* กำหนดความกว้างของวงกลม */
+  height: 100%;
+  /* กำหนดความสูงของวงกลม (เท่ากับความกว้างเพื่อให้เป็นวงกลม) */
+  border: 5px solid #000;
+  /* สีและความหนาของกรอบ */
+  border-radius: 50%;
+  /* ทำให้กรอบกลายเป็นวงกลม */
+  overflow: hidden;
+  /* ทำให้ภาพหรือเนื้อหาที่อยู่ภายในถูกตัดให้เป็นวงกลม */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* ทำให้ภาพครอบคลุมทั้งกรอบและคงสัดส่วน */
+}
+
+.custom-001 {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  background-color: #00225d !important;
+  color: white;
+}
+
+.custom-002 {
+  background-color: #00225d !important;
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
 }

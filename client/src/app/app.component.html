@@ -25,48 +25,44 @@
                 </div>
             </nav>
         </div>
-        <router-outlet></router-outlet>
 
+        <router-outlet></router-outlet>
         <br><br>
         <!-- Footer-->
-        <footer class="footer py-4">
-            <div class="container">
-                <div class="custom-01">
-                    <div class="col-md-3 col-sm-3 col-xs-6" style="text-align: left;">
-                        <h3 class="section-subheading text-muted">{{ contents.content006 }}</h3>
-                        <br>
-                        <div [innerHTML]="contents.content010"></div>
-                        <br>
-                        <div [innerHTML]="contents.content011"></div>
-                        <br>
-                        <div [innerHTML]="contents.content012"></div>
-                    </div>
-                    <div class="col-md-3 col-sm-3 col-xs-6" style="text-align: left;">
-                        <h3 class="section-subheading text-muted">{{ contents.content007 }}</h3>
-                        <br>
-                        <div [innerHTML]="contents.content013"></div>
-                    </div>
-                    <div class="col-md-3 col-sm-3 col-xs-6" style="text-align: left;">
-                        <h3 class="section-subheading text-muted">{{ contents.content008 }}</h3>
-                        <br>
-                        <div *ngFor="let array of arrays.array001">
-                            <div [innerHTML]="array.name"></div>
-                            <br>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-3 col-xs-6" style="text-align: left;">
-                        <h3 class="section-subheading text-muted">{{ contents.content009 }}</h3>
-                        <br>
-                        <div *ngFor="let array of arrays.array002">
-                            <div [innerHTML]="array.name"></div>
-                            <br>
-                        </div>
-                        <br>
-                        <img style="width: 50%;" [src]="images.image002" alt="..." />
-                    </div>
+        <div class="custom-001">
+            <div class="col-12 col-md-6 col-lg-3" style="text-align: left; padding: 5%;">
+                <h3 class="section-subheading text-muted">{{ contents.content006 }}</h3>
+                <br>
+                <div [innerHTML]="contents.content010"></div>
+                <br>
+                <div [innerHTML]="contents.content011"></div>
+                <br>
+                <div [innerHTML]="contents.content012"></div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3" style="text-align: left;">
+                <h3 class="section-subheading text-muted">{{ contents.content007 }}</h3>
+                <br>
+                <div [innerHTML]="contents.content013"></div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3" style="text-align: left;">
+                <h3 class="section-subheading text-muted">{{ contents.content008 }}</h3>
+                <br>
+                <div *ngFor="let array of arrays.array001">
+                    <div [innerHTML]="array.name"></div>
+                    <br>
                 </div>
             </div>
-        </footer>
+            <div class="col-12 col-md-6 col-lg-3" style="text-align: left;">
+                <h3 class="section-subheading text-muted">{{ contents.content009 }}</h3>
+                <br>
+                <div *ngFor="let array of arrays.array002">
+                    <div [innerHTML]="array.name"></div>
+                    <br>
+                </div>
+                <br>
+                <img style="width: 50%;" [src]="images.image002" alt="..." />
+            </div>
+        </div>
         <footer class="footer py-4" style="background-color: #00225d;">
             <div class="container">
                 <div [innerHTML]="contents.content014"></div>
