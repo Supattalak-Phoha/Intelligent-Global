@@ -971,8 +971,16 @@ progress {
     background-color: transparent;
   }
 
-  .custom-01 {
-    display: block;
+  .team-member img {
+    width: 25rem !important;
+    height: 25rem !important;
+    border: 0.5rem solid rgba(0, 0, 0, 0.1);
+  }
+
+  .team-member-custom-001 img {
+    width: 25rem !important;
+    height: 25rem !important;
+    border: 0.5rem solid rgba(0, 0, 0, 0.1);
   }
 
   .col-xs {
@@ -1193,8 +1201,16 @@ progress {
     background-color: transparent;
   }
 
-  .custom-01 {
-    display: flex !important;
+  .team-member img {
+    width: 30rem !important;
+    height: 30rem !important;
+    border: 0.5rem solid rgba(0, 0, 0, 0.1);
+  }
+
+  .team-member-custom-001 img {
+    width: 25rem !important;
+    height: 25rem !important;
+    border: 0.5rem solid rgba(0, 0, 0, 0.1);
   }
 
   .col-sm {
@@ -1415,8 +1431,16 @@ progress {
     background-color: transparent;
   }
 
-  .custom-01 {
-    display: flex !important;
+  .team-member img {
+    width: 17rem !important;
+    height: 17rem !important;
+    border: 0.5rem solid rgba(0, 0, 0, 0.1);
+  }
+
+  .team-member-custom-001 img {
+    width: 17rem !important;
+    height: 17rem !important;
+    border: 0.5rem solid rgba(0, 0, 0, 0.1);
   }
 
   .col-md {
@@ -1637,8 +1661,16 @@ progress {
     background-color: transparent;
   }
 
-  .custom-01 {
-    display: flex !important;
+  .team-member img {
+    width: 21rem !important;
+    height: 21rem !important;
+    border: 0.5rem solid rgba(0, 0, 0, 0.1);
+  }
+
+  .team-member-custom-001 img {
+    width: 15rem !important;
+    height: 15rem !important;
+    border: 0.5rem solid rgba(0, 0, 0, 0.1);
   }
 
   .col-lg {
@@ -1859,8 +1891,16 @@ progress {
     background-color: transparent;
   }
 
-  .custom-01 {
-    display: flex !important;
+  .team-member img {
+    width: 25rem !important;
+    height: 25rem !important;
+    border: 0.5rem solid rgba(0, 0, 0, 0.1);
+  }
+
+  .team-member-custom-001 img {
+    width: 19rem !important;
+    height: 19rem !important;
+    border: 0.5rem solid rgba(0, 0, 0, 0.1);
   }
 
   .col-xl {
@@ -2081,8 +2121,16 @@ progress {
     background-color: transparent;
   }
 
-  .custom-01 {
-    display: flex !important;
+  .team-member img {
+    width: 30rem !important;
+    height: 30rem !important;
+    border: 0.5rem solid rgba(0, 0, 0, 0.1);
+  }
+
+  .team-member-custom-001 img {
+    width: 25rem !important;
+    height: 25rem !important;
+    border: 0.5rem solid rgba(0, 0, 0, 0.1);
   }
 
   .col-xxl {
@@ -13423,6 +13471,17 @@ header.about-us .about-us-heading {
   border: 0.5rem solid rgba(0, 0, 0, 0.1);
 }
 
+.team-member-custom-001 {
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.team-member-custom-001 img {
+  width: 14rem;
+  height: 14rem;
+  border: 0.5rem solid rgba(0, 0, 0, 0.1);
+}
+
 .team-member h4,
 .team-member .h4 {
   margin-top: 1.5rem;
@@ -13505,4 +13564,41 @@ section#contact form#contactForm :-ms-input-placeholder {
   font-family: "Mitr-Light", "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   background-color: #01296f;
   color: white;
+}
+
+.circle-frame {
+  width: 100%;
+  /* กำหนดความกว้างของวงกลม */
+  height: 100%;
+  /* กำหนดความสูงของวงกลม (เท่ากับความกว้างเพื่อให้เป็นวงกลม) */
+  border: 5px solid #000;
+  /* สีและความหนาของกรอบ */
+  border-radius: 50%;
+  /* ทำให้กรอบกลายเป็นวงกลม */
+  overflow: hidden;
+  /* ทำให้ภาพหรือเนื้อหาที่อยู่ภายในถูกตัดให้เป็นวงกลม */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* ทำให้ภาพครอบคลุมทั้งกรอบและคงสัดส่วน */
+}
+
+.custom-001 {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  background-color: #00225d !important;
+  color: white;
+}
+
+.custom-002 {
+  background-color: #00225d !important;
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
 }
