@@ -7,23 +7,25 @@
 </header>
 
 <div>
-    <br><br><br>
+
     <!-- คำคม -->
-    <div style="display: flex; flex-wrap: wrap;  padding: 2%;">
-        <div class="col-12 col-md-7">
+    <div
+        style="display: flex; flex-wrap: wrap;  padding: 2%; background-image: url(assets/images/home-004.png); background-size: cover;  background-position: center; ">
+        <br><br><br><br>
+        <div class="col-12 col-md-7" style="display: flex; align-items: center !important; ">
             <div [innerHTML]="contents.content003" style="padding: 5%;  font-size: 1.5rem;"></div>
         </div>
         <div class="col-12 col-md-5">
             <div class="team-member">
-                <img class="mx-auto rounded-circle" [src]="images.image001" alt="..." />
+                <img class="mx-auto rounded-circle" [src]="images.image003" alt="..." />
             </div>
-
         </div>
     </div>
 
-    <br><br><br>
+
     <!-- บริการหลัก -->
     <div class="custom-002">
+        <br><br><br>
         <div class="col-12 col-md-4" style="color: #fff; padding: 5%;">
             <div>
                 <span class="fa-stack fa-4x">
@@ -67,7 +69,8 @@
             <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
             <br>
         </div>
-        <div *ngFor="let array of arrays.array001" class="col-12 col-md-6 col-lg-4" style="color: #fff; text-align: center; padding: 1%;">
+        <div *ngFor="let array of arrays.array001" class="col-12 col-md-6 col-lg-4"
+            style="color: #fff; text-align: center; padding: 1%;">
             <div class="portfolio-item">
                 <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal1">
                     <div class="portfolio-hover">
