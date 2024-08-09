@@ -16,6 +16,38 @@ export class HomeComponent {
   images = {
     image001: "assets/images/home/home-002.jpg"
   }
+
+  arrays = {
+    array001: [
+      {
+        name: "รับจดเครื่องหมายการค้า",
+        description: "รับจดเครื่องหมายการค้ารับจดเครื่องหมายการค้า",
+        image001: "assets/images/home/home-002.jpg"
+      },
+      {
+        name: "รับจดสิทธิบัตร อนุสิทธิบัตร",
+        description: "รับจดเครื่องหมายการค้ารับจดเครื่องหมายการค้า",
+        image001: "assets/images/home/home-002.jpg"
+      },
+      {
+        name: "รับจดลิขสิทธิ์",
+        description: "รับจดเครื่องหมายการค้ารับจดเครื่องหมายการค้า",
+        image001: "assets/images/home/home-002.jpg"
+      },
+      {
+        name: "รับจดสิทธิบัตรต่างประเทศ",
+        description: "รับจดเครื่องหมายการค้ารับจดเครื่องหมายการค้า",
+        image001: "assets/images/home/home-002.jpg"
+      },
+      {
+        name: "รับขึ้นทะเบียนและจดบัญชีนวัตกรรมไทย",
+        description: "รับจดเครื่องหมายการค้ารับจดเครื่องหมายการค้า",
+        image001: "assets/images/home/home-002.jpg"
+      }
+    ]
+  }
+
+
   data: any[] = [];
   isImageLoaded01 = false;
   isImageLoaded02 = false;

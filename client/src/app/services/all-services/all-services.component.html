@@ -1,18 +1,27 @@
 <img style="width: 100%;" src="assets/images/services-001.jpg" alt="..." />
 
-<br><br><br>
-<div style="padding: 5% 5% 5% 5%;">
-    <div class="row">
-        <div class="col-4" *ngFor="let r of data">
-            <mat-card class="example-card" appearance="outlined" style="margin-bottom: 5%;">
-                <mat-card-header>
-                    <div mat-card-avatar class="example-header-image"></div>
-                    <mat-card-title>{{ r.name || "" }}</mat-card-title>
-                    <mat-card-subtitle>{{ r.position || "" }}</mat-card-subtitle>
-                </mat-card-header>
-                <img mat-card-image src="assets/images/services-002.jpg"
-                    alt="Photo of a Shiba Inu">
-            </mat-card>
+<div>
+    <br><br><br>
+    <!-- บริการของเรา -->
+    <div style="display: flex; flex-wrap: wrap;">
+        <div class="col-12 text-center">
+            <h2 class="section-heading text-uppercase">บริการของเรา</h2>
+            <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+            <br>
+        </div>
+        <div *ngFor="let array of arrays.array001" class="col-12 col-md-6 col-lg-4" style="color: #fff; text-align: center; padding: 1%;">
+            <div class="portfolio-item">
+                <a class="portfolio-link" data-bs-toggle="modal">
+                    <div class="portfolio-hover">
+                        <div class="portfolio-hover-content"></div>
+                    </div>
+                    <img class="img-fluid" [src]="array.image001" alt="..." />
+                </a>
+                <div class="portfolio-caption" style="background-color: #00225d;">
+                    <div class="portfolio-caption-heading">{{ array.name }}</div>
+                    <div class="portfolio-caption-subheading text-muted">{{ array.description }}</div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
