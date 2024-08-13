@@ -3,9 +3,91 @@ header.masthead {
 }
 
 .moving-element {
-    transition: transform 0.5s ease-in-out; /* กำหนดช่วงเวลาและความเร็วของการเคลื่อนไหว */
+    transition: transform 0.5s ease-in-out;
+    /* กำหนดช่วงเวลาและความเร็วของการเคลื่อนไหว */
 }
 
 .moving-element:hover {
-    transform: scale(1.2); 
+    transform: scale(1.2);
+}
+
+
+// Default
+.home-custom-css-001 {
+    font-size: 2em;
+}
+
+.home-custom-css-002 {
+    padding: 10% 10% 0% 10% !important;
+}
+
+.home-custom-css-003 {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+// XS
+@media (max-width: 575px) {}
+
+// SM
+@media (min-width: 576px) {}
+
+// MD
+@media (min-width: 768px) {
+    .home-custom-css-001 {
+        font-size: 3em;
+    }
+
+    .home-custom-css-002 {
+        padding: 5% 5% 0% 0% !important;
+    }
+
+    .home-custom-css-003 {
+        padding-left: 5% !important;
+    }
+}
+
+// LG
+@media (min-width: 992px) {
+    .home-custom-css-001 {
+        font-size: 4em;
+    }
+
+    .home-custom-css-002 {
+        padding: 5% 5% 0% 0% !important;
+    }
+
+    .home-custom-css-003 {
+        padding-left: 5% !important;
+    }
+}
+
+// XL
+@media (min-width: 1200px) {
+    .home-custom-css-001 {
+        font-size: 5em;
+    }
+
+    .home-custom-css-002 {
+        padding: 5% 5% 0% 0% !important;
+    }
+
+    .home-custom-css-003 {
+        padding-left: 5% !important;
+    }
+}
+
+// XXl
+@media (min-width: 1400px) {
+    .home-custom-css-001 {
+        font-size: 6em;
+    }
+
+    .home-custom-css-002 {
+        padding: 5% 5% 0% 0% !important;
+    }
+
+    .home-custom-css-003 {
+        padding-left: 5% !important;
+    }
 }

@@ -16,7 +16,7 @@
             <div [innerHTML]="contents.content003" style="padding: 5%;  font-size: 1.5rem;"></div>
         </div>
         <div class="col-12 col-md-5">
-            <div class="team-member moving-element">
+            <div class="team-member">
                 <img class="mx-auto rounded-circle" [src]="images.image003" alt="..." />
             </div>
         </div>
@@ -26,38 +26,38 @@
     <!-- บริการหลัก -->
     <div class="custom-002">
         <br><br><br>
-        <div class="col-12 col-md-4" style="color: #fff; padding: 5%;">
+        <div class="col-4" style="color: #fff; padding: 5%;">
             <div>
-                <span class="fa-stack fa-4x">
+                <span class="fa-stack fa-4x home-custom-css-001">
                     <i class="fas fa-circle fa-stack-2x text-primary"></i>
                     <i class="fas fa-solid fa-handshake fa-stack-1x fa-inverse"></i>
                 </span>
             </div>
             <br>
             <div>จดสิทธิบัตร</div>
-            <div>บริการจดทะเบียน</div>
+            <div>บริการจดทะเบียนบริการจดทะเบียนบริการจดทะเบียน</div>
         </div>
-        <div class="col-12 col-md-4" style="color: #fff; padding: 5%;">
+        <div class="col-4" style="color: #fff; padding: 5%;">
             <div>
-                <span class="fa-stack fa-4x">
+                <span class="fa-stack fa-4x home-custom-css-001">
                     <i class="fas fa-circle fa-stack-2x text-primary"></i>
                     <i class="fas fa-solid fa-landmark fa-stack-1x fa-inverse"></i>
                 </span>
             </div>
             <br>
             <div>จดสิทธิบัตร</div>
-            <div>บริการจดทะเบียน</div>
+            <div>บริการจดทะเบียนบริการจดทะเบียนบริการจดทะเบียน</div>
         </div>
-        <div class="col-12 col-md-4" style="color: #fff; padding: 5%;">
+        <div class="col-4" style="color: #fff; padding: 5%;">
             <div>
-                <span class="fa-stack fa-4x">
+                <span class="fa-stack fa-4x home-custom-css-001">
                     <i class="fas fa-circle fa-stack-2x text-primary"></i>
                     <i class="fas fa-solid fa-user-secret fa-stack-1x fa-inverse"></i>
                 </span>
             </div>
             <br>
             <div>จดสิทธิบัตร</div>
-            <div>บริการจดทะเบียน</div>
+            <div>บริการจดทะเบียนบริการจดทะเบียนบริการจดทะเบียนบริการจดทะเบียน</div>
         </div>
     </div>
 
@@ -69,7 +69,8 @@
             <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
             <br>
         </div>
-        <div *ngFor="let array of arrays.array001" class="col-12 col-md-6 col-lg-4"
+        <div class="home-custom-css-003" style="display: flex;">
+        <div *ngFor="let array of arrays.array001" class="col-12 col-md-6 col-lg-4 home-custom-css-002"
             style="color: #fff; text-align: center; padding: 1%;">
             <div class="portfolio-item">
                 <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal1">
@@ -78,12 +79,13 @@
                     </div>
                     <img class="img-fluid" [src]="array.image001" alt="..." />
                 </a>
-                <div class="portfolio-caption" style="background-color: #00225d;">
+                <div class="portfolio-caption" style="background-color: #00225d; padding: 5%;">
                     <div class="portfolio-caption-heading">{{ array.name }}</div>
                     <div class="portfolio-caption-subheading text-muted">{{ array.description }}</div>
                 </div>
             </div>
         </div>
+    </div>
     </div>
 
     <br><br><br>
@@ -127,13 +129,13 @@
         </div>
     </div>
 
-    <br><br><br>
+    <br><br><br><br><br>
     <!-- ลูกค้าของเรา -->
     <div style="display: flex; flex-wrap: wrap; padding: 2%;">
         <div class="col-12 text-center">
             <h2 class="section-heading text-uppercase">ลูกค้าของเรา</h2>
             <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
-            <br>
+            <br><br><br>
         </div>
         <div class="col-12" style="color: #fff; text-align: center;">
             <div><img [src]="images.image001" style="width: 50%; " /></div>
@@ -145,7 +147,7 @@
         <div class="col-12 text-center">
             <h2 class="section-heading text-uppercase">ทีมของเรา</h2>
             <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
-            <br>
+            <br><br><br>
         </div>
         <div class="col-12 col-md-6 col-lg-4" style="color: #fff;">
             <div class="team-member-custom-001">
@@ -153,16 +155,7 @@
             </div>
             <div style="text-align: center;">
                 <h4 style="color: #00225d;">Diana Petersen</h4>
-                <p class="text-muted" style="color: #444546 !important;">Lead Marketer</p>
-            </div>
-        </div>
-        <div class="col-12 col-md-6 col-lg-4" style="color: #fff;">
-            <div class="team-member-custom-001">
-                <img class="mx-auto rounded-circle" [src]="images.image001" alt="..." />
-            </div>
-            <div style="text-align: center;">
-                <h4 style="color: #00225d;">Diana Petersen</h4>
-                <p class="text-muted" style="color: #444546 !important;">Lead Marketer</p>
+                <p class="text-muted" style="color: #ffc800 !important;">Lead Marketer</p>
             </div>
         </div>
         <div class="col-12 col-md-6 col-lg-4" style="color: #fff;">
@@ -171,7 +164,16 @@
             </div>
             <div style="text-align: center;">
                 <h4 style="color: #00225d;">Diana Petersen</h4>
-                <p class="text-muted" style="color: #444546 !important;">Lead Marketer</p>
+                <p class="text-muted" style="color: #ffc800 !important;">Lead Marketer</p>
+            </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4" style="color: #fff;">
+            <div class="team-member-custom-001">
+                <img class="mx-auto rounded-circle" [src]="images.image001" alt="..." />
+            </div>
+            <div style="text-align: center;">
+                <h4 style="color: #00225d;">Diana Petersen</h4>
+                <p class="text-muted" style="color: #ffc800 !important;">Lead Marketer</p>
             </div>
         </div>
     </div>
