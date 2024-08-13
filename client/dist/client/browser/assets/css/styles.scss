@@ -58,7 +58,7 @@
   --bs-body-font-weight: 400;
   --bs-body-line-height: 1.5;
   --bs-body-color: #00225d;
-  --bs-body-bg: #ffc800;
+  --bs-body-bg: #F9F9F9;
   --bs-border-width: 1px;
   --bs-border-style: solid;
   --bs-border-color: #dee2e6;
@@ -978,8 +978,8 @@ progress {
   }
 
   .team-member-custom-001 img {
-    width: 25rem !important;
-    height: 25rem !important;
+    width: 15rem !important;
+    height: 15rem !important;
     border: 0.5rem solid rgba(0, 0, 0, 0.1);
   }
 
@@ -1208,8 +1208,8 @@ progress {
   }
 
   .team-member-custom-001 img {
-    width: 25rem !important;
-    height: 25rem !important;
+    width: 15rem !important;
+    height: 15rem !important;
     border: 0.5rem solid rgba(0, 0, 0, 0.1);
   }
 
@@ -1438,8 +1438,8 @@ progress {
   }
 
   .team-member-custom-001 img {
-    width: 17rem !important;
-    height: 17rem !important;
+    width: 15rem !important;
+    height: 15rem !important;
     border: 0.5rem solid rgba(0, 0, 0, 0.1);
   }
 
@@ -1898,8 +1898,8 @@ progress {
   }
 
   .team-member-custom-001 img {
-    width: 19rem !important;
-    height: 19rem !important;
+    width: 15rem !important;
+    height: 15rem !important;
     border: 0.5rem solid rgba(0, 0, 0, 0.1);
   }
 
@@ -2122,14 +2122,14 @@ progress {
   }
 
   .team-member img {
-    width: 30rem !important;
-    height: 30rem !important;
+    width: 25rem !important;
+    height: 25rem !important;
     border: 0.5rem solid rgba(0, 0, 0, 0.1);
   }
 
   .team-member-custom-001 img {
-    width: 25rem !important;
-    height: 25rem !important;
+    width: 15rem !important;
+    height: 15rem !important;
     border: 0.5rem solid rgba(0, 0, 0, 0.1);
   }
 
@@ -9389,7 +9389,7 @@ fieldset:disabled .btn {
 
 .text-muted {
   --bs-text-opacity: 1;
-  color: #fff !important;
+  color: #ffc800 !important;
 }
 
 .text-black-50 {
@@ -13131,6 +13131,7 @@ header.about-us .about-us-heading {
     font-weight: 700;
     line-height: 4.5rem;
     margin-bottom: 4rem;
+    color: #E2AB2D !important;
   }
 
   header.about-us {
@@ -13601,4 +13602,68 @@ section#contact form#contactForm :-ms-input-placeholder {
   display: flex;
   flex-wrap: wrap;
   text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+// XS
+@media (max-width: 575px) {
+  header.masthead .masthead-heading {
+    font-size: 3.25rem;
+    color: #E2AB2D !important;
+    line-height: 120%;
+  }
+}
+
+// SM
+@media (min-width: 576px) {
+  header.masthead .masthead-heading {
+    font-size: 3.25rem;
+    color: #E2AB2D !important;
+    line-height: 120%;
+  }
+}
+
+// MD
+@media (min-width: 768px) {
+  header.masthead .masthead-heading {
+    font-size: 5rem;
+    color: #E2AB2D !important;
+    line-height: 120%;
+  }
+}
+
+// LG
+@media (min-width: 992px) {
+  header.masthead .masthead-heading {
+    font-size: 6rem;
+    color: #E2AB2D !important;
+    line-height: 120%;
+  }
+}
+
+// XL
+@media (min-width: 1200px) {
+  header.masthead .masthead-heading {
+    font-size: 4rem;
+    color: #E2AB2D !important;
+  }
+}
+
+// XXl
+@media (min-width: 1400px) {
+  header.masthead .masthead-heading {
+    font-size: 5rem;
+    color: #E2AB2D !important;
+  }
 }
