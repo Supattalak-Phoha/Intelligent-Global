@@ -1,0 +1,108 @@
+.contact-us-custom-css-001 {
+    font-size: 2em;
+}
+
+.contact-us-custom-css-002 {
+    display: block !important;
+}
+
+.contact-us-custom-css-003 {
+    margin-top: 5%;
+    font-size: 1.5rem;
+    overflow-wrap: anywhere;
+}
+
+.contact-us-custom-css-004 {
+    color: #fff;
+    padding: 4% 3%;
+}
+
+// XS
+@media (max-width: 575px) {
+    .contact-us-custom-css-002 {
+        display: none !important;
+    }
+
+    .contact-us-custom-css-003 {
+        font-size: 0.8rem;
+    }
+}
+
+// SM
+@media (min-width: 576px) {
+    .contact-us-custom-css-002 {
+        display: none !important;
+    }
+    
+    .contact-us-custom-css-003 {
+        font-size: 1rem;
+    }
+}
+
+// MD
+@media (min-width: 768px) {
+    .contact-us-custom-css-001 {
+        font-size: 3em;
+    }
+
+    .contact-us-custom-css-003 {
+        font-size: 1.2rem;
+    }
+
+    .contact-us-custom-css-004 {
+        color: #fff;
+        padding: 4% 3%;
+    } 
+}
+
+// LG
+@media (min-width: 992px) {
+    .contact-us-custom-css-001 {
+        font-size: 4em;
+    }
+
+    .contact-us-custom-css-002 {
+        display: block !important;
+    }
+
+    .contact-us-custom-css-003 {
+        font-size: 1.75rem;
+    }
+
+    .contact-us-custom-css-004 {
+        color: #fff;
+        padding: 4% 3%;
+    }
+}
+
+// XL
+@media (min-width: 1200px) {
+    .contact-us-custom-css-001 {
+        font-size: 5em;
+    }
+
+    .contact-us-custom-css-002 {
+        display: block !important;
+    }
+
+    .contact-us-custom-css-004 {
+        color: #fff;
+        padding: 2% 3%;
+    }
+}
+
+// XXl
+@media (min-width: 1400px) {
+    .contact-us-custom-css-001 {
+        font-size: 6em;
+    }
+
+    .contact-us-custom-css-002 {
+        display: block !important;
+    }
+
+    .contact-us-custom-css-004 {
+        color: #fff;
+        padding: 2% 3%;
+    }
+}
