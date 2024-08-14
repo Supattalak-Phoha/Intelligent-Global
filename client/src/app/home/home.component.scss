@@ -1,5 +1,6 @@
 header.masthead {
-    background-image: url("../../../public/assets/images/home/home-001.jpg") !important;
+    background-image: url("../../../public/assets/images/home/home-003.jpg") !important;
+    background-repeat: repeat;
 }
 
 .moving-element {
@@ -26,12 +27,39 @@ header.masthead {
     flex-wrap: wrap;
 }
 
+.home-custom-css-004 {
+    display: block !important;
+}
 
+.home-custom-css-005 {
+    padding: 5%;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.home-custom-css-006 {
+    margin-top: 5%;
+    font-size: 1.5rem;
+    overflow-wrap: anywhere;
+}
+
+.home-custom-css-007 {
+    color: #fff;
+    padding: 5% 5%;
+}
 
 // XS
 @media (max-width: 575px) {
     .home-custom-css-004 {
         display: none !important;
+    }
+
+    .home-custom-css-005 {
+        font-size: 2rem;
+    }
+
+    .home-custom-css-006 {
+        font-size: 0.8rem;
     }
 }
 
@@ -39,6 +67,14 @@ header.masthead {
 @media (min-width: 576px) {
     .home-custom-css-004 {
         display: none !important;
+    }
+
+    .home-custom-css-005 {
+        font-size: 2rem;
+    }
+
+    .home-custom-css-006 {
+        font-size: 1rem;
     }
 }
 
@@ -56,9 +92,18 @@ header.masthead {
         padding-left: 3% !important;
     }
 
-    .home-custom-css-004 {
-        display: block !important;
+    .home-custom-css-005 {
+        font-size: 1.5rem;
     }
+
+    .home-custom-css-006 {
+        font-size: 1.2rem;
+    }
+
+    .home-custom-css-007 {
+        color: #fff;
+        padding: 3% 5%;
+    } 
 }
 
 // LG
@@ -78,6 +123,20 @@ header.masthead {
     .home-custom-css-004 {
         display: block !important;
     }
+
+    .home-custom-css-005 {
+        font-size: 2rem;
+    }
+
+    .home-custom-css-006 {
+        font-size: 1.75rem;
+    }
+
+    .home-custom-css-007 {
+        color: #fff;
+        padding: 3% 5%;
+    }
+    
 }
 
 // XL
@@ -97,6 +156,16 @@ header.masthead {
     .home-custom-css-004 {
         display: block !important;
     }
+
+    .home-custom-css-005 {
+        font-size: 2rem;
+    }
+
+    .home-custom-css-007 {
+        color: #fff;
+        padding: 3% 5%;
+    }
+    
 }
 
 // XXl
@@ -116,4 +185,14 @@ header.masthead {
     .home-custom-css-004 {
         display: block !important;
     }
+
+    .home-custom-css-005 {
+        font-size: 2rem;
+    }
+
+    .home-custom-css-007 {
+        color: #fff;
+        padding: 3% 5%;
+    }
+    
 }

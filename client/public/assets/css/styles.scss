@@ -13463,7 +13463,7 @@ header.about-us .about-us-heading {
 }
 
 .team-member {
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
   text-align: center;
 }
 
@@ -13623,6 +13623,16 @@ section#contact form#contactForm :-ms-input-placeholder {
     color: #E2AB2D !important;
     line-height: 120%;
   }
+
+  h2,
+  .h2 {
+    font-size: 2.2rem;
+  }
+
+  h3,
+  .h3 {
+    font-size: calc(1.3rem + -1.4vw);
+  }
 }
 
 // SM
@@ -13631,6 +13641,16 @@ section#contact form#contactForm :-ms-input-placeholder {
     font-size: 3.25rem;
     color: #E2AB2D !important;
     line-height: 120%;
+  }
+
+  h2,
+  .h2 {
+    font-size: 2.2rem;
+  }
+
+  h3,
+  .h3 {
+    font-size: calc(1.3rem + -0.6vw);
   }
 }
 
@@ -13641,6 +13661,16 @@ section#contact form#contactForm :-ms-input-placeholder {
     color: #E2AB2D !important;
     line-height: 120%;
   }
+
+  h2,
+  .h2 {
+    font-size: 2.5rem;
+  }
+
+  h3,
+  .h3 {
+    font-size: calc(1.3rem + 0.2vw);
+  }
 }
 
 // LG
@@ -13650,6 +13680,11 @@ section#contact form#contactForm :-ms-input-placeholder {
     color: #E2AB2D !important;
     line-height: 120%;
   }
+
+  h2,
+  .h2 {
+    font-size: 3rem;
+  }
 }
 
 // XL
@@ -13658,6 +13693,11 @@ section#contact form#contactForm :-ms-input-placeholder {
     font-size: 4rem;
     color: #E2AB2D !important;
   }
+
+  h2,
+  .h2 {
+    font-size: 3rem;
+  }
 }
 
 // XXl
@@ -13665,5 +13705,10 @@ section#contact form#contactForm :-ms-input-placeholder {
   header.masthead .masthead-heading {
     font-size: 5rem;
     color: #E2AB2D !important;
+  }
+
+  h2,
+  .h2 {
+    font-size: 3rem;
   }
 }

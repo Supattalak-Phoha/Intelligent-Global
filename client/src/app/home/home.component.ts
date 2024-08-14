@@ -8,43 +8,99 @@ import { DataService } from '../data.service';
 })
 export class HomeComponent {
   contents = {
-    content001: "Welcome To Our Company",
+    content001: "ยินดีต้อนรับเข้าสู่",
     content002: "Intelligent Global Co, Ltd.",
-    content003: "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;การพัฒนาด้านคุณธรรม จะต้องเป็นตัวอย่างที่ดีของผู้ใต้บังคับบัญชา ยึดมั่นในความถูกต้องดีงาม. ประพฤติตนเป็นตัวอย่างแก่สังคมด้วยความซื่อสัตย์ จริงใจ ขยัน อดทน เที่ยงตรงและเสียสละ."
+    content003: '"เรายินดีให้คำปรึกษาและการบริการ เพื่อสร้างภาพลักษณ์ที่น่าเชื่อถือ จนนำพาธุรกิจของคุณไปสู่เป้าหมายที่ตั้งไว้"',
+    content004: "บริการของเรา",
+    content005: "บริษัทของเรามีบริการต่าง ๆ มากมาย เพื่อตอบสนองความต้องการของคุณ"
   }
 
   images = {
-    image001: "assets/images/home/home-002.jpg",
-    image002: "assets/images/home/home-004.png",
-    image003: "assets/images/home-005.jpg"
+    image001: "assets/images/home/home-002.jpg"
   }
 
   arrays = {
     array001: [
       {
-        name: "รับจดเครื่องหมายการค้า",
-        description: "รับจดเครื่องหมายการค้ารับจดเครื่องหมายการค้า",
-        image001: "assets/images/home/home-002.jpg"
+        name: "อาหารและยา",
+        description: "บริการให้คำปรึกษาเกี่ยวกับอาหารและยา (อย.)",
+        class: "fas fa-solid fa-handshake fa-stack-1x fa-inverse",
+        image001: "assets/images/home/home-004.png"
       },
       {
-        name: "รับจดสิทธิบัตร อนุสิทธิบัตร",
-        description: "รับจดเครื่องหมายการค้ารับจดเครื่องหมายการค้า",
-        image001: "assets/images/home/home-002.jpg"
+        name: "มาตรฐานผลิตภัณฑ์อุตสาหกรรม",
+        description: "บริการให้คำปรึกษาเกี่ยวกับมาตรฐานผลิตภัณฑ์อุตสาหกรรม (มอก.)",
+        class: "fas fa-solid fa-user-secret fa-stack-1x fa-inverse",
+        image001: "assets/images/home/home-005.png"
       },
       {
-        name: "รับจดลิขสิทธิ์",
-        description: "รับจดเครื่องหมายการค้ารับจดเครื่องหมายการค้า",
-        image001: "assets/images/home/home-002.jpg"
+        name: "ลิขสิทธิ์",
+        description: "บริการรับจดแจ้งลิขสิทธิ์ ฯลฯ",
+        class: "fas fa-solid fa-landmark fa-stack-1x fa-inverse",
+        image001: "assets/images/home/home-006.png"
+      }
+    ],
+    array002: [
+      {
+        name: "อาหารและยา (อย.)",
+        description: "รอดำเนินการ...",
+        image001: "assets/images/services/service-001.jpg"
       },
       {
-        name: "รับจดสิทธิบัตรต่างประเทศ",
-        description: "รับจดเครื่องหมายการค้ารับจดเครื่องหมายการค้า",
-        image001: "assets/images/home/home-002.jpg"
+        name: "มาตรฐานผลิตภัณฑ์อุตสาหกรรม (มอก.)",
+        description: "รอดำเนินการ...",
+        image001: "assets/images/services/service-002.jpg"
       },
       {
-        name: "รับขึ้นทะเบียนและจดบัญชีนวัตกรรมไทย",
-        description: "รับจดเครื่องหมายการค้ารับจดเครื่องหมายการค้า",
-        image001: "assets/images/home/home-002.jpg"
+        name: "บัญชีนวัตกรรมไทย",
+        description: "รอดำเนินการ...",
+        image001: "assets/images/services/service-003.jpg"
+      },
+      {
+        name: "เครื่องหมายการค้า ลิขสิทธิ์ และจดทะเบียนต่างๆ ",
+        description: "รอดำเนินการ...",
+        image001: "assets/images/services/service-004.jpg"
+      },
+      {
+        name: "บาร์โค้ด",
+        description: "รอดำเนินการ...",
+        image001: "assets/images/services/service-005.jpg"
+      },
+
+      {
+        name: "ส่งเสริมการลงทุน (BOI)",
+        description: "รอดำเนินการ...",
+        image001: "assets/images/services/service-006.jpg"
+      },
+      {
+        name: "Accounting and Tax",
+        description: "รอดำเนินการ...",
+        image001: "assets/images/services/service-007.jpg"
+      },
+      {
+        name: "GMP HACCP",
+        description: "รอดำเนินการ...",
+        image001: "assets/images/services/service-008.jpg"
+      },
+      {
+        name: "รับรองฮาลาล (HALAL)",
+        description: "รอดำเนินการ...",
+        image001: "assets/images/services/service-009.jpg"
+      },
+      {
+        name: "VISA and Work permit",
+        description: "รอดำเนินการ...",
+        image001: "assets/images/services/service-010.jpg"
+      },
+      {
+        name: "ขอรับรอง Made in Thailand (MiT)",
+        description: "รอดำเนินการ...",
+        image001: "assets/images/services/service-011.jpg"
+      },
+      {
+        name: "ปรึกษากฏหมาย",
+        description: "รอดำเนินการ...",
+        image001: "assets/images/services/service-012.jpg"
       }
     ]
   }

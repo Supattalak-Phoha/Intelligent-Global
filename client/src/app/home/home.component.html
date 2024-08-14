@@ -1,4 +1,4 @@
-<!-- Masthead-->
+<!-- Header -->
 <header class="masthead">
     <div class="container">
         <div class="masthead-subheading">{{ contents.content001 }}</div>
@@ -6,76 +6,47 @@
     </div>
 </header>
 
-<div >
-
-    <!-- คำคม -->
+<div>
+    <!-- วิสัยทัศน์ -->
     <div
-        style="display: flex; flex-wrap: wrap;  padding: 2%; background-image: url(assets/images/home-004.png); background-size: cover;  background-position: center; margin-top: 4%;">
-        <br><br><br><br>
-        <div class="col-12 col-md-7" style="display: flex; align-items: center !important; ">
-            <div [innerHTML]="contents.content003" style="padding: 5%;  font-size: 1.5rem;"></div>
+        style="display: flex; flex-wrap: wrap;  padding: 2%; background-image: url(assets/images/home/home-001.png); background-size: cover;  background-position: center;">
+        <div class="col-12 col-md-7" style="display: flex;">
+            <div [innerHTML]="contents.content003" class="home-custom-css-005"></div>
         </div>
         <div class="col-12 col-md-5">
-            <div class="team-member">
-                <img class="mx-auto rounded-circle" [src]="images.image003" alt="..." />
+            <div class="team-member" style="margin-top: 1rem;">
+                <img class="mx-auto rounded-circle" [src]="images.image001" alt="..." />
             </div>
         </div>
     </div>
-
 
     <!-- บริการหลัก -->
     <div class="custom-002">
-        <br><br><br>
-        <div class="col-4" style="color: #fff; padding: 5%;">
+        <div *ngFor="let array of arrays.array001" class="col-4 home-custom-css-007" >
             <div>
-                <span class="fa-stack fa-4x home-custom-css-001">
+                <!-- <span class="fa-stack fa-4x home-custom-css-001">
                     <i class="fas fa-circle fa-stack-2x text-primary" style="color: white !important;"></i>
-                    <i class="fas fa-solid fa-handshake fa-stack-1x fa-inverse" style="color: #ffc800 !important;"></i>
-                </span>
+                    <i [ngClass]="array.class" style="color: #ffc800 !important;"></i>
+                </span> -->
+                <img [src]="array.image001" style="width: 50%;" />
             </div>
-            <div style="margin-top: 5%;">จดสิทธิบัตร</div>
-            <div class="home-custom-css-004">บริการจดทะเบียนบริการจดทะเบียนบริการจดทะเบียน</div>
-        </div>
-        <div class="col-4" style="color: #fff; padding: 5%;">
-            <div>
-                <span class="fa-stack fa-4x home-custom-css-001">
-                    <i class="fas fa-circle fa-stack-2x text-primary" style="color: white !important;"></i>
-                    <i class="fas fa-solid fa-landmark fa-stack-1x fa-inverse" style="color: #ffc800 !important;"></i>
-                </span>
-            </div>
-            <div style="margin-top: 5%;">จดสิทธิบัตร</div>
-            <div class="home-custom-css-004">บริการจดทะเบียนบริการจดทะเบียนบริการจดทะเบียน</div>
-        </div>
-        <div class="col-4" style="color: #fff; padding: 5%;">
-            <div>
-                <span class="fa-stack fa-4x home-custom-css-001">
-                    <i class="fas fa-circle fa-stack-2x text-primary" style="color: white !important;"></i>
-                    <i class="fas fa-solid fa-user-secret fa-stack-1x fa-inverse" style="color: #ffc800 !important;"></i>
-                </span>
-            </div>
-            <div style="margin-top: 5%;">จดสิทธิบัตร</div>
-            <div class="home-custom-css-004">บริการจดทะเบียนบริการจดทะเบียนบริการจดทะเบียนบริการจดทะเบียน</div>
+            <div class="home-custom-css-006">{{ array.name }}</div>
+            <div class="home-custom-css-004">{{ array.description }}</div>
         </div>
     </div>
 
-    <br><br><br>
     <!-- บริการของเรา -->
-    <div style="display: flex; flex-wrap: wrap;">
-        <div class="col-12 text-center">
-            <h2 class="section-heading text-uppercase">บริการของเรา</h2>
-            <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+    <div style="display: flex; flex-wrap: wrap; margin-top: 8%;">
+        <div class="col-12 text-center" style="padding: 0% 2%">
+            <h2 class="section-heading text-uppercase">{{ contents.content004 }}</h2>
+            <h3 class="section-subheading text-muted">{{ contents.content005 }}</h3>
             <br>
         </div>
         <div class="home-custom-css-003" style="display: flex;">
-            <div *ngFor="let array of arrays.array001" class="col-12 col-md-6 col-lg-4 home-custom-css-002"
+            <div *ngFor="let array of arrays.array002" class="col-12 col-md-6 col-lg-4 home-custom-css-002"
                 style="color: #fff; text-align: center; padding: 1%;">
                 <div class="portfolio-item">
-                    <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal1Test">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content"></div>
-                        </div>
-                        <img class="img-fluid" [src]="array.image001" alt="..." />
-                    </a>
+                    <img class="img-fluid" [src]="array.image001" style="border: solid #00225d; width: 100%; height: auto; display: block;"/>
                     <div class="portfolio-caption" style="background-color: #00225d; padding: 5%;">
                         <div class="portfolio-caption-heading">{{ array.name }}</div>
                         <div class="portfolio-caption-subheading text-muted">{{ array.description }}</div>
@@ -138,19 +109,6 @@
         </div>
     </div>
 
-    <br><br><br><br><br>
-    <!-- ลูกค้าของเรา -->
-    <div style="display: flex; flex-wrap: wrap; padding: 2%;">
-        <div class="col-12 text-center">
-            <h2 class="section-heading text-uppercase">ลูกค้าของเรา</h2>
-            <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
-            <br><br><br>
-        </div>
-        <div class="col-12" style="color: #fff; text-align: center;">
-            <div><img [src]="images.image001" style="width: 50%; " /></div>
-        </div>
-    </div>
-
     <br><br><br>
     <div style="display: flex; flex-wrap: wrap; padding: 2%;">
         <div class="col-12 text-center">
@@ -164,7 +122,8 @@
             </div>
             <div style="text-align: center;">
                 <h4 style="color: #00225d;">Diana Petersen</h4>
-                <p class="text-muted" style="color: #ffc800 !important; font-weight: bold;">Lead Marketer Lead Marketer </p>
+                <p class="text-muted" style="color: #ffc800 !important; font-weight: bold;">Lead Marketer Lead Marketer
+                </p>
             </div>
         </div>
         <div class="col-12 col-md-6 col-lg-4" style="color: #fff;">
@@ -173,7 +132,8 @@
             </div>
             <div style="text-align: center;">
                 <h4 style="color: #00225d;">Diana Petersen</h4>
-                <p class="text-muted" style="color: #ffc800 !important; font-weight: bold;">Lead Marketer Lead Marketer </p>
+                <p class="text-muted" style="color: #ffc800 !important; font-weight: bold;">Lead Marketer Lead Marketer
+                </p>
             </div>
         </div>
         <div class="col-12 col-md-6 col-lg-4" style="color: #fff;">
@@ -182,7 +142,8 @@
             </div>
             <div style="text-align: center;">
                 <h4 style="color: #00225d;">Diana Petersen</h4>
-                <p class="text-muted" style="color: #ffc800 !important; font-weight: bold;">Lead Marketer Lead Marketer</p>
+                <p class="text-muted" style="color: #ffc800 !important; font-weight: bold;">Lead Marketer Lead Marketer
+                </p>
             </div>
         </div>
     </div>
