@@ -4,19 +4,39 @@
     text-align: justify;
 }
 
+.about-us-custom-css-002 {
+    width: 100%;
+}
+
 // XS
-@media (max-width: 575px) {}
+@media (max-width: 575px) {
+    .about-us-custom-css-002 {
+        padding-top: 10%;
+    }
+}
 
 // SM
-@media (min-width: 576px) {}
+@media (min-width: 576px) {
+    .about-us-custom-css-002 {
+        padding-top: 10%;
+    }
+}
 
 // MD
-@media (min-width: 768px) {}
+@media (min-width: 768px) {
+    .about-us-custom-css-002 {
+        padding-top: 10%;
+    }
+}
 
 // LG
 @media (min-width: 992px) {
     .about-us-custom-css-001 {
         font-size: 1.2rem;
+    }
+
+    .about-us-custom-css-002 {
+        padding-top: 0%;
     }
 }
 

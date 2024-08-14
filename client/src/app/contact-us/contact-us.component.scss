@@ -17,6 +17,10 @@
     padding: 4% 3%;
 }
 
+.contact-us-custom-css-005 {
+    width: 100%;
+}
+
 // XS
 @media (max-width: 575px) {
     .contact-us-custom-css-002 {
@@ -25,6 +29,10 @@
 
     .contact-us-custom-css-003 {
         font-size: 0.8rem;
+    }
+
+    .contact-us-custom-css-005 {
+        padding-top: 10%;
     }
 }
 
@@ -36,6 +44,10 @@
     
     .contact-us-custom-css-003 {
         font-size: 1rem;
+    }
+
+    .contact-us-custom-css-005 {
+        padding-top: 10%;
     }
 }
 
@@ -53,6 +65,10 @@
         color: #fff;
         padding: 4% 3%;
     } 
+
+    .contact-us-custom-css-005 {
+        padding-top: 10%;
+    }
 }
 
 // LG
@@ -72,6 +88,10 @@
     .contact-us-custom-css-004 {
         color: #fff;
         padding: 4% 3%;
+    }
+
+    .contact-us-custom-css-005 {
+        padding-top: 0%;
     }
 }
 

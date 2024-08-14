@@ -12,6 +12,10 @@ export class AllServicesComponent {
     content002: "บริษัทของเรามีบริการต่าง ๆ มากมาย เพื่อตอบสนองความต้องการของคุณ"
   }
 
+  images = {
+    image001: "assets/images/services/services-001.jpg"
+  }
+
   arrays = {
     array001: [
       {
