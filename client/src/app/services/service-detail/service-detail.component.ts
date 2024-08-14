@@ -7,8 +7,11 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrl: './service-detail.component.scss'
 })
 export class ServiceDetailComponent {
-  isImageLoaded01 = false;
   code: any = "";
+  contents = {
+    content001: "อาหารและยา (อย.)",
+    content002: "อย. ย่อมาจาก สำนักงานคณะกรรมการอาหารและยา (Food and Drug Administration – FDA) มีหน้าที่ปกป้องสุขภาพของประชาชนโดยการรับรองความปลอดภัย ประสิทธิภาพ และความมั่นคงของยาสำหรับมนุษย์และยารักษาสัตว์ ผลิตภัณฑ์ชีวภาพ และ อุปกรณ์ทางการแพทย์ "
+  }
 
   constructor(private route: ActivatedRoute, private router: Router) {}
 
@@ -16,12 +19,5 @@ export class ServiceDetailComponent {
     this.route.paramMap.subscribe(params => {
       this.code = params.get('code');
     });
-  }
-
-
-  onImageLoad(picture: string) {
-    if (picture === 'isImageLoaded01') {
-      this.isImageLoaded01 = true;
-    }
   }
 }
