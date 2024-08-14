@@ -1,21 +1,17 @@
-<img style="width: 100%;" src="assets/images/about-us-001.jpg" alt="..." />
+<img style="width: 100%;" [src]="images.image001" alt="..." />
 
 <div>
-    <br><br><br>
-    <div style="display: flex; flex-wrap: wrap;  padding: 2%;">
+    <div style="display: flex; flex-wrap: wrap;  padding: 0% 2%; margin-top: 8%;">
         <div class="col-12 text-center">
-            <h2 class="section-heading text-uppercase">เกี่ยวกับเรา</h2>
-            <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+            <h2 class="section-heading text-uppercase">{{ contents.content001 }}</h2>
+            <h3 class="section-subheading text-muted">{{ contents.content002 }}</h3>
             <br>
         </div>
-        <div class="col-12 col-md-7">
-            <div [innerHTML]="contents.text01" style="padding: 5%;  font-size: 1.5rem;"></div>
+        <div class="col-12 col-md-7" style="">
+            <div [innerHTML]="contents.content003" class="about-us-custom-css-001"></div>
         </div>
-        <div class="col-12 col-md-5">
-            <div class="team-member">
-                <img class="mx-auto rounded-circle" [src]="images.image001" alt="..." />
-            </div>
-
+        <div class="col-12 col-md-5" style="text-align: center;">
+            <img style="width: 90%;" [src]="images.image002" />
         </div>
     </div>
 </div>

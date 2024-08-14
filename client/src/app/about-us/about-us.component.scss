@@ -1,0 +1,31 @@
+.about-us-custom-css-001 {
+    padding: 0% 5% 5% 5%;
+    font-size: 1rem;
+    text-align: justify;
+}
+
+// XS
+@media (max-width: 575px) {}
+
+// SM
+@media (min-width: 576px) {}
+
+// MD
+@media (min-width: 768px) {}
+
+// LG
+@media (min-width: 992px) {
+    .about-us-custom-css-001 {
+        font-size: 1.2rem;
+    }
+}
+
+// XL
+@media (min-width: 1200px) {}
+
+// XXl
+@media (min-width: 1400px) {
+    .about-us-custom-css-001 {
+        font-size: 1.5rem;
+    }
+}
