@@ -966,14 +966,15 @@ progress {
   --bs-gutter-y: 3rem;
 }
 
+
 @media (max-width: 575px) {
   .container {
     background-color: transparent;
   }
 
   .team-member img {
-    width: 25rem !important;
-    height: 25rem !important;
+    width: 22rem !important;
+    height: 22rem !important;
     border: 0.5rem solid rgba(0, 0, 0, 0.1);
   }
 
@@ -13603,7 +13604,6 @@ section#contact form#contactForm :-ms-input-placeholder {
   flex-wrap: wrap;
   text-align: center;
 }
-
 
 
 
