@@ -96,8 +96,10 @@ export class AllServicesComponent {
 
   constructor(private router: Router
   ) { }
-  
+
   goToDetail(code: any) {
-    this.router.navigate(['/service-detail/' + code]);
+    this.router.navigate(['/service-detail/' + code]).then(() => {
+      window.scrollTo(0, 0); // เลื่อนหน้าไปที่ด้านบนสุด
+    });
   }
 }
