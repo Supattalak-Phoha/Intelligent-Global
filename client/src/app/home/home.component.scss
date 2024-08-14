@@ -48,6 +48,15 @@ header.masthead {
     padding: 5% 5%;
 }
 
+.home-custom-css-008 {
+    color: #ffc800 !important;
+    font-size: 75%;
+}
+
+.home-custom-css-009 {
+    margin-bottom: 1rem !important;
+}
+
 // XS
 @media (max-width: 575px) {
     .home-custom-css-004 {
@@ -104,6 +113,11 @@ header.masthead {
         color: #fff;
         padding: 3% 5%;
     } 
+
+    .home-custom-css-008 {
+        color: #ffc800 !important;
+        font-size: 100%;
+    }
 }
 
 // LG

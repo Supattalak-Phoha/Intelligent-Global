@@ -56,139 +56,36 @@
         </div>
     </div>
 
-    <br><br><br>
     <!-- สถิติ -->
-    <div class="custom-002">
-        <div class="col-6 col-lg-3" style="color: #fff; padding: 5%;">
+    <div class="custom-002" style="margin-top: 8%; padding: 0px 5%;">
+        <div *ngFor="let array of arrays.array003" class="col-6 col-lg-3" style="color: #fff; padding: 5% 2%;">
             <div style="display: flex;">
                 <div class="fa-stack fa-4x col-6">
-                    <i class="fas fa-solid fa-user fa-stack-1x fa-inverse"></i>
+                    <i [ngClass]="array.class"></i>
                 </div>
-                <div class="col-6">
-                    <div style="font-size: 150%; color: #ffc800 !important;">1,500</div>
-                    <div>จดสิทธิบัตร</div>
-                    <div>บริการจดทะเบียน</div>
-                </div>
-            </div>
-        </div>
-        <div class="col-6 col-lg-3" style="color: #fff; padding: 5%;">
-            <div style="display: flex;">
-                <div class="fa-stack fa-4x col-6">
-                    <i class="fas fa-solid fa-address-card fa-stack-1x fa-inverse"></i>
-                </div>
-                <div class="col-6">
-                    <div style="font-size: 150%; color: #ffc800 !important;">1,500</div>
-                    <div>จดสิทธิบัตร</div>
-                    <div>บริการจดทะเบียน</div>
-                </div>
-            </div>
-        </div>
-        <div class="col-6 col-lg-3" style="color: #fff; padding: 5%;">
-            <div style="display: flex;">
-                <div class="fa-stack fa-4x col-6">
-                    <i class="fas fa-solid fa-shopping-cart fa-stack-1x fa-inverse"></i>
-                </div>
-                <div class="col-6">
-                    <div style="font-size: 150%; color: #ffc800 !important;">1,500</div>
-                    <div>จดสิทธิบัตร</div>
-                    <div>บริการจดทะเบียน</div>
-                </div>
-            </div>
-        </div>
-        <div class="col-6 col-lg-3" style="color: #fff; padding: 5%;">
-            <div style="display: flex;">
-                <div class="fa-stack fa-4x col-6">
-                    <i class="fas fa-solid fa-shield-halved fa-stack-1x fa-inverse"></i>
-                </div>
-                <div class="col-6">
-                    <div style="font-size: 150%; color: #ffc800 !important;">1,500</div>
-                    <div>จดสิทธิบัตร</div>
-                    <div>บริการจดทะเบียน</div>
+                <div class="col-6" style="align-content: center;">
+                    <div style="font-size: 150%; color: #ffc800 !important;">{{ array.count | number }}</div>
+                    <div>{{ array.name }}</div>
                 </div>
             </div>
         </div>
     </div>
 
-    <br><br><br>
-    <div style="display: flex; flex-wrap: wrap; padding: 2%;">
+    <!-- ทีมของเรา -->
+    <div style="display: flex; flex-wrap: wrap; padding: 0% 2%; margin-top: 8%;">
         <div class="col-12 text-center">
-            <h2 class="section-heading text-uppercase">ทีมของเรา</h2>
-            <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
-            <br><br><br>
+            <h2 class="section-heading text-uppercase">{{ contents.content006 }}</h2>
+            <h3 class="section-subheading text-muted">{{ contents.content007 }}</h3>
+            <br>
         </div>
-        <div class="col-12 col-md-6 col-lg-4" style="color: #fff;">
-            <div class="team-member-custom-001">
+        <div *ngFor="let array of arrays.array004" class="col-12 col-md-6 col-lg-4" style="color: #fff;">
+            <div class="team-member-custom-001 home-custom-css-009">
                 <img class="mx-auto rounded-circle" [src]="images.image001" alt="..." />
             </div>
             <div style="text-align: center;">
-                <h4 style="color: #00225d;">Diana Petersen</h4>
-                <p class="text-muted" style="color: #ffc800 !important; font-weight: bold;">Lead Marketer Lead Marketer
+                <h4 style="color: #00225d;">{{ array.name }}</h4>
+                <p class="text-muted" style="color: #003CA6 !important; font-weight: bold; padding: 0% 5% 5% 5%;">{{ array.description }}
                 </p>
-            </div>
-        </div>
-        <div class="col-12 col-md-6 col-lg-4" style="color: #fff;">
-            <div class="team-member-custom-001">
-                <img class="mx-auto rounded-circle" [src]="images.image001" alt="..." />
-            </div>
-            <div style="text-align: center;">
-                <h4 style="color: #00225d;">Diana Petersen</h4>
-                <p class="text-muted" style="color: #ffc800 !important; font-weight: bold;">Lead Marketer Lead Marketer
-                </p>
-            </div>
-        </div>
-        <div class="col-12 col-md-6 col-lg-4" style="color: #fff;">
-            <div class="team-member-custom-001">
-                <img class="mx-auto rounded-circle" [src]="images.image001" alt="..." />
-            </div>
-            <div style="text-align: center;">
-                <h4 style="color: #00225d;">Diana Petersen</h4>
-                <p class="text-muted" style="color: #ffc800 !important; font-weight: bold;">Lead Marketer Lead Marketer
-                </p>
-            </div>
-        </div>
-    </div>
-
-    <br><br><br>
-</div>
-
-
-<!-- Portfolio Modals-->
-<!-- Portfolio item 1 modal popup-->
-<div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="close-modal" data-bs-dismiss="modal"><img src="assets/images/close-icon.svg"
-                    alt="Close modal" />
-            </div>
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-lg-8">
-                        <div class="modal-body">
-                            <!-- Project details-->
-                            <h2 class="text-uppercase">Project Name</h2>
-                            <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                            <img class="img-fluid d-block mx-auto" src="assets/images/portfolio/1.jpg" alt="..." />
-                            <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur
-                                adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt
-                                repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae,
-                                nostrum, reiciendis facere nemo!</p>
-                            <ul class="list-inline">
-                                <li>
-                                    <strong>Client:</strong>
-                                    Threads
-                                </li>
-                                <li>
-                                    <strong>Category:</strong>
-                                    Illustration
-                                </li>
-                            </ul>
-                            <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
-                                <i class="fas fa-xmark me-1"></i>
-                                Close Project
-                            </button>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
