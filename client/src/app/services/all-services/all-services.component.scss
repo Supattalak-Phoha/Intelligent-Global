@@ -1,0 +1,59 @@
+.services-custom-css-002 {
+    padding: 5% 5% 0% 5% !important;
+}
+
+.services-custom-css-003 {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+// XS
+@media (max-width: 575px) {}
+
+// SM
+@media (min-width: 576px) {}
+
+// MD
+@media (min-width: 768px) {
+    .services-custom-css-002 {
+        padding: 3% 3% 0% 0% !important;
+    }
+
+    .services-custom-css-003 {
+        padding-left: 3% !important;
+    }
+}
+
+// LG
+@media (min-width: 992px) {
+    .services-custom-css-002 {
+        padding: 3% 3% 0% 0% !important;
+    }
+
+    .services-custom-css-003 {
+        padding-left: 3% !important;
+    }
+}
+
+// XL
+@media (min-width: 1200px) {
+    .services-custom-css-002 {
+        padding: 3% 3% 0% 0% !important;
+    }
+
+    .services-custom-css-003 {
+        padding-left: 3% !important;
+    }
+}
+
+// XXl
+@media (min-width: 1400px) {
+    .services-custom-css-002 {
+        padding: 3% 3% 0% 0% !important;
+    }
+
+    .services-custom-css-003 {
+        padding-left: 3% !important;
+    }
+}
