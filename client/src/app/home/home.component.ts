@@ -59,7 +59,7 @@ export class HomeComponent {
         image001: "assets/images/services/service-003.jpg"
       },
       {
-        name: "เครื่องหมายการค้า ลิขสิทธิ์ และจดทะเบียนต่างๆ ",
+        name: "เครื่องหมายการค้า ลิขสิทธิ์ และจดทะเบียนต่าง ๆ",
         description: "รอดำเนินการ...",
         image001: "assets/images/services/service-004.jpg"
       },
