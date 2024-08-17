@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { Editor, Toolbar, Validators } from 'ngx-editor';
 import { FormControl, FormGroup } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-edit',
@@ -128,9 +129,22 @@ export class EditComponent implements OnInit, OnDestroy {
     } else if (this.tab === 'about-us') {
       this.getDataForAboutUsPage()
     } else if (this.tab === 'services') {
-      this.dataService.updateDataForServicePage(this?.data).subscribe(() => {
+      this.dataService.updateDataForServicePage(this?.data).subscribe((response) => {
+        Swal.fire({
+          title: "Success",
+          text: "แก้ไขข้อมูลเรียบร้อย",
+          icon: "success"
+        });
         this.getDataForServicePage()
-      });
+      },
+        (error) => {
+          console.error('Error:', error);
+          Swal.fire({
+            title: "Error",
+            text: error?.message,
+            icon: 'error'
+          });
+        });
     } else if (this.tab === 'contact-us') {
       this.getDataForContactUsPage()
     }

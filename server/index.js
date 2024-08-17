@@ -173,7 +173,7 @@ app.post('/api/services', (req, res) => {
     //   // };
 
     // uploadFileToGitHub2();
-    res.status(200).send('Update Data Success');
+    res.status(200).send({ message: 'Update Data Success' });
   });
 });
 // ================================================== API ==================================================
