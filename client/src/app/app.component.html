@@ -14,11 +14,7 @@
                     </button>
                     <div class="collapse navbar-collapse" id="navbarResponsive">
                         <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-                            <li class="nav-item"><a class="nav-link" href="">{{ contents.content001 }}</a></li>
-                            <li class="nav-item"><a class="nav-link" href="/about-us">{{ contents.content002 }}</a></li>
-                            <li class="nav-item"><a class="nav-link" href="/services">{{ contents.content003 }}</a></li>
-                            <li class="nav-item"><a class="nav-link" href="/contact-us">{{ contents.content004 }}</a></li>
-                            <!-- <li class="nav-item"><a class="nav-link" href="/edit">{{ contents.content005 }}</a></li> -->
+                            <li class="nav-item" *ngFor="let array of arrays.array001"><a class="nav-link" [href]="array.link">{{ array.name }}</a></li>
                         </ul>
                     </div>
                 </div>
@@ -46,14 +42,14 @@
             <div class="col-12 col-md-6 col-lg-3" style="text-align: left; padding: 5% 3%;">
                 <h3 class="section-subheading text-muted">{{ contents.content008 }}</h3>
                 <br>
-                <div *ngFor="let array of arrays.array001">
+                <div *ngFor="let array of arrays.array002">
                     <div [innerHTML]="array.name"></div>
                 </div>
             </div>
             <div class="col-12 col-md-6 col-lg-3" style="text-align: left; padding: 5% 3%;">
                 <h3 class="section-subheading text-muted">{{ contents.content009 }}</h3>
                 <br>
-                <div *ngFor="let array of arrays.array002">
+                <div *ngFor="let array of arrays.array003">
                     <div [innerHTML]="array.name"></div>
                 </div>
                 <br>

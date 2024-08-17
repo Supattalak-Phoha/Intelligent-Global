@@ -8,77 +8,10 @@ import { DataService } from './data.service';
   styleUrls: ['./app.component.scss', '../../public/assets/css/styles.scss'],
 })
 export class AppComponent {
-  contents = {
-    content001: "หน้าหลัก",
-    content002: "เกี่ยวกับเรา",
-    content003: "บริการ",
-    content004: "ติดต่อเรา",
-    content005: "จัดการข้อมูล",
-    content006: "ติดต่อเรา",
-    content007: "เวลาทำการ",
-    content008: "บริการของเรา",
-    content009: "ทนายความของเรา",
-    content010: "บริษัท อินเทลลิเจ้นท์ โกลบอล จำกัด <br>909/275 ซอย25 ถนนรังสิต-นครนายก ตำบลประชาธิปัตย์ อำเภอธัญบุรี จ.ปทุมธานี 12130",
-    content011: "เบอร์โทร : 065-359-3544",
-    content012: "Email : support@intelligentglobal.com",
-    content013: "Opening Day: <br>วันจันทร์ – วันศุกร์: 8am to 6pm <br>Saturday: 9am to 5pm <br><br>Vacation:All <br>Sunday DayAll <br>Vacation Holiday",
-    content014: "2024 Intelligent Global Co, Ltd.<br>All rights reserved.",
-    content000: "",
-  }
-
-  images = {
-    image001: "assets/images/logo-01.png",
-    image002: "assets/images/line-button.png"
-  }
-
-  arrays = {
-    array001: [
-      {
-        name: "<li>อาหารและยา (อย.)</li>"
-      },
-      {
-        name: "<li>มาตรฐานผลิตภัณฑ์อุตสาหกรรม (มอก.)</li>"
-      },
-      {
-        name: "<li>บัญชีนวัตกรรมไทย</li>"
-      },
-      {
-        name: "<li>เครื่องหมายการค้า ลิขสิทธิ์ และจดทะเบียนต่าง ๆ</li>"
-      },
-      {
-        name: "<li>บาร์โค้ด</li>"
-      },
-      {
-        name: "<li>ส่งเสริมการลงทุน (BOI)</li>"
-      },
-      {
-        name: "<li>Accounting and Tax</li>"
-      },
-      {
-        name: "<li>GMP HACCP</li>"
-      },
-      {
-        name: "<li>รับรองฮาลาล (HALAL)</li>"
-      },
-      {
-        name: "<li>VISA and Work permit</li>"
-      },
-      {
-        name: "<li>ขอรับรอง Made in Thailand (MiT)</li>"
-      },
-      {
-        name: "<li>ปรึกษากฏหมาย</li>"
-      }
-    ],
-    array002: [
-      {
-        name: "<li>สุภัทธลักษณ์ โพธิ์หา</li>"
-      },
-      {
-        name: "<li>ฐนธนินท์ พิมพ์ศิริ</li>"
-      },
-    ]
-  }
+  data: any = {};
+  contents: any = {}
+  images: any = {}
+  arrays: any = {}
 
   isLoginPage: boolean = false
   loginError: string = ""
@@ -97,6 +30,18 @@ export class AppComponent {
 
 
   ngOnInit() {
+    this.dataService.getDataForAppPage().subscribe(
+      (response: any) => {
+        this.data = response;
+        this.contents = this.data?.contents
+        this.images = this.data?.images
+        this.arrays = this.data?.arrays
+      },
+      (error: any) => {
+        console.error('Error fetching data', error);
+      }
+    );
+
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
         //#region Support Service Detail

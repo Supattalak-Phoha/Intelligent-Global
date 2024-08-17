@@ -11,6 +11,15 @@ app.use(express.static(path.join(__dirname, '../client/dist/client/browser')));
 // เส้นทางไปยังไฟล์ข้อมูล
 const dataFilePath = path.join(__dirname, 'assets/data');
 
+app.get('/api/app', (req, res) => {
+  fs.readFile(dataFilePath + '/app.json', 'utf8', (err, data) => {
+    if (err) {
+      return res.status(500).send('Error reading data');
+    }
+    res.json(JSON.parse(data));
+  });
+});
+
 app.get('/api/home', (req, res) => {
   fs.readFile(dataFilePath + '/home.json', 'utf8', (err, data) => {
     if (err) {
