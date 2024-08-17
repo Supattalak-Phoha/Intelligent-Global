@@ -8,6 +8,15 @@ import { Observable } from 'rxjs';
 export class DataService {
   constructor(private http: HttpClient) { }
 
+  login(data: any): Observable<any> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      })
+    };
+    return this.http.post<any>('/api/login', data, httpOptions);
+  }
+
   getDataForAppPage(): Observable<any> {
     return this.http.get<any>('/api/app');
   }

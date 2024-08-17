@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component, HostListener, signal } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { DataService } from './data.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-root',
@@ -28,20 +29,8 @@ export class AppComponent {
     private dataService: DataService
   ) { }
 
-
   ngOnInit() {
-    this.dataService.getDataForAppPage().subscribe(
-      (response: any) => {
-        this.data = response;
-        this.contents = this.data?.contents
-        this.images = this.data?.images
-        this.arrays = this.data?.arrays
-      },
-      (error: any) => {
-        console.error('Error fetching data', error);
-      }
-    );
-
+    this.getData()
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
         //#region Support Service Detail
@@ -69,6 +58,21 @@ export class AppComponent {
     });
   }
 
+  getData() {
+    this.dataService.getDataForAppPage().subscribe(
+      (response: any) => {
+        this.data = response;
+        this.contents = this.data?.contents
+        this.images = this.data?.images
+        this.arrays = this.data?.arrays
+        this.arrays.array001 = this.showAdminButton() ? this.arrays?.array001 : this.arrays?.array001?.filter?.((x: any) => x?.name !== 'การจัดการข้อมูล')
+      },
+      (error: any) => {
+        console.error('Error fetching data', error);
+      }
+    );
+  }
+
   showPage(page: string) {
     this.currentPage = page
     this.router.navigate(['/' + page]);
@@ -87,33 +91,53 @@ export class AppComponent {
   }
 
   addLINE() {
-    window.open('https://line.me/ti/p/~i-coke', '_blank', 'noopener,noreferrer');
+    window.open(this.contents?.content001, '_blank', 'noopener,noreferrer');
   }
 
-  // login() {
-  //   this.dataService.login(this.username, this.password).then(
-  //     (response: any) => {
-  //       if (response?.id && response?.username) {
-  //         this.isLoginPage = false
-  //         sessionStorage.setItem('isAdmin', 'true');
-  //         sessionStorage.setItem('username', response?.username);
-  //         this.router.navigate(['']);
-  //       }
-  //       else {
-  //         this.isLoginPage = true
-  //         this.loginError = "กรุณาตรวจสอบ Username และ Password อีกครั้ง"
-  //         this.password = ""
-  //         sessionStorage.clear();
-  //       }
-  //     },
-  //     (error: any) => {
-  //       console.error('Error fetching data', error);
-  //     }
-  //   );
+  login() {
+    this.dataService.login({ username: this.username, password: this.password }).subscribe((response) => {
+      if (response?.id && response?.username) {
+        this.isLoginPage = false
+        sessionStorage.setItem('isAdmin', 'true');
+        sessionStorage.setItem('username', response?.username);
+        this.router.navigate(['']);
+      }
+      else {
+        this.isLoginPage = true
+        this.loginError = "กรุณาตรวจสอบ Username และ Password อีกครั้ง"
+        this.password = ""
+        sessionStorage.clear();
+      }
+      this.getData()
+    },
+      (error: any) => {
+        console.error('Error fetching data', error);
+      }
+    );
 
-  // }
+  }
 
-  showEditButton() {
+  logout() {
+    Swal.fire({
+      text: "คุณต้องการออกจากระบบใช่หรือไม่?",
+      icon: "question",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "ใช่ ออกจากระบบ",
+      cancelButtonText: "ยกเลิก"
+    }).then((result) => {
+      if (result.isConfirmed) {
+        sessionStorage.clear();
+        this.router.navigate(['']).then(() => {
+          this.getData()
+          window.scrollTo(0, 0); // เลื่อนหน้าไปที่ด้านบนสุด
+        });
+      }
+    });
+  }
+
+  showAdminButton() {
     const isAdmin = sessionStorage.getItem('isAdmin');
     return isAdmin?.toString().toLowerCase() === 'true';
   }

@@ -129,22 +129,35 @@ export class EditComponent implements OnInit, OnDestroy {
     } else if (this.tab === 'about-us') {
       this.getDataForAboutUsPage()
     } else if (this.tab === 'services') {
-      this.dataService.updateDataForServicePage(this?.data).subscribe((response) => {
-        Swal.fire({
-          title: "Success",
-          text: "แก้ไขข้อมูลเรียบร้อย",
-          icon: "success"
-        });
-        this.getDataForServicePage()
-      },
-        (error) => {
-          console.error('Error:', error);
-          Swal.fire({
-            title: "Error",
-            text: error?.message,
-            icon: 'error'
-          });
-        });
+
+      Swal.fire({
+        text: "คุณต้องการบันทึกข้อมูลใช่หรือไม่?",
+        icon: "question",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "ใช่ บันทึกข้อมูล",
+        cancelButtonText: "ยกเลิก"
+      }).then((result) => {
+        if (result.isConfirmed) {
+          this.dataService.updateDataForServicePage(this?.data).subscribe((response) => {
+            Swal.fire({
+              title: "Success",
+              text: "แก้ไขข้อมูลเรียบร้อย",
+              icon: "success"
+            });
+            this.getDataForServicePage()
+          },
+            (error) => {
+              console.error('Error:', error);
+              Swal.fire({
+                title: "Error",
+                text: error?.message,
+                icon: 'error'
+              });
+            });
+        }
+      });
     } else if (this.tab === 'contact-us') {
       this.getDataForContactUsPage()
     }

@@ -14,7 +14,9 @@
                     </button>
                     <div class="collapse navbar-collapse" id="navbarResponsive">
                         <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-                            <li class="nav-item" *ngFor="let array of arrays.array001"><a class="nav-link" [href]="array.link">{{ array.name }}</a></li>
+                            <li class="nav-item" *ngFor="let array of arrays.array001"><a class="nav-link"
+                                    [href]="array.link">{{ array.name }}</a></li>
+                            <li *ngIf="showAdminButton()" class="nav-item" (click)="logout()"><a class="nav-link">ออกจากระบบ</a></li>
                         </ul>
                     </div>
                 </div>
@@ -56,7 +58,7 @@
                 <img style="width: 50%;" [src]="images.image002" (click)="addLINE()" />
             </div>
         </div>
-        <footer class="footer py-4" style="background-color: #00225d;">
+        <footer class="footer py-4" style="background-color: #003CA6;">
             <div class="container">
                 <div [innerHTML]="contents.content014"></div>
             </div>
@@ -64,56 +66,50 @@
         <app-scroll-to-top></app-scroll-to-top>
     </div>
 
-    <div *ngIf="isLoginPage" class="login">
-        <br><br><br><br><br><br><br>
-        <div class="row" style="text-align: center;">
-            <div class="col-4"></div>
-            <div class="col-4">
-                <img src="assets/images/logo-01.png" class="header-logo" alt="Intellegent Global" style="height: 100%;">
-            </div>
-            <div class="col-4"></div>
-        </div>
-        <br>
-        <div class="row" style="text-align: center;">
-            <div class="col-4"></div>
-            <div class="col-4">
-                <mat-form-field appearance="outline" style="width: 80%;">
-                    <mat-label>Username</mat-label>
-                    <input matInput [(ngModel)]="username">
-                </mat-form-field>
-            </div>
-            <div class="col-4"></div>
-        </div>
-        <div class="row" style="text-align: center;">
-            <div class="col-4"></div>
-            <div class="col-4">
-                <mat-form-field appearance="outline" style="width: 80%;">
-                    <mat-label>Password</mat-label>
-                    <input matInput [type]="hide() ? 'password' : 'text'" [(ngModel)]="password" />
-                    <button mat-icon-button matSuffix (click)="clickEvent($event)" [attr.aria-label]="'Hide password'"
-                        [attr.aria-pressed]="hide()">
-                        <mat-icon>{{hide() ? 'visibility_off' : 'visibility'}}</mat-icon>
+    <div *ngIf="isLoginPage">
+        <div class="login">
+
+            <div style="height: 100%; display: contents;">
+                <div class="col-12 col-lg-4"></div>
+                <div class="col-12 col-lg-4">
+                    <img [src]="images.image001" class="header-logo" alt="Intellegent Global" style="width: 50%;">
+                </div>
+                <div class="col-12 col-lg-4"></div>
+                <div class="col-12 col-lg-4"></div>
+                <div class="col-12 col-lg-4">
+                    <mat-form-field appearance="outline" style="width: 80%;">
+                        <mat-label>Username</mat-label>
+                        <input matInput [(ngModel)]="username">
+                    </mat-form-field>
+                </div>
+                <div class="col-12 col-lg-4"></div>
+                <div class="col-12 col-lg-4"></div>
+                <div class="col-12 col-lg-4">
+                    <mat-form-field appearance="outline" style="width: 80%;">
+                        <mat-label>Password</mat-label>
+                        <input matInput [type]="hide() ? 'password' : 'text'" [(ngModel)]="password" />
+                        <button mat-icon-button matSuffix (click)="clickEvent($event)"
+                            [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide()">
+                            <mat-icon>{{hide() ? 'visibility_off' : 'visibility'}}</mat-icon>
+                        </button>
+                    </mat-form-field>
+                </div>
+                <div class="col-12 col-lg-4"></div>
+
+                <div class="col-12 col-lg-4"></div>
+                <div class="col-12 col-lg-4">
+                    <button class="login-button" (click)="login()">
+                        <span>Login</span>
                     </button>
-                </mat-form-field>
+                </div>
+                <div class="col-12 col-lg-4"></div>
+
+                <div class="col-12 col-lg-4"></div>
+                <div class="col-12 col-lg-4" style="color: red;">
+                    {{ this.loginError }}
+                </div>
+                <div class="col-12 col-lg-4"></div>
             </div>
-            <div class="col-4"></div>
-        </div>
-        <div class="row" style="text-align: center;">
-            <div class="col-4"></div>
-            <div class="col-4">
-                <!-- <button class="login-button" (click)="login()">
-                    <span>Login</span>
-                </button> -->
-            </div>
-            <div class="col-4"></div>
-        </div>
-        <br>
-        <div class="row" style="text-align: center;">
-            <div class="col-4"></div>
-            <div class="col-4" style="color: red;">
-                {{ this.loginError }}
-            </div>
-            <div class="col-4"></div>
         </div>
     </div>
 </div>
