@@ -133,40 +133,4 @@ export class EditComponent implements OnInit, OnDestroy {
       this.getDataForContactUsPage()
     }
   }
-
-  // addData(newData: any) {
-  //   this.dataService.addData(newData).subscribe(() => {
-  //     this.getData();
-  //   });
-  // }
-
-  // updateData(id: number, updatedData: any) {
-  //   this.dataService.updateData(id, updatedData).subscribe(() => {
-  //     this.getData();
-  //   });
-  // }
-
-  // deleteData(id: number) {
-  //   this.dataService.deleteData(id).subscribe(() => {
-  //     this.getData();
-  //   });
-  // }
-
-  // selectedFile: File | null = null;
-  // onFileChange(event: any) {
-  //   this.selectedFile = event.target.files[0] as File;
-  // }
-
-  // onSubmit() {
-  //   if (this.selectedFile) {
-  //     // const formData = new FormData();
-  //     // formData.append('file', this.selectedFile, this.selectedFile.name);
-  //     this.dataService.uploadFile(this.selectedFile).subscribe(response => {
-  //       console.log('Upload successful', response);
-  //     }, error => {
-  //       console.error('Upload error', error);
-  //     });
-
-  //   }
-  // }
 }

@@ -36,33 +36,4 @@ export class DataService {
     };
     return this.http.post<any>('/api/services', data, httpOptions);
   }
-
-  // updateData(id: number, data: any): Observable<any> {
-  //   const url = `${this.apiUrl}/${id}`;
-  //   const httpOptions = {
-  //     headers: new HttpHeaders({
-  //       'Content-Type': 'application/json'
-  //     })
-  //   };
-  //   return this.http.put<any>(url, data, httpOptions);
-  // }
-
-  // deleteData(id: number): Observable<any> {
-  //   const url = `${this.apiUrl}/${id}`;
-  //   return this.http.delete<any>(url);
-  // }
-
-  // uploadFile(file: File): Observable<any> {
-  //   const httpOptions = {
-  //     headers: new HttpHeaders({
-  //       'Content-Type': 'multipart/form-data'
-  //     })
-  //   };
-
-  //   const formData = new FormData();
-  //   formData.append('file', file, file.name);
-  //   console.log("===============", file)
-
-  //   return this.http.post<any>(`${this.apiUrl}/uploadFile`, formData);
-  // }
 }
