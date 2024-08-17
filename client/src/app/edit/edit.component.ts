@@ -27,6 +27,7 @@ export class EditComponent implements OnInit, OnDestroy {
   contents: any = {}
   images: any = {}
   arrays: any = {}
+  tab: string = ''
 
   constructor(private router: Router,
     private dataService: DataService,
@@ -34,6 +35,7 @@ export class EditComponent implements OnInit, OnDestroy {
   ) { }
 
   ngOnInit() {
+    this.tab = 'services'
     this.getDataForServicePage()
   }
 
@@ -43,12 +45,16 @@ export class EditComponent implements OnInit, OnDestroy {
 
   getData(event: any) {
     if (event.tab.textLabel === 'หน้าหลัก') {
+      this.tab = 'home'
       this.getDataForHomePage()
     } else if (event.tab.textLabel === 'เกี่ยวกับเรา') {
+      this.tab = 'about-us'
       this.getDataForAboutUsPage()
     } else if (event.tab.textLabel === 'บริการ') {
+      this.tab = 'services'
       this.getDataForServicePage()
     } else if (event.tab.textLabel === 'ติดต่อเรา') {
+      this.tab = 'contact-us'
       this.getDataForContactUsPage()
     }
   }
@@ -111,6 +117,21 @@ export class EditComponent implements OnInit, OnDestroy {
 
   getDataFromObject() {
     return JSON.stringify(this.data)
+  }
+
+  updateData() {
+    alert(this.tab)
+    if (this.tab === 'home') {
+      this.getDataForHomePage()
+    } else if (this.tab === 'about-us') {
+      this.getDataForAboutUsPage()
+    } else if (this.tab === 'services') {
+      this.dataService.updateDataForServicePage(this?.data).subscribe(() => {
+        this.getDataForServicePage()
+      });      
+    } else if (this.tab === 'contact-us') {
+      this.getDataForContactUsPage()
+    }
   }
 
   // addData(newData: any) {

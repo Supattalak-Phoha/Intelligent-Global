@@ -19,9 +19,10 @@
                 </div>
             </mat-tab> -->
             <mat-tab label="บริการ">
-                <div style="margin: 2%">
-                    <div *ngFor="let array of arrays?.array001" class="edit-custom-css-002">
-                        <mat-slide-toggle [(ngModel)]="array.enabled" style="margin-bottom: 30px;" class="col-12">Enabled</mat-slide-toggle>
+                <div style="margin: 2%; text-align: right;">
+                    <div *ngFor="let array of arrays?.array001" class="edit-custom-css-002" style="text-align: left;">
+                        <mat-slide-toggle [(ngModel)]="array.enabled" style="margin-bottom: 30px;"
+                            class="col-12">Enabled</mat-slide-toggle>
 
                         <mat-form-field appearance="outline" class="col-12">
                             <mat-label>Name</mat-label>
@@ -46,9 +47,11 @@
 
                         <img class="col-12" style="width: 30%; justify-content: center;" [src]="array.image001" />
 
-                        
+
                         <br><br>
                     </div>
+                    <br>
+                    <button mat-stroked-button (click)="updateData()">บันทึก</button>
                 </div>
             </mat-tab>
             <!-- <mat-tab label="ติดต่อเรา">

@@ -28,14 +28,14 @@ export class DataService {
     return this.http.get<any>('/api/contact-us');
   }
 
-  // addData(data: any): Observable<any> {
-  //   const httpOptions = {
-  //     headers: new HttpHeaders({
-  //       'Content-Type': 'application/json'
-  //     })
-  //   };
-  //   return this.http.post<any>(this.apiUrl, data, httpOptions);
-  // }
+  updateDataForServicePage(data: any): Observable<any> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      })
+    };
+    return this.http.post<any>('/api/services', data, httpOptions);
+  }
 
   // updateData(id: number, data: any): Observable<any> {
   //   const url = `${this.apiUrl}/${id}`;
