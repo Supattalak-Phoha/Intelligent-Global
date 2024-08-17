@@ -80,7 +80,6 @@ export class AppComponent {
     ]
   }
 
-
   isLoginPage: boolean = false
   loginError: string = ""
   username: string = ""
@@ -146,28 +145,28 @@ export class AppComponent {
     window.open('https://line.me/ti/p/~i-coke', '_blank', 'noopener,noreferrer');
   }
 
-  login() {
-    this.dataService.login(this.username, this.password).then(
-      (response: any) => {
-        if (response?.id && response?.username) {
-          this.isLoginPage = false
-          sessionStorage.setItem('isAdmin', 'true');
-          sessionStorage.setItem('username', response?.username);
-          this.router.navigate(['']);
-        }
-        else {
-          this.isLoginPage = true
-          this.loginError = "กรุณาตรวจสอบ Username และ Password อีกครั้ง"
-          this.password = ""
-          sessionStorage.clear();
-        }
-      },
-      (error: any) => {
-        console.error('Error fetching data', error);
-      }
-    );
+  // login() {
+  //   this.dataService.login(this.username, this.password).then(
+  //     (response: any) => {
+  //       if (response?.id && response?.username) {
+  //         this.isLoginPage = false
+  //         sessionStorage.setItem('isAdmin', 'true');
+  //         sessionStorage.setItem('username', response?.username);
+  //         this.router.navigate(['']);
+  //       }
+  //       else {
+  //         this.isLoginPage = true
+  //         this.loginError = "กรุณาตรวจสอบ Username และ Password อีกครั้ง"
+  //         this.password = ""
+  //         sessionStorage.clear();
+  //       }
+  //     },
+  //     (error: any) => {
+  //       console.error('Error fetching data', error);
+  //     }
+  //   );
 
-  }
+  // }
 
   showEditButton() {
     const isAdmin = sessionStorage.getItem('isAdmin');
