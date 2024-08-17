@@ -20,7 +20,7 @@
             </mat-tab> -->
             <mat-tab label="บริการ">
                 <div style="margin: 2%; text-align: right;">
-                    <div *ngFor="let array of arrays?.array001" class="edit-custom-css-002" style="text-align: left;">
+                    <div *ngFor="let array of arrays?.array001; let i = index" class="edit-custom-css-002" style="text-align: left;">
                         <mat-slide-toggle [(ngModel)]="array.enabled" style="margin-bottom: 30px;"
                             class="col-12">Enabled</mat-slide-toggle>
 
@@ -35,9 +35,9 @@
                         </mat-form-field>
 
                         <div class="NgxEditor__Wrapper" style="margin-bottom: 20px;">
-                            <ngx-editor-menu [editor]="editor" [toolbar]="toolbar"> </ngx-editor-menu>
-                            <ngx-editor [editor]="editor" [(ngModel)]="array.content" [disabled]="false"
-                                [placeholder]="'Type here...'"></ngx-editor>
+                            <ngx-editor-menu [editor]="editors[i]"  [toolbar]="toolbar"> </ngx-editor-menu>
+                            <ngx-editor [editor]="editors[i]" [(ngModel)]="array.content" [disabled]="false"
+                                [placeholder]="'กรอกข้อมูล...'"></ngx-editor>
                         </div>
 
                         <mat-form-field appearance="outline" class="col-12">
@@ -62,31 +62,3 @@
         </mat-tab-group>
     </div>
 </div>
-
-
-<!-- 
-<div style="text-align: center; padding: 5% 5% 5% 5%;">
-    <div class="row">
-        <div class="col-6">
-            <div class="NgxEditor__Wrapper">
-                <ngx-editor-menu [editor]="editor" [toolbar]="toolbar"> </ngx-editor-menu>
-                <ngx-editor [editor]="editor" [ngModel]="html" [disabled]="false"
-                    [placeholder]="'Type here...'"></ngx-editor>
-            </div>
-        </div>
-        <div class="col-6">
-            {{html}}
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-6">
-            <form (ngSubmit)="onSubmit()" #fileUploadForm="ngForm" enctype="multipart/form-data">
-                <input type="file" (change)="onFileChange($event)" />
-                <button type="submit">Upload</button>
-            </form>
-        </div>
-        <div class="col-6">
-            <img mat-card-image src="assets/images/about-us-002.jpg" style="width: 100%;">
-        </div>
-    </div>
-</div> -->

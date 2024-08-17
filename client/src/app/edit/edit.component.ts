@@ -11,8 +11,12 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./edit.component.scss', '../../../public/assets/css/styles.scss'],
 })
 export class EditComponent implements OnInit, OnDestroy {
-  editor: Editor = new Editor();
-  html = '<p>Initial content</p>';
+  data: any = {};
+  contents: any = {}
+  images: any = {}
+  arrays: any = {}
+  tab: string = ''
+  editors: any[] = [];
   toolbar: Toolbar = [
     ['bold', 'italic'],
     ['underline', 'strike'],
@@ -23,11 +27,6 @@ export class EditComponent implements OnInit, OnDestroy {
     ['text_color', 'background_color'],
     ['align_left', 'align_center', 'align_right', 'align_justify'],
   ];
-  data: any = {};
-  contents: any = {}
-  images: any = {}
-  arrays: any = {}
-  tab: string = ''
 
   constructor(private router: Router,
     private dataService: DataService,
@@ -40,7 +39,7 @@ export class EditComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    this.editor.destroy();
+    this.editors.forEach(editor => editor.destroy());
   }
 
   getData(event: any) {
@@ -94,6 +93,10 @@ export class EditComponent implements OnInit, OnDestroy {
         this.contents = this.data?.contents
         this.images = this.data?.images
         this.arrays = this.data?.arrays
+
+        this.arrays?.array001?.forEach((element: any, index: number) => {
+          this.editors.push(new Editor());
+        });
       },
       (error: any) => {
         console.error('Error fetching data', error);
@@ -120,7 +123,6 @@ export class EditComponent implements OnInit, OnDestroy {
   }
 
   updateData() {
-    alert(this.tab)
     if (this.tab === 'home') {
       this.getDataForHomePage()
     } else if (this.tab === 'about-us') {
@@ -128,7 +130,7 @@ export class EditComponent implements OnInit, OnDestroy {
     } else if (this.tab === 'services') {
       this.dataService.updateDataForServicePage(this?.data).subscribe(() => {
         this.getDataForServicePage()
-      });      
+      });
     } else if (this.tab === 'contact-us') {
       this.getDataForContactUsPage()
     }
