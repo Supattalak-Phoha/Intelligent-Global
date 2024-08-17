@@ -1,20 +1,68 @@
-<!-- <img style="width: 100%;" src="assets/images/contact-us-001.jpg" alt="..." />
+<img class="edit-custom-css-001" [src]="images.image001" />
 
-<br><br><br>
-<div style="text-align: center; padding: 5% 5% 5% 5%;">
-    <div class="row">
-        <div class="col-12">การจัดการข้อมูล</div>
-    </div>
-    <div class="row" *ngFor="let item of data">
-        <div class="col-6">{{ item.name }}</div>
-        <div class="col-6"><button (click)="deleteData(item.id)">Delete</button></div>
-    </div>
-    <div class="row">
-        <div class="col-12">
-            <button (click)="addData({ id: 5, name: 'New Data' })">Add Data</button>
+<div>
+    <div style="display: flex; flex-wrap: wrap;  padding: 0% 2%; margin-top: 5%;">
+        <div class="col-12 text-center">
+            <h2 class="section-heading text-uppercase">การจัดการข้อมูล</h2>
+            <br><br>
         </div>
+
+        <mat-tab-group (selectedTabChange)="getData($event);" style="padding: 1% 5%; width: 100%;">
+            <!-- <mat-tab label="หน้าหลัก">
+                <div>
+                    {{ getDataFromObject() }}
+                </div>
+            </mat-tab>
+            <mat-tab label="เกี่ยวกับเรา">
+                <div>
+                    {{ getDataFromObject() }}
+                </div>
+            </mat-tab> -->
+            <mat-tab label="บริการ">
+                <div style="margin: 2%">
+                    <div *ngFor="let array of arrays?.array001" class="edit-custom-css-002">
+                        <mat-slide-toggle [(ngModel)]="array.enabled" style="margin-bottom: 30px;" class="col-12">Enabled</mat-slide-toggle>
+
+                        <mat-form-field appearance="outline" class="col-12">
+                            <mat-label>Name</mat-label>
+                            <input matInput [(ngModel)]="array.name">
+                        </mat-form-field>
+
+                        <mat-form-field appearance="outline" class="col-12">
+                            <mat-label>Description</mat-label>
+                            <input matInput [(ngModel)]="array.description">
+                        </mat-form-field>
+
+                        <div class="NgxEditor__Wrapper" style="margin-bottom: 20px;">
+                            <ngx-editor-menu [editor]="editor" [toolbar]="toolbar"> </ngx-editor-menu>
+                            <ngx-editor [editor]="editor" [(ngModel)]="array.content" [disabled]="false"
+                                [placeholder]="'Type here...'"></ngx-editor>
+                        </div>
+
+                        <mat-form-field appearance="outline" class="col-12">
+                            <mat-label>Image</mat-label>
+                            <input matInput [(ngModel)]="array.image001">
+                        </mat-form-field>
+
+                        <img class="col-12" style="width: 30%; justify-content: center;" [src]="array.image001" />
+
+                        
+                        <br><br>
+                    </div>
+                </div>
+            </mat-tab>
+            <!-- <mat-tab label="ติดต่อเรา">
+                <div>
+                    {{ getDataFromObject() }}
+                </div>
+            </mat-tab> -->
+        </mat-tab-group>
     </div>
-    <br>
+</div>
+
+
+<!-- 
+<div style="text-align: center; padding: 5% 5% 5% 5%;">
     <div class="row">
         <div class="col-6">
             <div class="NgxEditor__Wrapper">
@@ -38,18 +86,4 @@
             <img mat-card-image src="assets/images/about-us-002.jpg" style="width: 100%;">
         </div>
     </div>
-    <div class="row">
-        <div class="col-6"></div>
-        <div class="col-6"></div>
-    </div>
-    <div class="row">
-        <div class="col-6"></div>
-        <div class="col-6"></div>
-    </div>
-    <div class="row">
-        <div class="col-6"></div>
-        <div class="col-6"></div>
-    </div>
-
-
 </div> -->

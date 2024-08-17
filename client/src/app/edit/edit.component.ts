@@ -8,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-edit',
   templateUrl: './edit.component.html',
-  styleUrl: './edit.component.scss'
+  styleUrls: ['./edit.component.scss', '../../../public/assets/css/styles.scss'],
 })
 export class EditComponent implements OnInit, OnDestroy {
   editor: Editor = new Editor();
@@ -23,26 +23,95 @@ export class EditComponent implements OnInit, OnDestroy {
     ['text_color', 'background_color'],
     ['align_left', 'align_center', 'align_right', 'align_justify'],
   ];
-  
+  data: any = {};
+  contents: any = {}
+  images: any = {}
+  arrays: any = {}
+
   constructor(private router: Router,
     private dataService: DataService,
     private http: HttpClient
   ) { }
 
   ngOnInit() {
-    // this.getData();
+    this.getDataForServicePage()
   }
 
   ngOnDestroy(): void {
     this.editor.destroy();
   }
 
-  // data: any[] = [];
-  // getData() {
-  //   this.dataService.getData().subscribe((response) => {
-  //     this.data = response;
-  //   });
-  // }
+  getData(event: any) {
+    if (event.tab.textLabel === 'หน้าหลัก') {
+      this.getDataForHomePage()
+    } else if (event.tab.textLabel === 'เกี่ยวกับเรา') {
+      this.getDataForAboutUsPage()
+    } else if (event.tab.textLabel === 'บริการ') {
+      this.getDataForServicePage()
+    } else if (event.tab.textLabel === 'ติดต่อเรา') {
+      this.getDataForContactUsPage()
+    }
+  }
+
+  getDataForHomePage() {
+    this.dataService.getDataForHomePage().subscribe(
+      (response: any) => {
+        this.data = response;
+        this.contents = this.data?.contents
+        this.images = this.data?.images
+        this.arrays = this.data?.arrays
+      },
+      (error: any) => {
+        console.error('Error fetching data', error);
+      }
+    );
+  }
+
+  getDataForAboutUsPage() {
+    this.dataService.getDataForAboutUsPage().subscribe(
+      (response: any) => {
+        this.data = response;
+        this.contents = this.data?.contents
+        this.images = this.data?.images
+        this.arrays = this.data?.arrays
+      },
+      (error: any) => {
+        console.error('Error fetching data', error);
+      }
+    );
+  }
+
+  getDataForServicePage() {
+    this.dataService.getDataForServicePage().subscribe(
+      (response: any) => {
+        this.data = response;
+        this.contents = this.data?.contents
+        this.images = this.data?.images
+        this.arrays = this.data?.arrays
+      },
+      (error: any) => {
+        console.error('Error fetching data', error);
+      }
+    );
+  }
+
+  getDataForContactUsPage() {
+    this.dataService.getDataForContactUsPage().subscribe(
+      (response: any) => {
+        this.data = response;
+        this.contents = this.data?.contents
+        this.images = this.data?.images
+        this.arrays = this.data?.arrays
+      },
+      (error: any) => {
+        console.error('Error fetching data', error);
+      }
+    );
+  }
+
+  getDataFromObject() {
+    return JSON.stringify(this.data)
+  }
 
   // addData(newData: any) {
   //   this.dataService.addData(newData).subscribe(() => {
@@ -76,7 +145,7 @@ export class EditComponent implements OnInit, OnDestroy {
   //     }, error => {
   //       console.error('Upload error', error);
   //     });
-    
+
   //   }
   // }
 }
