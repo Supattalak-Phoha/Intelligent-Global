@@ -68,13 +68,13 @@
     </div>
 
     <!-- ทีมของเรา -->
-    <div style="display: flex; flex-wrap: wrap; padding: 0% 2%; margin-top: 8%;">
+    <div style="display: flex; flex-wrap: wrap; padding: 0% 2%; margin-top: 8%; justify-content: center;">
         <div class="col-12 text-center">
             <h2 class="section-heading text-uppercase">{{ contents.content006 }}</h2>
             <h3 class="section-subheading text-muted">{{ contents.content007 }}</h3>
             <br>
         </div>
-        <div *ngFor="let array of arrays.array004" class="col-12 col-md-6 col-lg-4" style="color: #fff;">
+        <div *ngFor="let array of arrays.array004" class="col-12 col-md-6 col-lg-4" style="color: #fff; margin-top: 2%;">
             <div class="team-member-custom-001 home-custom-css-009">
                 <img class="mx-auto rounded-circle" [src]="images.image001" alt="..." />
             </div>
