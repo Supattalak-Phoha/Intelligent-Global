@@ -19,6 +19,18 @@ app.use(express.urlencoded({ extended: true }));
 // เส้นทางไปยังไฟล์ข้อมูล
 const dataFilePath = path.join(__dirname, 'assets/data');
 
+app.post('/api/login', (req, res) => {
+  fs.readFile(dataFilePath + '/users.json', 'utf8', (err, data) => {
+    if (err) {
+      return res.status(500).send('Error reading data');
+    }
+
+    let users = JSON.parse(data)
+    let user = users?.find?.(x => x.username === req?.body?.username && x.password === req?.body?.password)
+    return res.json(user);
+  });
+})
+
 app.get('/api/app', (req, res) => {
   fs.readFile(dataFilePath + '/app.json', 'utf8', (err, data) => {
     if (err) {
