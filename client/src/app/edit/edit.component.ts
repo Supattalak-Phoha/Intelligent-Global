@@ -12,12 +12,26 @@ import Swal from 'sweetalert2';
   styleUrls: ['./edit.component.scss', '../../../public/assets/css/styles.scss'],
 })
 export class EditComponent implements OnInit, OnDestroy {
-  data: any = {};
-  contents: any = {}
-  images: any = {}
-  arrays: any = {}
   tab: string = ''
-  editors: any[] = [];
+
+  dataAboutUs: any = {};
+  contentsAboutUs: any = {}
+  imagesAboutUs: any = {}
+  arraysAboutUs: any = {}
+  editorsAboutUs: any[] = [];
+
+  dataServices: any = {};
+  contentsServices: any = {}
+  imagesServices: any = {}
+  arraysServices: any = {}
+  editorsServices: any[] = [];
+
+  dataContactUs: any = {};
+  contentsContactUs: any = {}
+  imagesContactUs: any = {}
+  arraysContactUs: any = {}
+  editorsContactUs: any[] = [];
+
   toolbar: Toolbar = [
     ['bold', 'italic'],
     ['underline', 'strike'],
@@ -40,7 +54,9 @@ export class EditComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    this.editors.forEach(editor => editor.destroy());
+    this.editorsAboutUs.forEach(editor => editor.destroy());
+    this.editorsServices.forEach(editor => editor.destroy());
+    this.editorsContactUs.forEach(editor => editor.destroy());
   }
 
   getData(event: any) {
@@ -62,10 +78,10 @@ export class EditComponent implements OnInit, OnDestroy {
   getDataForHomePage() {
     this.dataService.getDataForHomePage().subscribe(
       (response: any) => {
-        this.data = response;
-        this.contents = this.data?.contents
-        this.images = this.data?.images
-        this.arrays = this.data?.arrays
+        // this.data = response;
+        // this.contents = this.data?.contents
+        // this.images = this.data?.images
+        // this.arrays = this.data?.arrays
       },
       (error: any) => {
         console.error('Error fetching data', error);
@@ -74,16 +90,21 @@ export class EditComponent implements OnInit, OnDestroy {
   }
 
   getDataForAboutUsPage() {
+    this.dataAboutUs = {};
+    this.contentsAboutUs = {}
+    this.imagesAboutUs = {}
+    this.arraysAboutUs = {}
+    this.editorsAboutUs = [];
     this.dataService.getDataForAboutUsPage().subscribe(
       (response: any) => {
-        this.data = response;
-        this.contents = this.data?.contents
-        this.images = this.data?.images
-        this.arrays = this.data?.arrays
+        this.dataAboutUs = response;
+        this.contentsAboutUs = this.dataAboutUs?.contents
+        this.imagesAboutUs = this.dataAboutUs?.images
+        this.arraysAboutUs = this.dataAboutUs?.arrays
 
-        this.editors = [];
-        [{key: 'content003'}]?.forEach((element: any, index: number) => {
-          this.editors.push(new Editor());
+        this.editorsAboutUs = [];
+        [{ key: 'content003' }]?.forEach((element: any, index: number) => {
+          this.editorsAboutUs.push(new Editor());
         });
       },
       (error: any) => {
@@ -93,16 +114,21 @@ export class EditComponent implements OnInit, OnDestroy {
   }
 
   getDataForServicePage() {
+    this.dataServices = {};
+    this.contentsServices = {}
+    this.imagesServices = {}
+    this.arraysServices = {}
+    this.editorsServices = [];
     this.dataService.getDataForServicePage().subscribe(
       (response: any) => {
-        this.data = response;
-        this.contents = this.data?.contents
-        this.images = this.data?.images
-        this.arrays = this.data?.arrays
+        this.dataServices = response;
+        this.contentsServices = this.dataServices?.contents
+        this.imagesServices = this.dataServices?.images
+        this.arraysServices = this.dataServices?.arrays
 
-        this.editors = [];
-        this.arrays?.array001?.forEach((element: any, index: number) => {
-          this.editors.push(new Editor());
+        this.editorsServices = [];
+        this.arraysServices?.array001?.forEach((element: any, index: number) => {
+          this.editorsServices.push(new Editor());
         });
       },
       (error: any) => {
@@ -112,21 +138,26 @@ export class EditComponent implements OnInit, OnDestroy {
   }
 
   getDataForContactUsPage() {
+    this.dataContactUs = {};
+    this.contentsContactUs = {}
+    this.imagesContactUs = {}
+    this.arraysContactUs = {}
+    this.editorsContactUs = [];
     this.dataService.getDataForContactUsPage().subscribe(
       (response: any) => {
-        this.data = response;
-        this.contents = this.data?.contents
-        this.images = this.data?.images
-        this.arrays = this.data?.arrays
+        this.dataContactUs = response;
+        this.contentsContactUs = this.dataContactUs?.contents
+        this.imagesContactUs = this.dataContactUs?.images
+        this.arraysContactUs = this.dataContactUs?.arrays
+
+        this.arraysContactUs?.array001?.forEach((element: any, index: number) => {
+          this.editorsContactUs.push(new Editor());
+        });
       },
       (error: any) => {
         console.error('Error fetching data', error);
       }
     );
-  }
-
-  getDataFromObject() {
-    return JSON.stringify(this.data)
   }
 
   updateData() {
@@ -143,7 +174,7 @@ export class EditComponent implements OnInit, OnDestroy {
         cancelButtonText: "ยกเลิก"
       }).then((result) => {
         if (result.isConfirmed) {
-          this.dataService.updateDataForAboutUsPage(this?.data).subscribe((response) => {
+          this.dataService.updateDataForAboutUsPage(this?.dataAboutUs).subscribe((response) => {
             Swal.fire({
               title: "Success",
               text: "แก้ไขข้อมูลเรียบร้อย",
@@ -161,7 +192,6 @@ export class EditComponent implements OnInit, OnDestroy {
             });
         }
       });
-
     } else if (this.tab === 'services') {
       Swal.fire({
         text: "คุณต้องการบันทึกข้อมูลใช่หรือไม่?",
@@ -173,7 +203,7 @@ export class EditComponent implements OnInit, OnDestroy {
         cancelButtonText: "ยกเลิก"
       }).then((result) => {
         if (result.isConfirmed) {
-          this.dataService.updateDataForServicePage(this?.data).subscribe((response) => {
+          this.dataService.updateDataForServicePage(this?.dataServices).subscribe((response) => {
             Swal.fire({
               title: "Success",
               text: "แก้ไขข้อมูลเรียบร้อย",
@@ -192,7 +222,34 @@ export class EditComponent implements OnInit, OnDestroy {
         }
       });
     } else if (this.tab === 'contact-us') {
-      this.getDataForContactUsPage()
+      Swal.fire({
+        text: "คุณต้องการบันทึกข้อมูลใช่หรือไม่?",
+        icon: "question",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "ใช่ บันทึกข้อมูล",
+        cancelButtonText: "ยกเลิก"
+      }).then((result) => {
+        if (result.isConfirmed) {
+          this.dataService.updateDataForContactUsPage(this?.dataContactUs).subscribe((response) => {
+            Swal.fire({
+              title: "Success",
+              text: "แก้ไขข้อมูลเรียบร้อย",
+              icon: "success"
+            });
+            this.getDataForContactUsPage()
+          },
+            (error) => {
+              console.error('Error:', error);
+              Swal.fire({
+                title: "Error",
+                text: error?.message,
+                icon: 'error'
+              });
+            });
+        }
+      });
     }
   }
 }

@@ -1,4 +1,4 @@
-<img class="edit-custom-css-001" [src]="images.image001" />
+<!-- <img class="edit-custom-css-001" [src]="images.image001" /> -->
 
 <div>
     <div style="display: flex; flex-wrap: wrap;  padding: 0% 2%; margin-top: 5%;">
@@ -11,7 +11,7 @@
             <!-- หน้าหลัก -->
             <mat-tab label="หน้าหลัก">
                 <div>
-                    {{ getDataFromObject() }}
+                    <!-- {{ getDataFromObject() }} -->
                 </div>
             </mat-tab>
 
@@ -21,29 +21,29 @@
                     <div style="text-align: left;">
                         <mat-form-field appearance="outline" class="col-12">
                             <mat-label>Content001</mat-label>
-                            <input matInput [(ngModel)]="contents.content001">
+                            <input matInput [(ngModel)]="contentsAboutUs.content001">
                         </mat-form-field>
 
                         <mat-form-field appearance="outline" class="col-12">
                             <mat-label>Content002</mat-label>
-                            <input matInput [(ngModel)]="contents.content002">
+                            <input matInput [(ngModel)]="contentsAboutUs.content002">
                         </mat-form-field>
 
-                        <div *ngFor="let editor of editors; let i = index" class="NgxEditor__Wrapper"
+                        <div *ngFor="let editor of editorsAboutUs; let i = index" class="NgxEditor__Wrapper"
                             style="margin-bottom: 20px;">
-                            <ngx-editor-menu [editor]="editors[i]" [toolbar]="toolbar"> </ngx-editor-menu>
-                            <ngx-editor [editor]="editors[i]" [(ngModel)]="contents.content003" [disabled]="false"
+                            <ngx-editor-menu [editor]="editorsAboutUs[i]" [toolbar]="toolbar"> </ngx-editor-menu>
+                            <ngx-editor [editor]="editorsAboutUs[i]" [(ngModel)]="contentsAboutUs.content003" [disabled]="false"
                                 [placeholder]="'กรอกข้อมูล...'"></ngx-editor>
                         </div>
 
                         <mat-form-field appearance="outline" class="col-12">
                             <mat-label>image001</mat-label>
-                            <input matInput [(ngModel)]="images.image001">
+                            <input matInput [(ngModel)]="imagesAboutUs.image001">
                         </mat-form-field>
 
                         <mat-form-field appearance="outline" class="col-12">
                             <mat-label>image002</mat-label>
-                            <input matInput [(ngModel)]="images.image002">
+                            <input matInput [(ngModel)]="imagesAboutUs.image002">
                         </mat-form-field>
                     </div>
                     <button mat-stroked-button (click)="updateData()">บันทึก</button>
@@ -56,21 +56,21 @@
                     <div style="text-align: left;">
                         <mat-form-field appearance="outline" class="col-12">
                             <mat-label>Content001</mat-label>
-                            <input matInput [(ngModel)]="contents.content001">
+                            <input matInput [(ngModel)]="contentsServices.content001">
                         </mat-form-field>
 
                         <mat-form-field appearance="outline" class="col-12">
                             <mat-label>Content002</mat-label>
-                            <input matInput [(ngModel)]="contents.content002">
+                            <input matInput [(ngModel)]="contentsServices.content002">
                         </mat-form-field>
 
                         <mat-form-field appearance="outline" class="col-12">
                             <mat-label>image001</mat-label>
-                            <input matInput [(ngModel)]="images.image001">
+                            <input matInput [(ngModel)]="imagesServices.image001">
                         </mat-form-field>
                     </div>
 
-                    <div *ngFor="let array of arrays?.array001; let i = index" class="edit-custom-css-002"
+                    <div *ngFor="let array of arraysServices?.array001; let i = index" class="edit-custom-css-002"
                         style="text-align: left;">
                         <mat-slide-toggle [(ngModel)]="array.enabled" style="margin-bottom: 30px;"
                             class="col-12">Enabled</mat-slide-toggle>
@@ -86,8 +86,8 @@
                         </mat-form-field>
 
                         <div class="NgxEditor__Wrapper" style="margin-bottom: 20px;">
-                            <ngx-editor-menu [editor]="editors[i]" [toolbar]="toolbar"> </ngx-editor-menu>
-                            <ngx-editor [editor]="editors[i]" [(ngModel)]="array.content" [disabled]="false"
+                            <ngx-editor-menu [editor]="editorsServices[i]" [toolbar]="toolbar"> </ngx-editor-menu>
+                            <ngx-editor [editor]="editorsServices[i]" [(ngModel)]="array.content" [disabled]="false"
                                 [placeholder]="'กรอกข้อมูล...'"></ngx-editor>
                         </div>
 
@@ -107,11 +107,69 @@
             </mat-tab>
 
             <!-- ติดต่อเรา -->
-            <!-- <mat-tab label="ติดต่อเรา">
-                <div>
-                    {{ getDataFromObject() }}
+            <mat-tab label="ติดต่อเรา">
+                <div style="margin: 2%; text-align: right;">
+                    <div style="text-align: left;">
+                        <mat-form-field appearance="outline" class="col-12">
+                            <mat-label>Content001</mat-label>
+                            <input matInput [(ngModel)]="contentsContactUs.content001">
+                        </mat-form-field>
+
+                        <mat-form-field appearance="outline" class="col-12">
+                            <mat-label>Content002</mat-label>
+                            <input matInput [(ngModel)]="contentsContactUs.content002">
+                        </mat-form-field>
+
+                        <mat-form-field appearance="outline" class="col-12">
+                            <mat-label>Content003</mat-label>
+                            <input matInput [(ngModel)]="contentsContactUs.content003">
+                        </mat-form-field>
+
+                        <mat-form-field appearance="outline" class="col-12">
+                            <mat-label>image001</mat-label>
+                            <input matInput [(ngModel)]="imagesContactUs.image001">
+                        </mat-form-field>
+
+                        <mat-form-field appearance="outline" class="col-12">
+                            <mat-label>image002</mat-label>
+                            <input matInput [(ngModel)]="imagesContactUs.image002">
+                        </mat-form-field>
+
+                        <mat-form-field appearance="outline" class="col-12">
+                            <mat-label>image003</mat-label>
+                            <input matInput [(ngModel)]="imagesContactUs.image003">
+                        </mat-form-field>
+                    </div>
+                    <div *ngFor="let array of arraysContactUs?.array001; let i = index" class="edit-custom-css-002"
+                        style="text-align: left;">
+                        <mat-form-field appearance="outline" class="col-12">
+                            <mat-label>Name</mat-label>
+                            <input matInput [(ngModel)]="array.name">
+                        </mat-form-field>
+
+                        <div class="NgxEditor__Wrapper" style="margin-bottom: 20px;">
+                            <ngx-editor-menu [editor]="editorsContactUs[i]" [toolbar]="toolbar"> </ngx-editor-menu>
+                            <ngx-editor [editor]="editorsContactUs[i]" [(ngModel)]="array.description" [disabled]="false"
+                                [placeholder]="'กรอกข้อมูล...'"></ngx-editor>
+                        </div>
+
+                        <mat-form-field appearance="outline" class="col-12">
+                            <mat-label>Class</mat-label>
+                            <input matInput [(ngModel)]="array.class">
+                        </mat-form-field>
+
+                        <mat-form-field appearance="outline" class="col-12">
+                            <mat-label>Image</mat-label>
+                            <input matInput [(ngModel)]="array.image001">
+                        </mat-form-field>
+
+                        <img class="col-12" style="width: 30%; justify-content: center;" [src]="array.image001" />
+                        <br><br>
+                    </div>
+                    <br>
+                    <button mat-stroked-button (click)="updateData()">บันทึก</button>
                 </div>
-            </mat-tab> -->
+            </mat-tab>
         </mat-tab-group>
     </div>
 </div>
