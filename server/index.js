@@ -36,7 +36,26 @@ app.get('/api/app', (req, res) => {
     if (err) {
       return res.status(500).send('Error reading data');
     }
-    res.json(JSON.parse(data));
+
+    let result = JSON.parse(data)
+    fs.readFile(dataFilePath + '/services.json', 'utf8', (err, services) => {
+      if (err) {
+        return res.status(500).send('Error reading data');
+      }
+
+      let serviceObj = JSON.parse(services)
+      result.arrays.array002 = serviceObj.arrays.array001
+      
+      fs.readFile(dataFilePath + '/users.json', 'utf8', (err, users) => {
+        if (err) {
+          return res.status(500).send('Error reading data');
+        }
+
+        let usersObj = JSON.parse(users)
+        result.arrays.array003 = usersObj
+        res.json(result);
+      });
+    });
   });
 });
 
@@ -45,7 +64,27 @@ app.get('/api/home', (req, res) => {
     if (err) {
       return res.status(500).send('Error reading data');
     }
-    res.json(JSON.parse(data));
+
+    let result = JSON.parse(data)
+    fs.readFile(dataFilePath + '/services.json', 'utf8', (err, services) => {
+      if (err) {
+        return res.status(500).send('Error reading data');
+      }
+
+      let serviceObj = JSON.parse(services)
+      result.arrays.array002 = serviceObj.arrays.array001
+
+      fs.readFile(dataFilePath + '/users.json', 'utf8', (err, users) => {
+        if (err) {
+          return res.status(500).send('Error reading data');
+        }
+
+        let usersObj = JSON.parse(users)
+        result.arrays.array004 = usersObj
+        res.json(result);
+      });
+
+    });
   });
 });
 
@@ -69,6 +108,15 @@ app.get('/api/services', (req, res) => {
 
 app.get('/api/contact-us', (req, res) => {
   fs.readFile(dataFilePath + '/contact-us.json', 'utf8', (err, data) => {
+    if (err) {
+      return res.status(500).send('Error reading data');
+    }
+    res.json(JSON.parse(data));
+  });
+});
+
+app.get('/api/users', (req, res) => {
+  fs.readFile(dataFilePath + '/users.json', 'utf8', (err, data) => {
     if (err) {
       return res.status(500).send('Error reading data');
     }
@@ -347,6 +395,71 @@ app.post('/api/app', (req, res) => {
     const REPO_NAME = 'Intelligent-Global'; // Your repository name
     const FILE_PATH = dataFilePath + '/app.json'; // Local file path you want to upload
     const COMMIT_MESSAGE = 'Update App Data';
+    const TARGET_PATH = 'server/assets/data'; // Directory in the repository
+
+    const uploadFileToGitHub = async () => {
+      try {
+        const fileName = path.basename(FILE_PATH);
+        const fileContent = fs.readFileSync(FILE_PATH, { encoding: 'base64' });
+        const fileUrl = `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/contents/${TARGET_PATH}/${fileName}`;
+
+        // Check if the file already exists
+        let sha = null;
+        try {
+          const response = await axios.get(fileUrl, {
+            headers: {
+              Authorization: `token ${GITHUB_TOKEN}`,
+            },
+          });
+          sha = response.data.sha;
+        } catch (error) {
+          if (error.response && error.response.status === 404) {
+            // File does not exist
+            sha = null;
+          } else {
+            throw error;
+          }
+        }
+
+        // Upload or update the file
+        const response = await axios.put(
+          fileUrl,
+          {
+            message: COMMIT_MESSAGE,
+            content: fileContent,
+            sha: sha, // Include sha if updating an existing file
+          },
+          {
+            headers: {
+              Authorization: `token ${GITHUB_TOKEN}`,
+              'Content-Type': 'application/json',
+            },
+          }
+        );
+
+        console.log('Update Data Success')
+        return res.status(200).send({ message: 'Update Data Success' });
+      } catch (error) {
+        console.log(error)
+        return res.status(500).send(error?.response?.data?.message);
+      }
+    };
+
+    uploadFileToGitHub();
+  });
+});
+
+app.post('/api/users', (req, res) => {
+  fs.writeFile(dataFilePath + '/users.json', JSON.stringify(req.body, null, 2), (err) => {
+    if (err) {
+      return res.status(500).send('Error writing data');
+    }
+
+    const GITHUB_TOKEN = process.env.GITHUB_TOKEN; // Replace with your GitHub token
+    const REPO_OWNER = 'Supattalak-Phoha';
+    const REPO_NAME = 'Intelligent-Global'; // Your repository name
+    const FILE_PATH = dataFilePath + '/users.json'; // Local file path you want to upload
+    const COMMIT_MESSAGE = 'Update Users Data';
     const TARGET_PATH = 'server/assets/data'; // Directory in the repository
 
     const uploadFileToGitHub = async () => {
