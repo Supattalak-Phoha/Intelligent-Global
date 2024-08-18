@@ -37,6 +37,15 @@ export class DataService {
     return this.http.get<any>('/api/contact-us');
   }
 
+  updateDataForAboutUsPage(data: any): Observable<any> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      })
+    };
+    return this.http.post<any>('/api/about-us', data, httpOptions);
+  }
+
   updateDataForServicePage(data: any): Observable<any> {
     const httpOptions = {
       headers: new HttpHeaders({

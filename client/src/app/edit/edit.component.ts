@@ -80,6 +80,11 @@ export class EditComponent implements OnInit, OnDestroy {
         this.contents = this.data?.contents
         this.images = this.data?.images
         this.arrays = this.data?.arrays
+
+        this.editors = [];
+        [{key: 'content003'}]?.forEach((element: any, index: number) => {
+          this.editors.push(new Editor());
+        });
       },
       (error: any) => {
         console.error('Error fetching data', error);
@@ -95,6 +100,7 @@ export class EditComponent implements OnInit, OnDestroy {
         this.images = this.data?.images
         this.arrays = this.data?.arrays
 
+        this.editors = [];
         this.arrays?.array001?.forEach((element: any, index: number) => {
           this.editors.push(new Editor());
         });
@@ -127,9 +133,36 @@ export class EditComponent implements OnInit, OnDestroy {
     if (this.tab === 'home') {
       this.getDataForHomePage()
     } else if (this.tab === 'about-us') {
-      this.getDataForAboutUsPage()
-    } else if (this.tab === 'services') {
+      Swal.fire({
+        text: "คุณต้องการบันทึกข้อมูลใช่หรือไม่?",
+        icon: "question",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "ใช่ บันทึกข้อมูล",
+        cancelButtonText: "ยกเลิก"
+      }).then((result) => {
+        if (result.isConfirmed) {
+          this.dataService.updateDataForAboutUsPage(this?.data).subscribe((response) => {
+            Swal.fire({
+              title: "Success",
+              text: "แก้ไขข้อมูลเรียบร้อย",
+              icon: "success"
+            });
+            this.getDataForAboutUsPage()
+          },
+            (error) => {
+              console.error('Error:', error);
+              Swal.fire({
+                title: "Error",
+                text: error?.message,
+                icon: 'error'
+              });
+            });
+        }
+      });
 
+    } else if (this.tab === 'services') {
       Swal.fire({
         text: "คุณต้องการบันทึกข้อมูลใช่หรือไม่?",
         icon: "question",

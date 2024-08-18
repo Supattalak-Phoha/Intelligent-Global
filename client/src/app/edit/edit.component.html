@@ -8,16 +8,49 @@
         </div>
 
         <mat-tab-group (selectedTabChange)="getData($event);" style="padding: 1% 5%; width: 100%;">
-            <!-- <mat-tab label="หน้าหลัก">
+            <!-- หน้าหลัก -->
+            <mat-tab label="หน้าหลัก">
                 <div>
                     {{ getDataFromObject() }}
                 </div>
             </mat-tab>
+
+            <!-- เกี่ยวกับเรา -->
             <mat-tab label="เกี่ยวกับเรา">
-                <div>
-                    {{ getDataFromObject() }}
+                <div style="margin: 2%; text-align: right;">
+                    <div style="text-align: left;">
+                        <mat-form-field appearance="outline" class="col-12">
+                            <mat-label>Content001</mat-label>
+                            <input matInput [(ngModel)]="contents.content001">
+                        </mat-form-field>
+
+                        <mat-form-field appearance="outline" class="col-12">
+                            <mat-label>Content002</mat-label>
+                            <input matInput [(ngModel)]="contents.content002">
+                        </mat-form-field>
+
+                        <div *ngFor="let editor of editors; let i = index" class="NgxEditor__Wrapper"
+                            style="margin-bottom: 20px;">
+                            <ngx-editor-menu [editor]="editors[i]" [toolbar]="toolbar"> </ngx-editor-menu>
+                            <ngx-editor [editor]="editors[i]" [(ngModel)]="contents.content003" [disabled]="false"
+                                [placeholder]="'กรอกข้อมูล...'"></ngx-editor>
+                        </div>
+
+                        <mat-form-field appearance="outline" class="col-12">
+                            <mat-label>image001</mat-label>
+                            <input matInput [(ngModel)]="images.image001">
+                        </mat-form-field>
+
+                        <mat-form-field appearance="outline" class="col-12">
+                            <mat-label>image002</mat-label>
+                            <input matInput [(ngModel)]="images.image002">
+                        </mat-form-field>
+                    </div>
+                    <button mat-stroked-button (click)="updateData()">บันทึก</button>
                 </div>
-            </mat-tab> -->
+            </mat-tab>
+
+            <!-- บริการ -->
             <mat-tab label="บริการ">
                 <div style="margin: 2%; text-align: right;">
                     <div style="text-align: left;">
@@ -72,6 +105,8 @@
                     <button mat-stroked-button (click)="updateData()">บันทึก</button>
                 </div>
             </mat-tab>
+
+            <!-- ติดต่อเรา -->
             <!-- <mat-tab label="ติดต่อเรา">
                 <div>
                     {{ getDataFromObject() }}
