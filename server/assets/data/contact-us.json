@@ -14,20 +14,17 @@
       {
         "name": "ที่อยู่",
         "description": "<p>บริษัท อินเทลลิเจ้นท์ โกลบอล จำกัด เลขที่ 909/275 ซอย25 ถนนรังสิต-นครนายก ตำบลประชาธิปัตย์ อำเภอธัญบุรี จ.ปทุมธานี 1213055555555</p>",
-        "class": "fas fa-solid fa-house fa-stack-1x fa-inverse",
-        "image001": "assets/images/home/home-004.png"
+        "class": "fas fa-solid fa-house fa-stack-1x fa-inverse"
       },
       {
         "name": "ติดต่อ",
         "description": "<p>เบอร์โทร : 065-359-3544<br>Email : support@intelligentglobal.com5555555</p>",
-        "class": "fas fa-solid fa-phone fa-stack-1x fa-inverse",
-        "image001": "assets/images/home/home-005.png"
+        "class": "fas fa-solid fa-phone fa-stack-1x fa-inverse"
       },
       {
         "name": "เวลาทำการ",
         "description": "<p>วันจันทร์ – วันศุกร์: 8am to 6pm<br>Saturday: 9am to 5pm5555555</p>",
-        "class": "fas fa-solid fa-door-open fa-stack-1x fa-inverse",
-        "image001": "assets/images/home/home-006.png"
+        "class": "fas fa-solid fa-door-open fa-stack-1x fa-inverse"
       }
     ]
   }
