@@ -14,6 +14,12 @@ import Swal from 'sweetalert2';
 export class EditComponent implements OnInit, OnDestroy {
   tab: string = ''
 
+  dataHome: any = {};
+  contentsHome: any = {}
+  imagesHome: any = {}
+  arraysHome: any = {}
+  editorsHome: any[] = [];
+
   dataAboutUs: any = {};
   contentsAboutUs: any = {}
   imagesAboutUs: any = {}
@@ -49,8 +55,8 @@ export class EditComponent implements OnInit, OnDestroy {
   ) { }
 
   ngOnInit() {
-    this.tab = 'services'
-    this.getDataForServicePage()
+    this.tab = 'home'
+    this.getDataForHomePage()
   }
 
   ngOnDestroy(): void {
@@ -76,12 +82,22 @@ export class EditComponent implements OnInit, OnDestroy {
   }
 
   getDataForHomePage() {
+    this.dataHome = {};
+    this.contentsHome = {}
+    this.imagesHome = {}
+    this.arraysHome = {}
+    this.editorsHome = [];
     this.dataService.getDataForHomePage().subscribe(
       (response: any) => {
-        // this.data = response;
-        // this.contents = this.data?.contents
-        // this.images = this.data?.images
-        // this.arrays = this.data?.arrays
+        this.dataHome = response;
+        this.contentsHome = this.dataHome?.contents
+        this.imagesHome = this.dataHome?.images
+        this.arraysHome = this.dataHome?.arrays
+
+        this.editorsHome = [];
+        [{ key: 'content003' }]?.forEach((element: any, index: number) => {
+          this.editorsHome.push(new Editor());
+        });
       },
       (error: any) => {
         console.error('Error fetching data', error);
@@ -162,7 +178,34 @@ export class EditComponent implements OnInit, OnDestroy {
 
   updateData() {
     if (this.tab === 'home') {
-      this.getDataForHomePage()
+      Swal.fire({
+        text: "คุณต้องการบันทึกข้อมูลใช่หรือไม่?",
+        icon: "question",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "ใช่ บันทึกข้อมูล",
+        cancelButtonText: "ยกเลิก"
+      }).then((result) => {
+        if (result.isConfirmed) {
+          this.dataService.updateDataForHomePage(this?.dataHome).subscribe((response) => {
+            Swal.fire({
+              title: "Success",
+              text: "แก้ไขข้อมูลเรียบร้อย",
+              icon: "success"
+            });
+            this.getDataForHomePage()
+          },
+            (error) => {
+              console.error('Error:', error);
+              Swal.fire({
+                title: "Error",
+                text: error?.message,
+                icon: 'error'
+              });
+            });
+        }
+      });
     } else if (this.tab === 'about-us') {
       Swal.fire({
         text: "คุณต้องการบันทึกข้อมูลใช่หรือไม่?",
