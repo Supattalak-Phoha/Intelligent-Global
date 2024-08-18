@@ -12,7 +12,7 @@ export class HomeComponent {
   contents: any = {}
   images: any = {}
   arrays: any = {}
-  
+
   constructor(private dataService: DataService, private router: Router) {
   }
 
@@ -30,9 +30,12 @@ export class HomeComponent {
     );
   }
 
-  goToDetail(code: any) {
-    this.router.navigate(['/service-detail/' + code]).then(() => {
-      window.scrollTo(0, 0); // เลื่อนหน้าไปที่ด้านบนสุด
-    });
+  goToDetail(element: any) {
+    this.router.navigate(['/service-detail/' + element?.code],
+      {
+        state: { service: element }
+      }).then(() => {
+        window.scrollTo(0, 0); // เลื่อนหน้าไปที่ด้านบนสุด
+      });
   }
 }

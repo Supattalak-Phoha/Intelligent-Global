@@ -22,7 +22,9 @@
                             <input matInput [(ngModel)]="contentsHome.content002">
                         </mat-form-field>
 
-                        <div><h6>Content003</h6></div>
+                        <div>
+                            <h6>Content003</h6>
+                        </div>
                         <div *ngFor="let editor of editorsHome; let i = index" class="NgxEditor__Wrapper"
                             style="margin-bottom: 20px;">
                             <ngx-editor-menu [editor]="editorsHome[i]" [toolbar]="toolbar"> </ngx-editor-menu>
@@ -56,7 +58,9 @@
                         </mat-form-field>
                     </div>
 
-                    <div style="text-align: left;"><br><h6>Array001</h6></div>
+                    <div style="text-align: left;"><br>
+                        <h6>Array001</h6>
+                    </div>
                     <div *ngFor="let array of arraysHome?.array001; let i = index" class="edit-custom-css-002"
                         style="text-align: left;">
                         <mat-form-field appearance="outline" class="col-12">
@@ -83,7 +87,9 @@
                         <br><br>
                     </div>
 
-                    <div style="text-align: left;"><br><h6>Array003</h6></div>
+                    <div style="text-align: left;"><br>
+                        <h6>Array003</h6>
+                    </div>
                     <div *ngFor="let array of arraysHome?.array003; let i = index" class="edit-custom-css-002"
                         style="text-align: left;">
                         <mat-form-field appearance="outline" class="col-12">
@@ -121,7 +127,9 @@
                             <input matInput [(ngModel)]="contentsAboutUs.content002">
                         </mat-form-field>
 
-                        <div><h6>Content003</h6></div>
+                        <div>
+                            <h6>Content003</h6>
+                        </div>
                         <div *ngFor="let editor of editorsAboutUs; let i = index" class="NgxEditor__Wrapper"
                             style="margin-bottom: 20px;">
                             <ngx-editor-menu [editor]="editorsAboutUs[i]" [toolbar]="toolbar"> </ngx-editor-menu>
@@ -163,7 +171,9 @@
                         </mat-form-field>
                     </div>
 
-                    <div style="text-align: left;"><br><h6>Array001</h6></div>
+                    <div style="text-align: left;"><br>
+                        <h6>Array001</h6>
+                    </div>
                     <div *ngFor="let array of arraysServices?.array001; let i = index" class="edit-custom-css-002"
                         style="text-align: left;">
                         <mat-slide-toggle [(ngModel)]="array.enabled" style="margin-bottom: 30px;"
@@ -179,7 +189,9 @@
                             <input matInput [(ngModel)]="array.description">
                         </mat-form-field>
 
-                        <div><h6>Content</h6></div>
+                        <div>
+                            <h6>Content</h6>
+                        </div>
                         <div class="NgxEditor__Wrapper" style="margin-bottom: 20px;">
                             <ngx-editor-menu [editor]="editorsServices[i]" [toolbar]="toolbar"> </ngx-editor-menu>
                             <ngx-editor [editor]="editorsServices[i]" [(ngModel)]="array.content" [disabled]="false"
@@ -236,7 +248,9 @@
                         </mat-form-field>
                     </div>
 
-                    <div style="text-align: left;"><br><h6>Array001</h6></div>
+                    <div style="text-align: left;"><br>
+                        <h6>Array001</h6>
+                    </div>
                     <div *ngFor="let array of arraysContactUs?.array001; let i = index" class="edit-custom-css-002"
                         style="text-align: left;">
                         <mat-form-field appearance="outline" class="col-12">
@@ -244,7 +258,9 @@
                             <input matInput [(ngModel)]="array.name">
                         </mat-form-field>
 
-                        <div><h6>Description</h6></div>
+                        <div>
+                            <h6>Description</h6>
+                        </div>
                         <div class="NgxEditor__Wrapper" style="margin-bottom: 20px;">
                             <ngx-editor-menu [editor]="editorsContactUs[i]" [toolbar]="toolbar"> </ngx-editor-menu>
                             <ngx-editor [editor]="editorsContactUs[i]" [(ngModel)]="array.description"
@@ -311,43 +327,60 @@
                             <input matInput [(ngModel)]="contentsOthers.content009">
                         </mat-form-field>
 
-                        <div><h6>Content010</h6></div>
-                        <div *ngFor="let editors of editorsOthers010; let i = index" class="NgxEditor__Wrapper" style="margin-bottom: 20px;">
+                        <div>
+                            <h6>Content010</h6>
+                        </div>
+                        <div *ngFor="let editors of editorsOthers010; let i = index" class="NgxEditor__Wrapper"
+                            style="margin-bottom: 20px;">
                             <ngx-editor-menu [editor]="editorsOthers010[i]" [toolbar]="toolbar"> </ngx-editor-menu>
                             <ngx-editor [editor]="editorsOthers010[i]" [(ngModel)]="contentsOthers.content010"
                                 [disabled]="false" [placeholder]="'กรอกข้อมูล...'"></ngx-editor>
                         </div>
 
-                        <div><h6>Content011</h6></div>
-                        <div *ngFor="let editors of editorsOthers011; let i = index" class="NgxEditor__Wrapper" style="margin-bottom: 20px;">
+                        <div>
+                            <h6>Content011</h6>
+                        </div>
+                        <div *ngFor="let editors of editorsOthers011; let i = index" class="NgxEditor__Wrapper"
+                            style="margin-bottom: 20px;">
                             <ngx-editor-menu [editor]="editorsOthers011[i]" [toolbar]="toolbar"> </ngx-editor-menu>
                             <ngx-editor [editor]="editorsOthers011[i]" [(ngModel)]="contentsOthers.content011"
                                 [disabled]="false" [placeholder]="'กรอกข้อมูล...'"></ngx-editor>
                         </div>
 
-                        <div><h6>Content012</h6></div>
-                        <div *ngFor="let editors of editorsOthers012; let i = index" class="NgxEditor__Wrapper" style="margin-bottom: 20px;">
+                        <div>
+                            <h6>Content012</h6>
+                        </div>
+                        <div *ngFor="let editors of editorsOthers012; let i = index" class="NgxEditor__Wrapper"
+                            style="margin-bottom: 20px;">
                             <ngx-editor-menu [editor]="editorsOthers012[i]" [toolbar]="toolbar"> </ngx-editor-menu>
                             <ngx-editor [editor]="editorsOthers012[i]" [(ngModel)]="contentsOthers.content012"
                                 [disabled]="false" [placeholder]="'กรอกข้อมูล...'"></ngx-editor>
                         </div>
 
-                        <div><h6>Content013</h6></div>
-                        <div *ngFor="let editors of editorsOthers013; let i = index" class="NgxEditor__Wrapper" style="margin-bottom: 20px;">
+                        <div>
+                            <h6>Content013</h6>
+                        </div>
+                        <div *ngFor="let editors of editorsOthers013; let i = index" class="NgxEditor__Wrapper"
+                            style="margin-bottom: 20px;">
                             <ngx-editor-menu [editor]="editorsOthers013[i]" [toolbar]="toolbar"> </ngx-editor-menu>
                             <ngx-editor [editor]="editorsOthers013[i]" [(ngModel)]="contentsOthers.content013"
                                 [disabled]="false" [placeholder]="'กรอกข้อมูล...'"></ngx-editor>
                         </div>
 
-                        <div><h6>Content014</h6></div>
-                        <div *ngFor="let editors of editorsOthers014; let i = index" class="NgxEditor__Wrapper" style="margin-bottom: 20px;">
+                        <div>
+                            <h6>Content014</h6>
+                        </div>
+                        <div *ngFor="let editors of editorsOthers014; let i = index" class="NgxEditor__Wrapper"
+                            style="margin-bottom: 20px;">
                             <ngx-editor-menu [editor]="editorsOthers014[i]" [toolbar]="toolbar"> </ngx-editor-menu>
                             <ngx-editor [editor]="editorsOthers014[i]" [(ngModel)]="contentsOthers.content014"
                                 [disabled]="false" [placeholder]="'กรอกข้อมูล...'"></ngx-editor>
                         </div>
                     </div>
 
-                    <div style="text-align: left;"><br><h6>Array001</h6></div>
+                    <div style="text-align: left;"><br>
+                        <h6>Array001</h6>
+                    </div>
                     <div *ngFor="let array of arraysOthers?.array001; let i = index" class="edit-custom-css-002"
                         style="text-align: left;">
                         <mat-form-field appearance="outline" class="col-12">
@@ -359,6 +392,46 @@
                             <mat-label>Link</mat-label>
                             <input matInput [(ngModel)]="array.link">
                         </mat-form-field>
+                    </div>
+                    <br>
+                    <button mat-stroked-button (click)="updateData()">บันทึก</button>
+                </div>
+            </mat-tab>
+
+            <!-- ทีมของเรา -->
+            <mat-tab label="ทีมของเรา">
+                <div style="margin: 2%; text-align: right;">
+                    <div style="text-align: left;"><br>
+                        <h6>My Teams</h6>
+                    </div>
+                    <div *ngFor="let array of dataTeamUs; let i = index" class="edit-custom-css-002"
+                        style="text-align: left;">
+                        <mat-form-field appearance="outline" class="col-12">
+                            <mat-label>Username</mat-label>
+                            <input matInput [(ngModel)]="array.username">
+                        </mat-form-field>
+
+                        <mat-form-field appearance="outline" class="col-12">
+                            <mat-label>Password</mat-label>
+                            <input matInput [(ngModel)]="array.password">
+                        </mat-form-field>
+
+                        <mat-form-field appearance="outline" class="col-12">
+                            <mat-label>Name</mat-label>
+                            <input matInput [(ngModel)]="array.name">
+                        </mat-form-field>
+
+                        <mat-form-field appearance="outline" class="col-12">
+                            <mat-label>Description</mat-label>
+                            <input matInput [(ngModel)]="array.description">
+                        </mat-form-field>
+
+                        <mat-form-field appearance="outline" class="col-12">
+                            <mat-label>Image</mat-label>
+                            <input matInput [(ngModel)]="array.image">
+                        </mat-form-field>
+
+                        <img class="col-12" style="width: 30%; justify-content: center;" [src]="array.image" />
                     </div>
                     <br>
                     <button mat-stroked-button (click)="updateData()">บันทึก</button>

@@ -48,6 +48,8 @@ export class EditComponent implements OnInit, OnDestroy {
   editorsOthers013: any[] = [];
   editorsOthers014: any[] = [];
 
+  dataTeamUs: any[] = [];
+
   toolbar: Toolbar = [
     ['bold', 'italic'],
     ['underline', 'strike'],
@@ -97,6 +99,9 @@ export class EditComponent implements OnInit, OnDestroy {
     } else if (event.tab.textLabel === 'อื่นๆ') {
       this.tab = 'others'
       this.getDataForOthersPage()
+    } else if (event.tab.textLabel === 'ทีมของเรา') {
+      this.tab = 'team-us'
+      this.getDataForTeamUsPage()
     }
   }
 
@@ -243,6 +248,18 @@ export class EditComponent implements OnInit, OnDestroy {
     );
   }
 
+  getDataForTeamUsPage() {
+    this.dataTeamUs = [];
+    this.dataService.getDataForTeamUsPage().subscribe(
+      (response: any) => {
+        this.dataTeamUs = response;
+      },
+      (error: any) => {
+        console.error('Error fetching data', error);
+      }
+    );
+  }
+
   updateData() {
     if (this.tab === 'home') {
       Swal.fire({
@@ -378,6 +395,35 @@ export class EditComponent implements OnInit, OnDestroy {
               icon: "success"
             });
             this.getDataForOthersPage()
+          },
+            (error) => {
+              console.error('Error:', error);
+              Swal.fire({
+                title: "Error",
+                text: error?.message,
+                icon: 'error'
+              });
+            });
+        }
+      });
+    } else if (this.tab === 'team-us') {
+      Swal.fire({
+        text: "คุณต้องการบันทึกข้อมูลใช่หรือไม่?",
+        icon: "question",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "ใช่ บันทึกข้อมูล",
+        cancelButtonText: "ยกเลิก"
+      }).then((result) => {
+        if (result.isConfirmed) {
+          this.dataService.updateDataForTeamUsPage(this?.dataTeamUs).subscribe((response) => {
+            Swal.fire({
+              title: "Success",
+              text: "แก้ไขข้อมูลเรียบร้อย",
+              icon: "success"
+            });
+            this.getDataForTeamUsPage()
           },
             (error) => {
               console.error('Error:', error);

@@ -36,6 +36,11 @@ export class DataService {
   getDataForContactUsPage(): Observable<any> {
     return this.http.get<any>('/api/contact-us');
   }
+
+  getDataForTeamUsPage(): Observable<any> {
+    return this.http.get<any>('/api/users');
+  }
+
   
   updateDataForHomePage(data: any): Observable<any> {
     const httpOptions = {
@@ -80,5 +85,14 @@ export class DataService {
       })
     };
     return this.http.post<any>('/api/app', data, httpOptions);
+  }
+
+  updateDataForTeamUsPage(data: any): Observable<any> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      })
+    };
+    return this.http.post<any>('/api/users', data, httpOptions);
   }
 }
