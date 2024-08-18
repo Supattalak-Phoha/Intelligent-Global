@@ -259,6 +259,103 @@
                     <button mat-stroked-button (click)="updateData()">บันทึก</button>
                 </div>
             </mat-tab>
+
+            <!-- อื่นๆ -->
+            <mat-tab label="อื่นๆ">
+                <div style="margin: 2%; text-align: right;">
+                    <div style="text-align: left;">
+                        <mat-form-field appearance="outline" class="col-12">
+                            <mat-label>Content001</mat-label>
+                            <input matInput [(ngModel)]="contentsOthers.content001">
+                        </mat-form-field>
+
+                        <mat-form-field appearance="outline" class="col-12">
+                            <mat-label>Content002</mat-label>
+                            <input matInput [(ngModel)]="contentsOthers.content002">
+                        </mat-form-field>
+
+                        <mat-form-field appearance="outline" class="col-12">
+                            <mat-label>Content003</mat-label>
+                            <input matInput [(ngModel)]="contentsOthers.content003">
+                        </mat-form-field>
+
+                        <mat-form-field appearance="outline" class="col-12">
+                            <mat-label>Content004</mat-label>
+                            <input matInput [(ngModel)]="contentsOthers.content004">
+                        </mat-form-field>
+
+                        <mat-form-field appearance="outline" class="col-12">
+                            <mat-label>Content005</mat-label>
+                            <input matInput [(ngModel)]="contentsOthers.content005">
+                        </mat-form-field>
+
+                        <mat-form-field appearance="outline" class="col-12">
+                            <mat-label>Content006</mat-label>
+                            <input matInput [(ngModel)]="contentsOthers.content006">
+                        </mat-form-field>
+
+                        <mat-form-field appearance="outline" class="col-12">
+                            <mat-label>Content007</mat-label>
+                            <input matInput [(ngModel)]="contentsOthers.content007">
+                        </mat-form-field>
+
+                        <mat-form-field appearance="outline" class="col-12">
+                            <mat-label>Content008</mat-label>
+                            <input matInput [(ngModel)]="contentsOthers.content008">
+                        </mat-form-field>
+
+                        <mat-form-field appearance="outline" class="col-12">
+                            <mat-label>Content009</mat-label>
+                            <input matInput [(ngModel)]="contentsOthers.content009">
+                        </mat-form-field>
+
+                        <div *ngFor="let editors of editorsOthers010; let i = index" class="NgxEditor__Wrapper" style="margin-bottom: 20px;">
+                            <ngx-editor-menu [editor]="editorsOthers010[i]" [toolbar]="toolbar"> </ngx-editor-menu>
+                            <ngx-editor [editor]="editorsOthers010[i]" [(ngModel)]="contentsOthers.content010"
+                                [disabled]="false" [placeholder]="'กรอกข้อมูล...'"></ngx-editor>
+                        </div>
+
+                        <div *ngFor="let editors of editorsOthers011; let i = index" class="NgxEditor__Wrapper" style="margin-bottom: 20px;">
+                            <ngx-editor-menu [editor]="editorsOthers011[i]" [toolbar]="toolbar"> </ngx-editor-menu>
+                            <ngx-editor [editor]="editorsOthers011[i]" [(ngModel)]="contentsOthers.content011"
+                                [disabled]="false" [placeholder]="'กรอกข้อมูล...'"></ngx-editor>
+                        </div>
+
+                        <div *ngFor="let editors of editorsOthers012; let i = index" class="NgxEditor__Wrapper" style="margin-bottom: 20px;">
+                            <ngx-editor-menu [editor]="editorsOthers012[i]" [toolbar]="toolbar"> </ngx-editor-menu>
+                            <ngx-editor [editor]="editorsOthers012[i]" [(ngModel)]="contentsOthers.content012"
+                                [disabled]="false" [placeholder]="'กรอกข้อมูล...'"></ngx-editor>
+                        </div>
+
+                        <div *ngFor="let editors of editorsOthers013; let i = index" class="NgxEditor__Wrapper" style="margin-bottom: 20px;">
+                            <ngx-editor-menu [editor]="editorsOthers013[i]" [toolbar]="toolbar"> </ngx-editor-menu>
+                            <ngx-editor [editor]="editorsOthers013[i]" [(ngModel)]="contentsOthers.content013"
+                                [disabled]="false" [placeholder]="'กรอกข้อมูล...'"></ngx-editor>
+                        </div>
+
+                        <div *ngFor="let editors of editorsOthers014; let i = index" class="NgxEditor__Wrapper" style="margin-bottom: 20px;">
+                            <ngx-editor-menu [editor]="editorsOthers014[i]" [toolbar]="toolbar"> </ngx-editor-menu>
+                            <ngx-editor [editor]="editorsOthers014[i]" [(ngModel)]="contentsOthers.content014"
+                                [disabled]="false" [placeholder]="'กรอกข้อมูล...'"></ngx-editor>
+                        </div>
+                    </div>
+
+                    <div *ngFor="let array of arraysOthers?.array001; let i = index" class="edit-custom-css-002"
+                        style="text-align: left;">
+                        <mat-form-field appearance="outline" class="col-12">
+                            <mat-label>Name</mat-label>
+                            <input matInput [(ngModel)]="array.name">
+                        </mat-form-field>
+
+                        <mat-form-field appearance="outline" class="col-12">
+                            <mat-label>Link</mat-label>
+                            <input matInput [(ngModel)]="array.link">
+                        </mat-form-field>
+                    </div>
+                    <br>
+                    <button mat-stroked-button (click)="updateData()">บันทึก</button>
+                </div>
+            </mat-tab>
         </mat-tab-group>
     </div>
 </div>

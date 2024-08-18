@@ -72,4 +72,13 @@ export class DataService {
     };
     return this.http.post<any>('/api/contact-us', data, httpOptions);
   }
+
+  updateDataForOthersPage(data: any): Observable<any> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      })
+    };
+    return this.http.post<any>('/api/app', data, httpOptions);
+  }
 }

@@ -38,6 +38,16 @@ export class EditComponent implements OnInit, OnDestroy {
   arraysContactUs: any = {}
   editorsContactUs: any[] = [];
 
+  dataOthers: any = {};
+  contentsOthers: any = {}
+  imagesOthers: any = {}
+  arraysOthers: any = {}
+  editorsOthers010: any[] = [];
+  editorsOthers011: any[] = [];
+  editorsOthers012: any[] = [];
+  editorsOthers013: any[] = [];
+  editorsOthers014: any[] = [];
+
   toolbar: Toolbar = [
     ['bold', 'italic'],
     ['underline', 'strike'],
@@ -60,9 +70,15 @@ export class EditComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
+    this.editorsHome.forEach(editor => editor.destroy());
     this.editorsAboutUs.forEach(editor => editor.destroy());
     this.editorsServices.forEach(editor => editor.destroy());
     this.editorsContactUs.forEach(editor => editor.destroy());
+    this.editorsOthers010.forEach(editor => editor.destroy());
+    this.editorsOthers011.forEach(editor => editor.destroy());
+    this.editorsOthers012.forEach(editor => editor.destroy());
+    this.editorsOthers013.forEach(editor => editor.destroy());
+    this.editorsOthers014.forEach(editor => editor.destroy());
   }
 
   getData(event: any) {
@@ -78,6 +94,9 @@ export class EditComponent implements OnInit, OnDestroy {
     } else if (event.tab.textLabel === 'ติดต่อเรา') {
       this.tab = 'contact-us'
       this.getDataForContactUsPage()
+    } else if (event.tab.textLabel === 'อื่นๆ') {
+      this.tab = 'others'
+      this.getDataForOthersPage()
     }
   }
 
@@ -168,6 +187,54 @@ export class EditComponent implements OnInit, OnDestroy {
 
         this.arraysContactUs?.array001?.forEach((element: any, index: number) => {
           this.editorsContactUs.push(new Editor());
+        });
+      },
+      (error: any) => {
+        console.error('Error fetching data', error);
+      }
+    );
+  }
+
+  getDataForOthersPage() {
+    this.dataOthers = {};
+    this.contentsOthers = {}
+    this.imagesOthers = {}
+    this.arraysOthers = {}
+    this.editorsOthers010 = [];
+    this.editorsOthers011 = [];
+    this.editorsOthers012 = [];
+    this.editorsOthers013 = [];
+    this.editorsOthers014 = [];
+    this.dataService.getDataForAppPage().subscribe(
+      (response: any) => {
+        this.dataOthers = response;
+        this.contentsOthers = this.dataOthers?.contents
+        this.imagesOthers = this.dataOthers?.images
+        this.arraysOthers = this.dataOthers?.arrays
+
+        this.editorsOthers010 = [];
+        [{ key: 'content010' }]?.forEach((element: any, index: number) => {
+          this.editorsOthers010.push(new Editor());
+        });
+
+        this.editorsOthers011 = [];
+        [{ key: 'content011' }]?.forEach((element: any, index: number) => {
+          this.editorsOthers011.push(new Editor());
+        });
+
+        this.editorsOthers012 = [];
+        [{ key: 'content012' }]?.forEach((element: any, index: number) => {
+          this.editorsOthers012.push(new Editor());
+        });
+
+        this.editorsOthers013 = [];
+        [{ key: 'content013' }]?.forEach((element: any, index: number) => {
+          this.editorsOthers013.push(new Editor());
+        });
+
+        this.editorsOthers014 = [];
+        [{ key: 'content014' }]?.forEach((element: any, index: number) => {
+          this.editorsOthers014.push(new Editor());
         });
       },
       (error: any) => {
@@ -282,6 +349,35 @@ export class EditComponent implements OnInit, OnDestroy {
               icon: "success"
             });
             this.getDataForContactUsPage()
+          },
+            (error) => {
+              console.error('Error:', error);
+              Swal.fire({
+                title: "Error",
+                text: error?.message,
+                icon: 'error'
+              });
+            });
+        }
+      });
+    } else if (this.tab === 'others') {
+      Swal.fire({
+        text: "คุณต้องการบันทึกข้อมูลใช่หรือไม่?",
+        icon: "question",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "ใช่ บันทึกข้อมูล",
+        cancelButtonText: "ยกเลิก"
+      }).then((result) => {
+        if (result.isConfirmed) {
+          this.dataService.updateDataForOthersPage(this?.dataOthers).subscribe((response) => {
+            Swal.fire({
+              title: "Success",
+              text: "แก้ไขข้อมูลเรียบร้อย",
+              icon: "success"
+            });
+            this.getDataForOthersPage()
           },
             (error) => {
               console.error('Error:', error);
