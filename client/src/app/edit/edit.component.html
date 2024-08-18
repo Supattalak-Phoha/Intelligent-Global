@@ -20,7 +20,25 @@
             </mat-tab> -->
             <mat-tab label="บริการ">
                 <div style="margin: 2%; text-align: right;">
-                    <div *ngFor="let array of arrays?.array001; let i = index" class="edit-custom-css-002" style="text-align: left;">
+                    <div style="text-align: left;">
+                        <mat-form-field appearance="outline" class="col-12">
+                            <mat-label>Content001</mat-label>
+                            <input matInput [(ngModel)]="contents.content001">
+                        </mat-form-field>
+
+                        <mat-form-field appearance="outline" class="col-12">
+                            <mat-label>Content002</mat-label>
+                            <input matInput [(ngModel)]="contents.content002">
+                        </mat-form-field>
+
+                        <mat-form-field appearance="outline" class="col-12">
+                            <mat-label>image001</mat-label>
+                            <input matInput [(ngModel)]="images.image001">
+                        </mat-form-field>
+                    </div>
+
+                    <div *ngFor="let array of arrays?.array001; let i = index" class="edit-custom-css-002"
+                        style="text-align: left;">
                         <mat-slide-toggle [(ngModel)]="array.enabled" style="margin-bottom: 30px;"
                             class="col-12">Enabled</mat-slide-toggle>
 
@@ -35,7 +53,7 @@
                         </mat-form-field>
 
                         <div class="NgxEditor__Wrapper" style="margin-bottom: 20px;">
-                            <ngx-editor-menu [editor]="editors[i]"  [toolbar]="toolbar"> </ngx-editor-menu>
+                            <ngx-editor-menu [editor]="editors[i]" [toolbar]="toolbar"> </ngx-editor-menu>
                             <ngx-editor [editor]="editors[i]" [(ngModel)]="array.content" [disabled]="false"
                                 [placeholder]="'กรอกข้อมูล...'"></ngx-editor>
                         </div>
