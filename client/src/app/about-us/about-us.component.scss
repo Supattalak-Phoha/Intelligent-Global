@@ -6,26 +6,27 @@
 
 .about-us-custom-css-002 {
     width: 100%;
+    margin-top: -10%;
 }
 
 // XS
 @media (max-width: 575px) {
     .about-us-custom-css-002 {
-        padding-top: 10%;
+        margin-top: 10%;
     }
 }
 
 // SM
 @media (min-width: 576px) {
     .about-us-custom-css-002 {
-        padding-top: 10%;
+        margin-top: 10%;
     }
 }
 
 // MD
 @media (min-width: 768px) {
     .about-us-custom-css-002 {
-        padding-top: 10%;
+        margin-top: -10%;
     }
 }
 
@@ -36,7 +37,7 @@
     }
 
     .about-us-custom-css-002 {
-        padding-top: 0%;
+        margin-top: -25%;
     }
 }
 
