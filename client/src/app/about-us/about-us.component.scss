@@ -46,6 +46,16 @@
 
 // XXl
 @media (min-width: 1400px) {
+    h2,
+    .h2 {
+        font-size: 2rem !important;
+    }
+
+    h3,
+    .h3 {
+        font-size: calc(1rem + .2vw) !important;
+    }
+    
     .about-us-custom-css-001 {
         font-size: 1.5rem;
     }

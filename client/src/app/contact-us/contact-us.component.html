@@ -1,7 +1,7 @@
 <img class="contact-us-custom-css-005" [src]="images.image001" />
 
 <div>
-    <div style="display: flex; flex-wrap: wrap;  padding: 0% 2%; margin-top: 5%;">
+    <div style="display: flex; flex-wrap: wrap;  padding: 0% 6%; margin-top: 5%;">
         <div class="col-12 text-center">
             <h2 class="section-heading text-uppercase">{{ contents.content001 }}</h2>
             <h3 class="section-subheading text-muted">{{ contents.content002 }}</h3>
@@ -10,25 +10,25 @@
     </div>
 </div>
 
-<div class="custom-002">
+<div class="contact-us-custom-css-006">
     <div *ngFor="let array of arrays.array001" class="col-12 col-md-6 col-xl-4 contact-us-custom-css-004">
         <div>
             <span class="fa-stack fa-4x contact-us-custom-css-001">
-                <i class="fas fa-circle fa-stack-2x text-primary" style="color: white !important;"></i>
+                <i class="fas fa-circle fa-stack-2x text-primary" style="color: #003CA6 !important;"></i>
                 <i [ngClass]="array.class" style="color: #ffc800 !important;"></i>
             </span>
         </div>
         <div class="contact-us-custom-css-003">{{ array.name }}</div>
-        <div [innerHTML]="array.description"></div>
+        <div style="color: black;" [innerHTML]="array.description"></div>
     </div>
 </div>
 
-<div style="display: flex; flex-wrap: wrap;  padding: 5% 2%;">
+<div style="display: flex; flex-wrap: wrap;  padding: 2% 6%;">
     <div class="col-12 col-md-6" style="text-align: center;">
-        <img style="width: 90%; height: auto; padding: 0% 0% 5% 0%;" [src]="images.image002" />
+        <img style="width: 90%; height: auto; padding: 0%; border-radius: 10px;" [src]="images.image002" />
     </div>
 
     <div class="col-12 col-md-6" style="text-align: center;">
-        <img style="width: 90%; height: auto;" [src]="images.image003" (click)="openMap()"/>
+        <img style="width: 90%; height: auto; border-radius: 10px;" [src]="images.image003" (click)="openMap()"/>
     </div>
 </div>

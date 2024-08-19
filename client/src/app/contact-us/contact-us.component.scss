@@ -10,16 +10,30 @@
     margin-top: 5%;
     font-size: 1.5rem;
     overflow-wrap: anywhere;
+    color: #003CA6;
 }
 
 .contact-us-custom-css-004 {
-    color: #fff;
+    color: #003CA6;
     padding: 4% 3%;
 }
 
 .contact-us-custom-css-005 {
     width: 100%;
+    margin-top: -10%;
 }
+
+.contact-us-custom-css-006 {
+    // background-image: url('../../../public/assets/images/contact-us/contact-us-004.jpg');
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    padding: 0% 5%;
+}
+
 
 // XS
 @media (max-width: 575px) {
@@ -32,7 +46,7 @@
     }
 
     .contact-us-custom-css-005 {
-        padding-top: 10%;
+        margin-top: 10%;
     }
 }
 
@@ -47,7 +61,7 @@
     }
 
     .contact-us-custom-css-005 {
-        padding-top: 10%;
+        margin-top: 10%;
     }
 }
 
@@ -67,7 +81,7 @@
     } 
 
     .contact-us-custom-css-005 {
-        padding-top: 10%;
+        margin-top: -10%;
     }
 }
 
@@ -91,7 +105,7 @@
     }
 
     .contact-us-custom-css-005 {
-        padding-top: 0%;
+        margin-top: -25%;
     }
 }
 
@@ -113,6 +127,16 @@
 
 // XXl
 @media (min-width: 1400px) {
+    h2,
+    .h2 {
+        font-size: 2rem !important;
+    }
+
+    h3,
+    .h3 {
+        font-size: calc(1rem + .2vw) !important;
+    }
+
     .contact-us-custom-css-001 {
         font-size: 3em;
     }
