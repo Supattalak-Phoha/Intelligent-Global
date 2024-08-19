@@ -9,19 +9,20 @@
 
 .services-custom-css-004 {
     width: 100%;
+    margin-top: -10%;
 }
 
 // XS
 @media (max-width: 575px) {
     .services-custom-css-004 {
-        padding-top: 10%;
+        margin-top: 10%;
     }
 }
 
 // SM
 @media (min-width: 576px) {
     .services-custom-css-004 {
-        padding-top: 10%;
+        margin-top: 10%;
     }
 }
 
@@ -36,7 +37,7 @@
     }
 
     .services-custom-css-004 {
-        padding-top: 10%;
+        margin-top: -10%;
     }
 }
 
@@ -51,7 +52,7 @@
     }
 
     .services-custom-css-004 {
-        padding-top: 0%;
+        margin-top: -25%;
     }
 }
 
@@ -68,6 +69,16 @@
 
 // XXl
 @media (min-width: 1400px) {
+    h2,
+    .h2 {
+        font-size: 2rem !important;
+    }
+
+    h3,
+    .h3 {
+        font-size: calc(1rem + .2vw) !important;
+    }
+
     .services-custom-css-002 {
         padding: 3% 3% 0% 0% !important;
     }

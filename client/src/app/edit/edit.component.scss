@@ -1,5 +1,6 @@
 .edit-custom-css-001 {
     width: 100%;
+    margin-top: -10%;
 }
 
 .edit-custom-css-002 {
@@ -7,4 +8,49 @@
     background-color: #ededed;
     padding: 3%;
     border-radius: 10px;
+}
+
+// XS
+@media (max-width: 575px) {
+    .edit-custom-css-001 {
+        margin-top: 10%;
+    }
+}
+
+// SM
+@media (min-width: 576px) {
+    .edit-custom-css-001 {
+        margin-top: 10%;
+    }
+}
+
+// MD
+@media (min-width: 768px) {
+    .edit-custom-css-001 {
+        margin-top: -10%;
+    }
+}
+
+// LG
+@media (min-width: 992px) {
+    .edit-custom-css-001 {
+        margin-top: -25%;
+    }
+}
+
+// XL
+@media (min-width: 1200px) {}
+
+// XXl
+@media (min-width: 1400px) {
+
+    h2,
+    .h2 {
+        font-size: 2rem !important;
+    }
+
+    h3,
+    .h3 {
+        font-size: calc(1rem + .2vw) !important;
+    }
 }
