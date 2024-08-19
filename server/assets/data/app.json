@@ -17,7 +17,8 @@
   },
   "images": {
     "image001": "assets/images/logo-01.png",
-    "image002": "assets/images/line-button.png"
+    "image002": "assets/images/line-button.png",
+    "image003": "assets/images/line-qr.jpg"
   },
   "arrays": {
     "array001": [

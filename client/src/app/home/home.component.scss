@@ -1,6 +1,24 @@
 header.masthead {
-    background-image: url("../../../public/assets/images/home/home-003.jpg") !important;
     background-repeat: repeat;
+    animation: changeBackground 15s infinite;
+}
+
+@keyframes changeBackground {
+    0% {
+        background-image: url('../../../public/assets/images/home/home-001.jpg');
+    }
+
+    33% {
+        background-image: url('../../../public/assets/images/home/home-007.jpg');
+    }
+
+    66% {
+        background-image: url('../../../public/assets/images/home/home-008.jpg');
+    }
+
+    100% {
+        background-image: url('../../../public/assets/images/home/home-001.jpg');
+    }
 }
 
 // Default
@@ -47,6 +65,22 @@ header.masthead {
     margin-bottom: 1rem !important;
 }
 
+.home-custom-css-010 {
+    width: 100%;
+}
+
+.home-custom-css-011 {
+    background-image: url('../../../public/assets/images/home/home-009.jpg');
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    padding: 0% 5%;
+}
+
+
 // XS
 @media (max-width: 575px) {
     .home-custom-css-004 {
@@ -54,7 +88,10 @@ header.masthead {
     }
 
     .home-custom-css-005 {
-        font-size: 2rem;
+        font-size: 1.5rem;
+        justify-content: center;
+        align-items: center;
+        display: flex;
     }
 
     .home-custom-css-006 {
@@ -69,7 +106,10 @@ header.masthead {
     }
 
     .home-custom-css-005 {
-        font-size: 2rem;
+        font-size: 1.5rem;
+        justify-content: center;
+        align-items: center;
+        display: flex;
     }
 
     .home-custom-css-006 {
@@ -93,6 +133,9 @@ header.masthead {
 
     .home-custom-css-005 {
         font-size: 1.5rem;
+        justify-content: center;
+        align-items: center;
+        display: flex;
     }
 
     .home-custom-css-006 {
@@ -102,7 +145,7 @@ header.masthead {
     .home-custom-css-007 {
         color: #fff;
         padding: 3% 5%;
-    } 
+    }
 
     .home-custom-css-008 {
         color: #ffc800 !important;
@@ -129,7 +172,10 @@ header.masthead {
     }
 
     .home-custom-css-005 {
-        font-size: 2rem;
+        font-size: 1.5rem;
+        justify-content: center;
+        align-items: center;
+        display: flex;
     }
 
     .home-custom-css-006 {
@@ -140,7 +186,7 @@ header.masthead {
         color: #fff;
         padding: 3% 5%;
     }
-    
+
 }
 
 // XL
@@ -162,18 +208,32 @@ header.masthead {
     }
 
     .home-custom-css-005 {
-        font-size: 2rem;
+        font-size: 1.5rem;
+        justify-content: center;
+        align-items: center;
+        display: flex;
     }
 
     .home-custom-css-007 {
         color: #fff;
         padding: 3% 5%;
     }
-    
+
 }
 
 // XXl
 @media (min-width: 1400px) {
+
+    h2,
+    .h2 {
+        font-size: 2rem !important;
+    }
+
+    h3,
+    .h3 {
+        font-size: calc(1rem + .2vw) !important;
+    }
+
     .home-custom-css-001 {
         font-size: 6em;
     }
@@ -191,12 +251,15 @@ header.masthead {
     }
 
     .home-custom-css-005 {
-        font-size: 2rem;
+        font-size: 1.5rem;
+        justify-content: center;
+        align-items: center;
+        display: flex;
     }
 
     .home-custom-css-007 {
         color: #fff;
         padding: 3% 5%;
     }
-    
+
 }

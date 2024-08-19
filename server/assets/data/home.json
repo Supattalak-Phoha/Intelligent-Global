@@ -1,6 +1,6 @@
 {
   "contents": {
-    "content001": "ยินดีต้อนรับเข้าสู่ 5555",
+    "content001": "ยินดีต้อนรับเข้าสู่",
     "content002": "Intelligent Global Co, Ltd.",
     "content003": "<p>\"เรายินดีให้คำปรึกษาและการบริการ เพื่อสร้างภาพลักษณ์ที่น่าเชื่อถือ จนนำพาธุรกิจของคุณไปสู่เป้าหมายที่ตั้งไว้\"</p>",
     "content004": "บริการของเรา",
@@ -9,7 +9,9 @@
     "content007": "ทีมงานของเรา เต็มเปี่ยมไปด้วยศักยภาพและประสบการณ์ต่าง ๆ มากมาย"
   },
   "images": {
-    "image001": "assets/images/home/home-002.jpg"
+    "image001": "assets/images/home/home-001.jpg",
+    "image002": "assets/images/home/home-002.jpg",
+    "image003": "assets/images/home/home-009.jpg"
   },
   "arrays": {
     "array001": [

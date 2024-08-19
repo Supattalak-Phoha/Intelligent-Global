@@ -27,35 +27,31 @@
         <br><br>
         <!-- Footer-->
         <div class="custom-001" style="background-color: #E2AB2D !important;">
-            <div class="col-12 col-md-6 col-lg-3" style="text-align: left; padding: 5% 3%;">
+            <div class="col-12 col-md-6 col-lg-3" style="text-align: left; padding: 2% 3%;">
                 <h3 class="section-subheading text-muted" style="color: #003CA6 !important;">{{ contents.content006 }}</h3>
-                <br>
                 <div [innerHTML]="contents.content010"></div>
-                <br>
                 <div [innerHTML]="contents.content011"></div>
-                <br>
                 <div [innerHTML]="contents.content012"></div>
             </div>
-            <div class="col-12 col-md-6 col-lg-3" style="text-align: left; padding: 5% 3%;">
+            <div class="col-12 col-md-6 col-lg-3" style="text-align: left; padding: 2% 3%;">
                 <h3 class="section-subheading text-muted" style="color: #003CA6 !important;">{{ contents.content007 }}</h3>
-                <br>
                 <div [innerHTML]="contents.content013"></div>
             </div>
-            <div class="col-12 col-md-6 col-lg-3" style="text-align: left; padding: 5% 3%;">
+            <div class="col-12 col-md-6 col-lg-3" style="text-align: left; padding: 2% 3%;">
                 <h3 class="section-subheading text-muted" style="color: #003CA6 !important;">{{ contents.content008 }}</h3>
-                <br>
                 <div *ngFor="let array of arrays.array002">
                     <div [innerHTML]="array.name"></div>
                 </div>
             </div>
-            <div class="col-12 col-md-6 col-lg-3" style="text-align: left; padding: 5% 3%;">
+            <div class="col-12 col-md-6 col-lg-3" style="text-align: left; padding: 2% 3%;">
                 <h3 class="section-subheading text-muted" style="color: #003CA6 !important;">{{ contents.content009 }}</h3>
-                <br>
                 <div *ngFor="let array of arrays.array003">
                     <div [innerHTML]="array.name"></div>
                 </div>
                 <br>
                 <img style="width: 50%;" [src]="images.image002" (click)="addLINE()" />
+                <br>
+                <img style="width: 50%; margin-top: 5%; border-radius: 8px;" [src]="images.image003" (click)="addLINE()" />
             </div>
         </div>
         <footer class="footer py-4" style="background-color: #003CA6;">
