@@ -20,14 +20,12 @@
     </div>
 
     <!-- บริการหลัก -->
-    <div class="home-custom-css-011">
-        <div *ngFor="let array of arrays.array001" class="col-4 home-custom-css-007">
-            <div>
+    <div class="home-custom-css-011" style="justify-content: center;">
+        <div *ngFor="let array of arrays.array001" class="col-6 col-md-4 home-custom-css-007">
+            <div style="background-color: #000000c7; padding: 5% 5%; border-radius: 5px; height: 100%;">
                 <img [src]="array.image001" style="width: 30%;" />
-            </div>
-            <div style="background-color: #000000c7; height: 50%; padding: 0% 5%; border-radius: 5px">
                 <div class="home-custom-css-006">{{ array.name }}</div>
-                <div class="home-custom-css-004">{{ array.description }}</div>
+                <!-- <div class="home-custom-css-004">{{ array.description }}</div> -->
             </div>
         </div>
     </div>

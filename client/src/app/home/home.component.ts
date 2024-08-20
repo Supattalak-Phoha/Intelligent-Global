@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, HostListener } from '@angular/core';
 import { DataService } from '../data.service';
 import { Router } from '@angular/router';
 
@@ -13,7 +13,7 @@ export class HomeComponent {
   images: any = {}
   arrays: any = {}
 
-  constructor(private dataService: DataService, private router: Router) {
+  constructor(private dataService: DataService, private router: Router, private el: ElementRef) {
   }
 
   ngOnInit() {
@@ -38,4 +38,5 @@ export class HomeComponent {
         window.scrollTo(0, 0); // เลื่อนหน้าไปที่ด้านบนสุด
       });
   }
+
 }

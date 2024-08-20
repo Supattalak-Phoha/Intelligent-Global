@@ -26,6 +26,9 @@ export class ServiceDetailComponent {
         content001: this.data?.name,
         content002: this.data?.content
       }
+      this.images = {
+        image001: "assets/images/services/services-001.jpg"
+      }
     });
   }
 }
