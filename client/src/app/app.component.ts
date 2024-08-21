@@ -66,9 +66,6 @@ export class AppComponent {
         this.images = this.data?.images
         this.arrays = this.data?.arrays
         this.arrays.array001 = this.showAdminButton() ? this.arrays?.array001 : this.arrays?.array001?.filter?.((x: any) => x?.name !== 'การจัดการข้อมูล')
-        this.arrays.array002?.forEach((element: any) => {
-          element.name = '<li>' + element?.name + '</li>'
-        });
         this.arrays.array003?.forEach((element: any) => {
           element.name = '<li>' + element?.name + '</li>'
         });
@@ -146,6 +143,15 @@ export class AppComponent {
   showAdminButton() {
     const isAdmin = sessionStorage.getItem('isAdmin');
     return isAdmin?.toString().toLowerCase() === 'true';
+  }
+
+  goToDetail(element: any) {
+    this.router.navigate(['/service-detail/' + element?.code],
+      {
+        state: { service: element }
+      }).then(() => {
+        window.scrollTo(0, 0); // เลื่อนหน้าไปที่ด้านบนสุด
+      });
   }
 
 }
