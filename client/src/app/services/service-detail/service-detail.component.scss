@@ -3,6 +3,24 @@
     margin-top: -10%;
 }
 
+.services-detail-custom-css-002:hover {
+    animation: blink 1s;
+}
+
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1;
+        /* ข้อความแสดงเต็มที่ */
+    }
+
+    50% {
+        opacity: 0;
+        /* ข้อความหายไป */
+    }
+}
+
 // XS
 @media (max-width: 575px) {
     .services-detail-custom-css-001 {

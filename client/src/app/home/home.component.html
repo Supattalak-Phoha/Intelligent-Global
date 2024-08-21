@@ -2,7 +2,7 @@
 <header class="masthead">
     <div class="container">
         <div class="masthead-subheading">{{ contents.content001 }}</div>
-        <div class="masthead-heading text-uppercase">{{ contents.content002 }}</div>
+        <div class="masthead-heading text-uppercase home-custom-css-015">{{ contents.content002 }}</div>
     </div>
 </header>
 
@@ -13,8 +13,8 @@
             <div [innerHTML]="contents.content003" class="home-custom-css-005"></div>
         </div>
         <div class="col-12 col-md-5">
-            <div class="team-member" style="margin-top: 1rem;">
-                <img class="mx-auto rounded-circle " [src]="images.image002" alt="..." />
+            <div class="team-member image-container" style="margin-top: 1rem;">
+                <img class="mx-auto rounded-circle" [src]="images.image002" alt="..." />
             </div>
         </div>
     </div>
@@ -22,7 +22,7 @@
     <!-- บริการหลัก -->
     <div class="home-custom-css-011" style="justify-content: center;">
         <div *ngFor="let array of arrays.array001" class="col-6 col-md-4 home-custom-css-007">
-            <div style="background-color: #000000c7; padding: 5% 5%; border-radius: 5px; height: 100%;">
+            <div class="hover" style="background-color: #000000c7; padding: 5% 5%; border-radius: 5px; height: 100%;">
                 <img [src]="array.image001" style="width: 30%;" />
                 <div class="home-custom-css-006">{{ array.name }}</div>
                 <!-- <div class="home-custom-css-004">{{ array.description }}</div> -->
@@ -31,7 +31,7 @@
     </div>
 
     <!-- บริการของเรา -->
-    <div style="display: flex; flex-wrap: wrap; margin-top: 6%;">
+    <!-- <div style="display: flex; flex-wrap: wrap; margin-top: 6%;">
         <div class="col-12 text-center" style="padding: 0% 2%">
             <h2 class="section-heading text-uppercase">{{ contents.content004 }}</h2>
             <h3 class="section-subheading text-muted">{{ contents.content005 }}</h3>
@@ -49,10 +49,30 @@
                 </div>
             </div>
         </div>
+    </div> -->
+
+    <div style="display: flex; flex-wrap: wrap; margin-top: 6%;">
+        <div class="col-12 text-center home-custom-css-015" style="padding: 0% 2%">
+            <h2 class="section-heading text-uppercase">{{ contents.content004 }}</h2>
+            <h3 class="section-subheading text-muted">{{ contents.content005 }}</h3>
+        </div>
+        <div class="home-custom-css-003" style="display: flex; padding: 2% 8% !important;">
+            <div *ngFor="let array of arrays.array002" class="col-12 col-md-6 col-lg-4"
+                style="color: #fff; text-align: center; padding: 1%;">
+                <div class="home-custom-css-013" (click)="goToDetail(array)">
+                    <img class="" [src]="array.image001"
+                        style="border: solid #003CA6; width: 100%; height: auto; display: block;" />
+                    <div class="home-custom-css-014 home-custom-css-012">
+                        <div class="portfolio-caption-heading">{{ array.name }}</div>
+                        <div class="portfolio-caption-subheading text-muted">{{ array.description }}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- สถิติ -->
-    <div class="home-custom-css-011" style="margin-top: 6%; padding: 0px 7%;">
+    <!-- <div class="home-custom-css-011" style="margin-top: 6%; padding: 0px 7%;">
         <div *ngFor="let array of arrays.array003" class="col-6 col-lg-3" style="color: #fff; padding: 5% 2%;">
             <div style="display: flex; background-color: #000000c7; padding: 0% 5%; border-radius: 5px">
                 <div class="fa-stack fa-4x col-6">
@@ -64,10 +84,10 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <!-- ทีมของเรา -->
-    <div style="display: flex; flex-wrap: wrap; padding: 0% 2%; margin-top: 6%; justify-content: center;">
+    <!-- <div style="display: flex; flex-wrap: wrap; padding: 0% 2%; margin-top: 6%; justify-content: center;">
         <div class="col-12 text-center">
             <h2 class="section-heading text-uppercase">{{ contents.content006 }}</h2>
             <h3 class="section-subheading text-muted">{{ contents.content007 }}</h3>
@@ -85,5 +105,5 @@
                 </p>
             </div>
         </div>
-    </div>
+    </div> -->
 </div>

@@ -2,7 +2,7 @@
 
 <div>
     <div style="display: flex; flex-wrap: wrap;  padding: 0% 6%; margin-top: 5%;">
-        <div class="col-12 text-center">
+        <div class="col-12 text-center contact-us-custom-css-007">
             <h2 class="section-heading text-uppercase">{{ contents.content001 }}</h2>
             <h3 class="section-subheading text-muted">{{ contents.content002 }}</h3>
             <br><br>
@@ -11,7 +11,7 @@
 </div>
 
 <div class="contact-us-custom-css-006">
-    <div *ngFor="let array of arrays.array001" class="col-12 col-md-6 col-xl-4 contact-us-custom-css-004">
+    <div *ngFor="let array of arrays.array001" class="col-12 col-md-6 col-xl-4 contact-us-custom-css-004 contact-us-custom-css-007">
         <div>
             <span class="fa-stack fa-4x contact-us-custom-css-001">
                 <i class="fas fa-circle fa-stack-2x text-primary" style="color: #003CA6 !important;"></i>
@@ -25,10 +25,10 @@
 
 <div style="display: flex; flex-wrap: wrap;  padding: 2% 6%;">
     <div class="col-12 col-md-6" style="text-align: center;">
-        <img style="width: 90%; height: auto; padding: 0%; border-radius: 10px;" [src]="images.image002" />
+        <img style="width: 90%; height: auto; padding: 0%; border-radius: 10px;" class="hover" [src]="images.image002" />
     </div>
 
     <div class="col-12 col-md-6" style="text-align: center;">
-        <img style="width: 90%; height: auto; border-radius: 10px;" [src]="images.image003" (click)="openMap()"/>
+        <img style="width: 90%; height: auto; border-radius: 10px;" class="hover" [src]="images.image003" (click)="openMap()"/>
     </div>
 </div>

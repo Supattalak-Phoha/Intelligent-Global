@@ -77,7 +77,7 @@ header.masthead {
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-position: center center;
-    padding: 0% 5%;
+    padding: 3% 5%;
 }
 
 .home-custom-css-012 {
@@ -165,6 +165,11 @@ header.masthead {
         color: #ffc800 !important;
         font-size: 100%;
     }
+
+    .home-custom-css-011 {
+        padding: 0% 5%;
+    }
+
 }
 
 // LG
@@ -276,4 +281,66 @@ header.masthead {
         padding: 3% 5%;
     }
 
+}
+
+.home-custom-css-013 {
+    position: relative;
+    width: 100%;
+}
+
+.home-custom-css-014 {
+    position: absolute;
+    bottom: 0;
+    background: #003CA6;
+    width: 100%;
+    transition: .5s ease;
+    opacity: 0;
+    text-align: center;
+}
+
+.home-custom-css-013:hover .home-custom-css-014 {
+    opacity: 1;
+}
+
+.image-container img:hover {
+    animation: blink 1s;
+}
+
+.home-custom-css-005:hover {
+    animation: blink 1s;
+}
+
+.home-custom-css-015:hover {
+    animation: blink 1s;
+}
+
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1;
+        /* ข้อความแสดงเต็มที่ */
+    }
+
+    50% {
+        opacity: 0;
+        /* ข้อความหายไป */
+    }
+}
+
+
+.hover {
+    border: 5px solid;
+    border-image: repeating-linear-gradient(135deg, #F8CA00 0 10px) 8;
+    -webkit-mask:
+        conic-gradient(from 180deg at top 8px right 8px, #0000 90deg, #000 0) var(--_i, 200%) 0 /200% var(--_i, 8px) border-box no-repeat,
+        conic-gradient(at bottom 8px left 8px, #0000 90deg, #000 0) 0 var(--_i, 200%)/var(--_i, 8px) 200% border-box no-repeat,
+        linear-gradient(#000 0 0) padding-box no-repeat;
+    transition: .3s, -webkit-mask-position .3s .3s;
+}
+
+.hover:hover {
+    --_i: 100%;
+    color: #F8CA00;
+    transition: .3s, -webkit-mask-size .3s .3s;
 }

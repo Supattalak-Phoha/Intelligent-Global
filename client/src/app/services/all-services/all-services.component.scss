@@ -12,6 +12,48 @@
     margin-top: -10%;
 }
 
+.services-custom-css-005:hover {
+    animation: blink 1s;
+}
+
+.services-custom-css-006 {
+    position: relative;
+    width: 100%;
+}
+
+.services-custom-css-007 {
+    position: absolute;
+    bottom: 0;
+    background: #003CA6;
+    width: 100%;
+    transition: .5s ease;
+    opacity: 0;
+    text-align: center;
+}
+
+.services-custom-css-006:hover .services-custom-css-007 {
+    opacity: 1;
+}
+
+.services-custom-css-008 {
+    background-color: #003CA6;
+    padding: 5%;
+}
+
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1;
+        /* ข้อความแสดงเต็มที่ */
+    }
+
+    50% {
+        opacity: 0;
+        /* ข้อความหายไป */
+    }
+}
+
 // XS
 @media (max-width: 575px) {
     .services-custom-css-004 {
