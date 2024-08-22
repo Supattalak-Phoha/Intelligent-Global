@@ -29,7 +29,7 @@
       },
       {
         "name": "เครื่องหมายการค้า",
-        "description": "บริการรับจดแจ้งลิขสิทธิ์ ฯลฯ",
+        "description": "บริการรับจดแจ้งลิขสิทธิ์ เครื่องหมายการค้า ฯลฯ",
         "class": "fas fa-solid fa-landmark fa-stack-1x fa-inverse",
         "image001": "assets/images/home/home-006.png"
       }
