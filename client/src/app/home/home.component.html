@@ -57,8 +57,7 @@
             <h3 class="section-subheading text-muted">{{ contents.content005 }}</h3>
         </div>
         <div class="home-custom-css-003" style="display: flex; padding: 2% 8% !important;">
-            <div *ngFor="let array of getAllService()" class="col-12 col-md-6 col-lg-4"
-                style="color: #fff; text-align: center; padding: 1%;">
+            <div *ngFor="let array of getAllService()" class="col-12 col-md-6 col-lg-4 home-custom-css-016">
                 <div class="home-custom-css-013" (click)="goToDetail(array)">
                     <img class="" [src]="array.image001"
                         style="border: solid #003CA6; width: 100%; height: auto; display: block;" />

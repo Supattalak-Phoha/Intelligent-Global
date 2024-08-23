@@ -40,6 +40,12 @@
     padding: 5%;
 }
 
+.services-custom-css-009 {
+    color: #fff !important;
+    text-align: center !important;
+    padding: 1% !important;
+}
+
 @keyframes blink {
 
     0%,
@@ -59,12 +65,20 @@
     .services-custom-css-004 {
         margin-top: 10%;
     }
+
+    .services-custom-css-009 {
+        padding: 4% 1% !important;
+    }
 }
 
 // SM
 @media (min-width: 576px) {
     .services-custom-css-004 {
         margin-top: 10%;
+    }
+
+    .services-custom-css-009 {
+        padding: 4% 1% !important;
     }
 }
 
@@ -80,6 +94,10 @@
 
     .services-custom-css-004 {
         margin-top: -10%;
+    }
+
+    .services-custom-css-009 {
+        padding: 1% !important;
     }
 }
 

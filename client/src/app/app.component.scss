@@ -26,3 +26,38 @@
 .app-custom-css-001:hover {
     color: #003CA6;
 }
+
+.app-custom-css-002 {
+    text-align: left;
+    padding: 2% 3%;
+}
+
+// XS
+@media (max-width: 575px) {
+    .app-custom-css-002 {
+        padding: 5% 5% 2.5% 5%;
+    }
+}
+
+// SM
+@media (min-width: 576px) {
+    .app-custom-css-002 {
+        padding: 5% 5% 2.5% 5%;
+    }
+}
+
+// MD
+@media (min-width: 768px) {
+    .app-custom-css-002 {
+        padding: 2% 2% 2% 2%;
+    }
+}
+
+// LG
+@media (min-width: 992px) {}
+
+// XL
+@media (min-width: 1200px) {}
+
+// XXl
+@media (min-width: 1400px) {}

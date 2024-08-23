@@ -85,6 +85,12 @@ header.masthead {
     padding: 5%;
 }
 
+.home-custom-css-016 {
+    color: #fff !important;
+    text-align: center !important;
+    padding: 1% !important;
+}
+
 // XS
 @media (max-width: 575px) {
     .home-custom-css-004 {
@@ -105,6 +111,10 @@ header.masthead {
     .home-custom-css-007 {
         color: #fff;
         padding: 2%;
+    }
+
+    .home-custom-css-016 {
+        padding: 4% 1% !important;
     }
 }
 
@@ -128,6 +138,10 @@ header.masthead {
     .home-custom-css-007 {
         color: #fff;
         padding: 2%;
+    }
+
+    .home-custom-css-016 {
+        padding: 4% 1% !important;
     }
 }
 
@@ -170,6 +184,9 @@ header.masthead {
         padding: 0% 5%;
     }
 
+    .home-custom-css-016 {
+        padding: 1% !important;
+    }
 }
 
 // LG
