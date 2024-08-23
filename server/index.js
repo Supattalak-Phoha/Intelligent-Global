@@ -550,7 +550,7 @@ const storage = multer.diskStorage({
     cb(null, '../client/dist/client/browser/assets/images'); // เพื่อให้เปลี่บยนใน folder build ด้วย
   },
   filename: (req, file, cb) => {
-    cb(null, Date.now() + path.extname(file.originalname)); // Rename file with timestamp
+    cb(null, file.originalname); // Rename file with timestamp
     // cb(null, 'abouttttt-us-002' + path.extname(file.originalname)); // Rename file with timestamp
   }
 });
@@ -570,7 +570,6 @@ app.post('/api/uploadImage', upload.single('file'), (req, res) => {
   console.log('Size:', req.file.size);
 
   const GITHUB_TOKEN = process.env.GITHUB_TOKEN; // Replace with your GitHub token
-  console.log(GITHUB_TOKEN)
   const REPO_OWNER = 'Supattalak-Phoha';
   const REPO_NAME = 'Intelligent-Global'; // Your repository name
   const FILE_PATH = '../client/public/assets/images/'; // Local file path you want to upload
@@ -618,11 +617,10 @@ app.post('/api/uploadImage', upload.single('file'), (req, res) => {
       );
 
       console.log('File uploaded successfully');
-      // Respond to client
-      res.send('File uploaded successfully');
+      return res.status(200).send({ message: 'File uploaded successfully' });
     } catch (error) {
       console.error(error);
-      return res.status(500).send('Error writing data');
+      return res.status(500).send(error?.response?.data?.message);
     }
   };
 
@@ -637,9 +635,14 @@ app.delete('/api/deleteImage/:filename', async (req, res) => {
   const filename = req.params.filename;
   const fileUrl = `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/contents/${TARGET_PATH}/${filename}`;
 
-  console.log(fileUrl)
-
   try {
+    let filePath = path.join(__dirname, '../client/public/assets/images/' + filename)
+    fs.unlink(filePath, (err) => {
+      if (err) {
+        throw err;
+      }
+    });
+
     // Get the SHA of the file to be deleted
     const response = await axios.get(fileUrl, {
       headers: {
@@ -662,10 +665,10 @@ app.delete('/api/deleteImage/:filename', async (req, res) => {
     });
 
     console.log('File deleted successfully');
-    res.send('File deleted successfully');
+    return res.status(200).send({ message: 'File deleted successfully' });
   } catch (error) {
     console.error(error);
-    res.status(500).send('Error deleting file');
+    return res.status(500).send(error?.response?.data?.message);
   }
 });
 // ================================================== API ==================================================

@@ -486,7 +486,7 @@ export class EditComponent implements OnInit, OnDestroy {
               text: "Upload File เรียบร้อย",
               icon: "success"
             });
-            this.getDataForImagesPage()
+            window.location.reload();
           }, (error: any) => {
             Swal.fire({
               title: "Error",
@@ -517,7 +517,7 @@ export class EditComponent implements OnInit, OnDestroy {
             text: "ลบรูปภาพเรียบร้อย",
             icon: "success"
           });
-          this.getDataForImagesPage()
+          window.location.reload();
         }, (error: any) => {
           Swal.fire({
             title: "Error",
