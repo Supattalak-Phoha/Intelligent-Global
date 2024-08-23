@@ -2,6 +2,7 @@ import { ChangeDetectionStrategy, Component, HostListener, signal } from '@angul
 import { NavigationEnd, Router } from '@angular/router';
 import { DataService } from './data.service';
 import Swal from 'sweetalert2';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-root',
@@ -26,7 +27,8 @@ export class AppComponent {
   }
 
   constructor(private router: Router,
-    private dataService: DataService
+    private dataService: DataService,
+    private sanitizer: DomSanitizer
   ) { }
 
   ngOnInit() {
@@ -69,6 +71,12 @@ export class AppComponent {
         this.arrays.array003?.forEach((element: any) => {
           element.name = '<li>' + element?.name + '</li>'
         });
+
+        this.contents.content010 = this.sanitizer.bypassSecurityTrustHtml(this?.contents?.content010);
+        this.contents.content011 = this.sanitizer.bypassSecurityTrustHtml(this?.contents?.content011);
+        this.contents.content012 = this.sanitizer.bypassSecurityTrustHtml(this?.contents?.content012);
+        this.contents.content013 = this.sanitizer.bypassSecurityTrustHtml(this?.contents?.content013);
+        this.contents.content014 = this.sanitizer.bypassSecurityTrustHtml(this?.contents?.content014);
       },
       (error: any) => {
         console.error('Error fetching data', error);

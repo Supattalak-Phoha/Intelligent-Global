@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { DataService } from '../data.service';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-contact-us',
@@ -13,7 +14,10 @@ export class ContactUsComponent {
   images: any = {}
   arrays: any = {}
 
-  constructor(private dataService: DataService) {}
+  constructor(
+    private dataService: DataService,
+    private sanitizer: DomSanitizer
+  ) { }
 
   ngOnInit() {
     this.dataService.getDataForContactUsPage().subscribe(
@@ -22,6 +26,10 @@ export class ContactUsComponent {
         this.contents = this.data?.contents
         this.images = this.data?.images
         this.arrays = this.data?.arrays
+
+        this.arrays.array001?.forEach((element: any) => {
+          element.description = this.sanitizer.bypassSecurityTrustHtml(element.description);
+        });
       },
       (error: any) => {
         console.error('Error fetching data', error);

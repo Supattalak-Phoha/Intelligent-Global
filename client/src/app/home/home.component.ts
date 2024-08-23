@@ -1,6 +1,7 @@
 import { Component, ElementRef, HostListener } from '@angular/core';
 import { DataService } from '../data.service';
 import { Router } from '@angular/router';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-home',
@@ -13,7 +14,12 @@ export class HomeComponent {
   images: any = {}
   arrays: any = {}
 
-  constructor(private dataService: DataService, private router: Router, private el: ElementRef) {
+  constructor(
+    private dataService: DataService,
+    private router: Router,
+    private el: ElementRef,
+    private sanitizer: DomSanitizer
+  ) {
   }
 
   ngOnInit() {
@@ -23,6 +29,7 @@ export class HomeComponent {
         this.contents = this.data?.contents
         this.images = this.data?.images
         this.arrays = this.data?.arrays
+        this.contents.content003 = this.sanitizer.bypassSecurityTrustHtml(this.contents.content003);
       },
       (error: any) => {
         console.error('Error fetching data', error);
@@ -38,7 +45,7 @@ export class HomeComponent {
     //     window.scrollTo(0, 0); // เลื่อนหน้าไปที่ด้านบนสุด
     //   });
 
-      window.open('/service-detail/' + element?.code, '_blank');
+    window.open('/service-detail/' + element?.code, '_blank');
   }
 
   getAllService() {
