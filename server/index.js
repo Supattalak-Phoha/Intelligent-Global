@@ -106,6 +106,25 @@ app.get('/api/services', (req, res) => {
   });
 });
 
+app.get('/api/service-detail/:code', (req, res) => {
+  fs.readFile(dataFilePath + '/services.json', 'utf8', (err, data) => {
+    if (err) {
+      return res.status(500).send('Error reading data');
+    }
+
+    let services = JSON.parse(data)
+    let service = services?.arrays?.array001?.find(x => x.code === req.params.code)
+    let resp = {
+      images: {
+        "image001": services?.images?.image001
+      },
+      service: service
+    }
+
+    res.json(resp);
+  });
+});
+
 app.get('/api/contact-us', (req, res) => {
   fs.readFile(dataFilePath + '/contact-us.json', 'utf8', (err, data) => {
     if (err) {

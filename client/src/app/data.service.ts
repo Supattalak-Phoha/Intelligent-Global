@@ -33,6 +33,10 @@ export class DataService {
     return this.http.get<any>('/api/services');
   }
 
+  getDataForServiceDetailPage(code: string): Observable<any> {
+    return this.http.get<any>('/api/service-detail/' + code);
+  }
+
   getDataForContactUsPage(): Observable<any> {
     return this.http.get<any>('/api/contact-us');
   }

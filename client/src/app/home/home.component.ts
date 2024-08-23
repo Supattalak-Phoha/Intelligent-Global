@@ -31,12 +31,14 @@ export class HomeComponent {
   }
 
   goToDetail(element: any) {
-    this.router.navigate(['/service-detail/' + element?.code],
-      {
-        state: { service: element }
-      }).then(() => {
-        window.scrollTo(0, 0); // เลื่อนหน้าไปที่ด้านบนสุด
-      });
+    // this.router.navigate(['/service-detail/' + element?.code],
+    //   {
+    //     state: { service: element }
+    //   }).then(() => {
+    //     window.scrollTo(0, 0); // เลื่อนหน้าไปที่ด้านบนสุด
+    //   });
+
+      window.open('/service-detail/' + element?.code, '_blank');
   }
 
 }
