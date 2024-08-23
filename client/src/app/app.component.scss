@@ -32,6 +32,14 @@
     padding: 2% 3%;
 }
 
+.app-custom-css-003 {
+    width: 50%;
+}
+
+.app-custom-css-004 {
+    width: 80%;
+}
+
 // XS
 @media (max-width: 575px) {
     .app-custom-css-002 {
@@ -51,6 +59,14 @@
     .app-custom-css-002 {
         padding: 2% 2% 2% 2%;
     }
+
+    .app-custom-css-003 {
+        width: 20%;
+    }
+    
+    .app-custom-css-004 {
+        width: 30%;
+    }    
 }
 
 // LG

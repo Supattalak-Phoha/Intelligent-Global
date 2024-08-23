@@ -86,45 +86,30 @@
         <div class="login">
 
             <div style="height: 100%; display: contents;">
-                <div class="col-12 col-lg-4"></div>
-                <div class="col-12 col-lg-4">
-                    <img [src]="images.image001" class="header-logo" alt="Intellegent Global" style="width: 50%;">
-                </div>
-                <div class="col-12 col-lg-4"></div>
-                <div class="col-12 col-lg-4"></div>
-                <div class="col-12 col-lg-4">
-                    <mat-form-field appearance="outline" style="width: 80%;">
+                <div class="col-12">
+                    <img [src]="images.image001" class="header-logo app-custom-css-003" alt="Intellegent Global">
+                    <br><br>
+                    <mat-form-field appearance="outline" class="app-custom-css-004">
                         <mat-label>Username</mat-label>
                         <input matInput [(ngModel)]="username">
                     </mat-form-field>
-                </div>
-                <div class="col-12 col-lg-4"></div>
-                <div class="col-12 col-lg-4"></div>
-                <div class="col-12 col-lg-4">
-                    <mat-form-field appearance="outline" style="width: 80%;">
+                    <br>
+                    <mat-form-field appearance="outline" class="app-custom-css-004">
                         <mat-label>Password</mat-label>
                         <input matInput [type]="hide() ? 'password' : 'text'" [(ngModel)]="password" />
                         <button mat-icon-button matSuffix (click)="clickEvent($event)"
                             [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide()">
-                            <mat-icon>{{hide() ? 'visibility_off' : 'visibility'}}</mat-icon>
                         </button>
                     </mat-form-field>
-                </div>
-                <div class="col-12 col-lg-4"></div>
-
-                <div class="col-12 col-lg-4"></div>
-                <div class="col-12 col-lg-4">
-                    <button class="login-button" (click)="login()">
+                    <br>
+                    <button class="login-button app-custom-css-004" (click)="login()">
                         <span>Login</span>
                     </button>
+                    <div style="color: red;">
+                        <br>
+                        {{ this.loginError }}
+                    </div>
                 </div>
-                <div class="col-12 col-lg-4"></div>
-
-                <div class="col-12 col-lg-4"></div>
-                <div class="col-12 col-lg-4" style="color: red;">
-                    {{ this.loginError }}
-                </div>
-                <div class="col-12 col-lg-4"></div>
             </div>
         </div>
     </div>
