@@ -10,10 +10,10 @@ const port = process.env.PORT || 3000;
 app.use(express.static(path.join(__dirname, '../client/dist/client/browser')));
 
 // Middleware สำหรับพาร์สข้อมูล JSON
-app.use(express.json());
+app.use(express.json({ limit: '10mb' }));
 
 // Middleware สำหรับพาร์สข้อมูลแบบฟอร์มที่เข้ารหัสแบบ URL (เช่น application/x-www-form-urlencoded)
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({ limit: '10mb', extended: true }));
 
 // ================================================== API ==================================================
 // เส้นทางไปยังไฟล์ข้อมูล
