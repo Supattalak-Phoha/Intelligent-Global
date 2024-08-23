@@ -135,7 +135,6 @@ app.get('/api/images', (req, res) => {
 
     files = files.filter(file => file.search(/\./) != -1);
     files.forEach(file => {
-      console.log(file); // Print each .txt filename
       images?.push(
         {
           fileName: file,
@@ -628,6 +627,46 @@ app.post('/api/uploadImage', upload.single('file'), (req, res) => {
   };
 
   uploadFileToGitHub();
+});
+
+app.delete('/api/deleteImage/:filename', async (req, res) => {
+  const GITHUB_TOKEN = process.env.GITHUB_TOKEN; // Replace with your GitHub token
+  const REPO_OWNER = 'Supattalak-Phoha';
+  const REPO_NAME = 'Intelligent-Global'; // Your repository name
+  const TARGET_PATH = 'client/public/assets/images'; // Directory in the repository
+  const filename = req.params.filename;
+  const fileUrl = `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/contents/${TARGET_PATH}/${filename}`;
+
+  console.log(fileUrl)
+
+  try {
+    // Get the SHA of the file to be deleted
+    const response = await axios.get(fileUrl, {
+      headers: {
+        Authorization: `token ${GITHUB_TOKEN}`,
+      },
+    });
+
+    const sha = response.data.sha;
+
+    // Delete the file
+    await axios.delete(fileUrl, {
+      headers: {
+        Authorization: `token ${GITHUB_TOKEN}`,
+        'Content-Type': 'application/json',
+      },
+      data: {
+        message: 'Delete File',
+        sha: sha,
+      },
+    });
+
+    console.log('File deleted successfully');
+    res.send('File deleted successfully');
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Error deleting file');
+  }
 });
 // ================================================== API ==================================================
 

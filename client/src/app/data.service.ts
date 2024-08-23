@@ -111,4 +111,8 @@ export class DataService {
     formData.append('file', file, file.name);
     return this.http.post<any>('/api/uploadImage', formData);
   }
+
+  deleteImage(fileName: string): Observable<any> {
+    return this.http.delete<any>('/api/deleteImage/' + fileName);
+  }
 }

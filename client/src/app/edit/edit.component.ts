@@ -474,7 +474,7 @@ export class EditComponent implements OnInit, OnDestroy {
       showCancelButton: true,
       confirmButtonColor: "#3085d6",
       cancelButtonColor: "#d33",
-      confirmButtonText: "ใช่ บันทึกข้อมูล",
+      confirmButtonText: "ใช่ Upload รูปภาพ",
       cancelButtonText: "ยกเลิก",
       reverseButtons: true
     }).then((result) => {
@@ -486,6 +486,7 @@ export class EditComponent implements OnInit, OnDestroy {
               text: "Upload File เรียบร้อย",
               icon: "success"
             });
+            this.getDataForImagesPage()
           }, (error: any) => {
             Swal.fire({
               title: "Error",
@@ -494,6 +495,36 @@ export class EditComponent implements OnInit, OnDestroy {
             });
           });
         }
+      }
+    });
+  }
+
+  deleteImage(fileName: string) {
+    Swal.fire({
+      text: "คุณต้องการ ลบรูปภาพใช่หรือไม่?",
+      icon: "question",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "ใช่ ลบรูปภาพ",
+      cancelButtonText: "ยกเลิก",
+      reverseButtons: true
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.dataService.deleteImage(fileName).subscribe((response: any) => {
+          Swal.fire({
+            title: "Success",
+            text: "ลบรูปภาพเรียบร้อย",
+            icon: "success"
+          });
+          this.getDataForImagesPage()
+        }, (error: any) => {
+          Swal.fire({
+            title: "Error",
+            text: error?.message,
+            icon: 'error'
+          });
+        });
       }
     });
   }
