@@ -36,7 +36,7 @@ export class ServiceDetailComponent {
         content002: this.data?.content
       }
       this.images = {
-        image001: "assets/images/services/services-001.jpg"
+        image001: "assets/images/services-001.jpg"
       }
     });
   }

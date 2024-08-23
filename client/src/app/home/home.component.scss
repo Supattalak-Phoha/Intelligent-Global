@@ -5,19 +5,19 @@ header.masthead {
 
 @keyframes changeBackground {
     0% {
-        background-image: url('../../../public/assets/images/home/home-001.jpg');
+        background-image: url('../../../public/assets/images/home-001.jpg');
     }
 
     33% {
-        background-image: url('../../../public/assets/images/home/home-007.jpg');
+        background-image: url('../../../public/assets/images/home-007.jpg');
     }
 
     66% {
-        background-image: url('../../../public/assets/images/home/home-008.jpg');
+        background-image: url('../../../public/assets/images/home-008.jpg');
     }
 
     100% {
-        background-image: url('../../../public/assets/images/home/home-001.jpg');
+        background-image: url('../../../public/assets/images/home-001.jpg');
     }
 }
 
@@ -70,7 +70,7 @@ header.masthead {
 }
 
 .home-custom-css-011 {
-    background-image: url('../../../public/assets/images/home/home-009.jpg');
+    background-image: url('../../../public/assets/images/home-009.jpg');
     display: flex;
     flex-wrap: wrap;
     text-align: center;
