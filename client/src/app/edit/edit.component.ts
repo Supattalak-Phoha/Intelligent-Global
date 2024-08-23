@@ -288,7 +288,8 @@ export class EditComponent implements OnInit, OnDestroy {
         confirmButtonColor: "#3085d6",
         cancelButtonColor: "#d33",
         confirmButtonText: "ใช่ บันทึกข้อมูล",
-        cancelButtonText: "ยกเลิก"
+        cancelButtonText: "ยกเลิก",
+        reverseButtons: true
       }).then((result) => {
         if (result.isConfirmed) {
           this.dataService.updateDataForHomePage(this?.dataHome).subscribe((response) => {
@@ -317,7 +318,8 @@ export class EditComponent implements OnInit, OnDestroy {
         confirmButtonColor: "#3085d6",
         cancelButtonColor: "#d33",
         confirmButtonText: "ใช่ บันทึกข้อมูล",
-        cancelButtonText: "ยกเลิก"
+        cancelButtonText: "ยกเลิก",
+        reverseButtons: true
       }).then((result) => {
         if (result.isConfirmed) {
           this.dataService.updateDataForAboutUsPage(this?.dataAboutUs).subscribe((response) => {
@@ -346,7 +348,8 @@ export class EditComponent implements OnInit, OnDestroy {
         confirmButtonColor: "#3085d6",
         cancelButtonColor: "#d33",
         confirmButtonText: "ใช่ บันทึกข้อมูล",
-        cancelButtonText: "ยกเลิก"
+        cancelButtonText: "ยกเลิก",
+        reverseButtons: true
       }).then((result) => {
         if (result.isConfirmed) {
           this.dataService.updateDataForServicePage(this?.dataServices).subscribe((response) => {
@@ -375,7 +378,8 @@ export class EditComponent implements OnInit, OnDestroy {
         confirmButtonColor: "#3085d6",
         cancelButtonColor: "#d33",
         confirmButtonText: "ใช่ บันทึกข้อมูล",
-        cancelButtonText: "ยกเลิก"
+        cancelButtonText: "ยกเลิก",
+        reverseButtons: true
       }).then((result) => {
         if (result.isConfirmed) {
           this.dataService.updateDataForContactUsPage(this?.dataContactUs).subscribe((response) => {
@@ -404,7 +408,8 @@ export class EditComponent implements OnInit, OnDestroy {
         confirmButtonColor: "#3085d6",
         cancelButtonColor: "#d33",
         confirmButtonText: "ใช่ บันทึกข้อมูล",
-        cancelButtonText: "ยกเลิก"
+        cancelButtonText: "ยกเลิก",
+        reverseButtons: true
       }).then((result) => {
         if (result.isConfirmed) {
           this.dataService.updateDataForOthersPage(this?.dataOthers).subscribe((response) => {
@@ -433,7 +438,8 @@ export class EditComponent implements OnInit, OnDestroy {
         confirmButtonColor: "#3085d6",
         cancelButtonColor: "#d33",
         confirmButtonText: "ใช่ บันทึกข้อมูล",
-        cancelButtonText: "ยกเลิก"
+        cancelButtonText: "ยกเลิก",
+        reverseButtons: true
       }).then((result) => {
         if (result.isConfirmed) {
           this.dataService.updateDataForTeamUsPage(this?.dataTeamUs).subscribe((response) => {
@@ -469,7 +475,8 @@ export class EditComponent implements OnInit, OnDestroy {
       confirmButtonColor: "#3085d6",
       cancelButtonColor: "#d33",
       confirmButtonText: "ใช่ บันทึกข้อมูล",
-      cancelButtonText: "ยกเลิก"
+      cancelButtonText: "ยกเลิก",
+      reverseButtons: true
     }).then((result) => {
       if (result.isConfirmed) {
         if (this.selectedFile) {
