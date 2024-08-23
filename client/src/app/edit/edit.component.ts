@@ -463,6 +463,36 @@ export class EditComponent implements OnInit, OnDestroy {
     }
   }
 
+  addUser() {
+    let id = this.dataTeamUs?.[this.dataTeamUs?.length - 1]?.id
+    let user = {
+      id: id + 1,
+      username: "",
+      password: "",
+      name: "",
+      description: "",
+      image: "assets/images/"
+    }
+    this.dataTeamUs = [...[user], ...this.dataTeamUs]
+  }
+
+  deleteUser(indexToRemove: number) {
+    Swal.fire({
+      text: "คุณต้องการลบผู้ใช้งานใช่หรือไม่?",
+      icon: "question",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "ใช่ ลบผู้ใช้งาน",
+      cancelButtonText: "ยกเลิก",
+      reverseButtons: true
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.dataTeamUs = this.dataTeamUs?.filter((_, index) => index !== indexToRemove);
+      }
+    });
+  }
+
   onFileChange(event: any) {
     this.selectedFile = event.target.files[0] as File;
   }

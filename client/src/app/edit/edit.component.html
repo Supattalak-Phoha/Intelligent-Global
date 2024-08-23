@@ -283,6 +283,7 @@
                 <div style="margin: 2%; text-align: right;">
                     <div style="text-align: left;"><br>
                         <h6>My Teams</h6>
+                        <button mat-stroked-button (click)="addUser()" style="float: right; margin-top: -4%;">เพิ่มผู้ใช้งาน</button>
                     </div>
                     <div *ngFor="let array of dataTeamUs; let i = index" class="edit-custom-css-002"
                         style="text-align: left;">
@@ -312,6 +313,7 @@
                         </mat-form-field>
 
                         <img class="col-12" style="width: 30%; justify-content: center;" [src]="array.image" />
+                        <button mat-stroked-button (click)="deleteUser(i)" style="float: right;"><i class="fa-solid fa-trash"></i></button>
                     </div>
                     <br>
                     <button mat-stroked-button (click)="updateData()">บันทึก</button>
