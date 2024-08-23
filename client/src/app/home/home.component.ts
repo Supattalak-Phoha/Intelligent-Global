@@ -41,4 +41,8 @@ export class HomeComponent {
       window.open('/service-detail/' + element?.code, '_blank');
   }
 
+  getAllService() {
+    let allService = this?.arrays?.array002?.filter?.((x: any) => x.enabled)
+    return allService
+  }
 }
