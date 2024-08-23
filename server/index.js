@@ -125,31 +125,30 @@ app.get('/api/users', (req, res) => {
 });
 
 app.get('/api/images', (req, res) => {
-  let data = {
-    images: [
-      {
-        fileName: "",
-        path: "assets/images/about-us/about-us-001.jpg"
-      },
-      {
-        fileName: "",
-        path: "assets/images/about-us/about-us-001.jpg"
-      },
-      {
-        fileName: "",
-        path: "assets/images/about-us/about-us-001.jpg"
-      },
-      {
-        fileName: "",
-        path: "assets/images/about-us/about-us-001.jpg"
-      },
-      {
-        fileName: "",
-        path: "assets/images/about-us/about-us-001.jpg"
-      }
-    ]
-  }
-  res.json(data);
+  const folderImagesPath = path.join(__dirname, '../client/public/assets/images')
+  let images = []
+  fs.readdir(folderImagesPath, (err, files) => {
+    if (err) {
+      console.error('Error reading directory:', err);
+      return;
+    }
+
+    files = files.filter(file => file.search(/\./) != -1);
+    files.forEach(file => {
+      console.log(file); // Print each .txt filename
+      images?.push(
+        {
+          fileName: file,
+          path: "assets/images/" + file
+        }
+      )
+    });
+
+    let data = {
+      images: images
+    }
+    res.json(data);
+  });
 });
 
 app.post('/api/home', (req, res) => {
@@ -563,7 +562,6 @@ if (!fs.existsSync(uploadDir)) {
   fs.mkdirSync(uploadDir);
 }
 
-
 app.post('/api/uploadImage', upload.single('file'), (req, res) => {
   // Log file information
   console.log('File:', req.file); // Contains details about the uploaded file
@@ -585,7 +583,7 @@ app.post('/api/uploadImage', upload.single('file'), (req, res) => {
       const fileName = path.basename(FILE_PATH + req.file.filename);
       const fileContent = fs.readFileSync(FILE_PATH + req.file.filename, { encoding: 'base64' });
       const fileUrl = `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/contents/${TARGET_PATH}/${fileName}`;
-      
+
       // Check if the file already exists
       let sha = null;
       try {

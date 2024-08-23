@@ -321,14 +321,19 @@
             <!-- รูปภาพ -->
             <mat-tab label="รูปภาพ">
                 <div style="margin: 2%; text-align: center; display: flex; flex-wrap: wrap;">
-                    <div class="col-12">
+                    <div class="col-12" style="text-align: left; padding: 2%; background-color: #e7e7e7; border-radius: 10px;">
                         <form (ngSubmit)="uploadFile()" #fileUploadForm="ngForm" enctype="multipart/form-data">
                             <input type="file" (change)="onFileChange($event)" />
-                            <button type="submit" style="margin-left: 5%;">Upload</button>
+                            <button mat-stroked-button type="submit" style="margin-left: 5%; float: right;">Upload</button>
                         </form>
                     </div>
-                    <br>
-                    <div class="col-3" *ngFor="let image of dataImages?.images; let i = index">
+                    <div class="col-12" style="margin-top: 8%;">
+                        <h2 class="section-heading text-uppercase">รูปภาพทั้งหมด</h2>
+                        <br><br>
+                    </div>
+                    <div class="col-3" *ngFor="let image of dataImages?.images; let i = index" style="padding: 2%;">
+                        <div style="text-align: left; font-size: 10px;">File Name: {{image?.fileName}}</div>
+                        <div style="text-align: left; font-size: 10px;">Path: assets/images/{{image?.fileName}}</div>
                         <img style="width: 100%; justify-content: center; padding: 3%;" [src]="image?.path" />
                     </div>
                 </div>
