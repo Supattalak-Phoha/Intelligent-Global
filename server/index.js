@@ -45,7 +45,7 @@ app.get('/api/app', (req, res) => {
 
       let serviceObj = JSON.parse(services)
       result.arrays.array002 = serviceObj.arrays.array001
-      
+
       fs.readFile(dataFilePath + '/users.json', 'utf8', (err, users) => {
         if (err) {
           return res.status(500).send('Error reading data');
@@ -122,6 +122,34 @@ app.get('/api/users', (req, res) => {
     }
     res.json(JSON.parse(data));
   });
+});
+
+app.get('/api/images', (req, res) => {
+  let data = {
+    images: [
+      {
+        fileName: "",
+        path: "assets/images/about-us/about-us-001.jpg"
+      },
+      {
+        fileName: "",
+        path: "assets/images/about-us/about-us-001.jpg"
+      },
+      {
+        fileName: "",
+        path: "assets/images/about-us/about-us-001.jpg"
+      },
+      {
+        fileName: "",
+        path: "assets/images/about-us/about-us-001.jpg"
+      },
+      {
+        fileName: "",
+        path: "assets/images/about-us/about-us-001.jpg"
+      }
+    ]
+  }
+  res.json(data);
 });
 
 app.post('/api/home', (req, res) => {
@@ -512,6 +540,94 @@ app.post('/api/users', (req, res) => {
 
     uploadFileToGitHub();
   });
+});
+
+
+
+const multer = require('multer');
+// Set up multer for file storage
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, '../client/public/assets/images'); // Specify the upload directory
+    cb(null, '../client/dist/client/browser/assets/images'); // เพื่อให้เปลี่บยนใน folder build ด้วย
+  },
+  filename: (req, file, cb) => {
+    cb(null, Date.now() + path.extname(file.originalname)); // Rename file with timestamp
+    // cb(null, 'abouttttt-us-002' + path.extname(file.originalname)); // Rename file with timestamp
+  }
+});
+const upload = multer({ storage: storage });
+// Create the uploads directory if it does not exist
+const uploadDir = '../client/public/assets/images';
+if (!fs.existsSync(uploadDir)) {
+  fs.mkdirSync(uploadDir);
+}
+
+app.post('/api/uploadImage', upload.single('file'), (req, res) => {
+  // Log file information
+  console.log('File:', req.file); // Contains details about the uploaded file
+  console.log('Original Filename:', req.file.originalname);
+  console.log('Filename:', req.file.filename);
+  console.log('Mimetype:', req.file.mimetype);
+  console.log('Size:', req.file.size);
+
+  const GITHUB_TOKEN = process.env.GITHUB_TOKEN; // Replace with your GitHub token
+  const REPO_OWNER = 'Supattalak-Phoha';
+  const REPO_NAME = 'Intelligent-Global'; // Your repository name
+  const FILE_PATH = '../public/assets/images/'; // Local file path you want to upload
+  const COMMIT_MESSAGE = 'Update File';
+  const TARGET_PATH = 'client/public/assets/images'; // Directory in the repository
+
+  const uploadFileToGitHub = async () => {
+    try {
+      const fileName = path.basename(FILE_PATH + req.file.filename);
+      const fileContent = fs.readFileSync(FILE_PATH + req.file.filename, { encoding: 'base64' });
+      const fileUrl = `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/contents/${TARGET_PATH}/${fileName}`;
+
+      // Check if the file already exists
+      let sha = null;
+      try {
+        const response = await axios.get(fileUrl, {
+          headers: {
+            Authorization: `token ${GITHUB_TOKEN}`,
+          },
+        });
+        sha = response.data.sha;
+      } catch (error) {
+        if (error.response && error.response.status === 404) {
+          // File does not exist
+          sha = null;
+        } else {
+          throw error;
+        }
+      }
+
+      // Upload or update the file
+      const response = await axios.put(
+        fileUrl,
+        {
+          message: COMMIT_MESSAGE,
+          content: fileContent,
+          sha: sha, // Include sha if updating an existing file
+        },
+        {
+          headers: {
+            Authorization: `token ${GITHUB_TOKEN}`,
+            'Content-Type': 'application/json',
+          },
+        }
+      );
+
+      console.log('File uploaded successfully');
+      // Respond to client
+      res.send('File uploaded successfully');
+    } catch (error) {
+      console.error('Error uploading file');
+      return res.status(500).send('Error writing data');
+    }
+  };
+
+  uploadFileToGitHub();
 });
 // ================================================== API ==================================================
 
