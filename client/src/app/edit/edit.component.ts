@@ -50,6 +50,10 @@ export class EditComponent implements OnInit, OnDestroy {
 
   dataTeamUs: any[] = [];
 
+  dataImages: any = {};
+
+  selectedFile: File | null = null;
+
   toolbar: Toolbar = [
     ['bold', 'italic'],
     ['underline', 'strike'],
@@ -102,6 +106,9 @@ export class EditComponent implements OnInit, OnDestroy {
     } else if (event.tab.textLabel === 'ทีมของเรา') {
       this.tab = 'team-us'
       this.getDataForTeamUsPage()
+    } else if (event.tab.textLabel === 'รูปภาพ') {
+      this.tab = 'images'
+      this.getDataForImagesPage()
     }
   }
 
@@ -253,6 +260,18 @@ export class EditComponent implements OnInit, OnDestroy {
     this.dataService.getDataForTeamUsPage().subscribe(
       (response: any) => {
         this.dataTeamUs = response;
+      },
+      (error: any) => {
+        console.error('Error fetching data', error);
+      }
+    );
+  }
+
+  getDataForImagesPage() {
+    this.dataImages = {};
+    this.dataService.getDataForImagesPage().subscribe(
+      (response: any) => {
+        this.dataImages = response;
       },
       (error: any) => {
         console.error('Error fetching data', error);
@@ -436,5 +455,39 @@ export class EditComponent implements OnInit, OnDestroy {
         }
       });
     }
+  }
+
+  onFileChange(event: any) {
+    this.selectedFile = event.target.files[0] as File;
+  }
+
+  uploadFile() {
+    Swal.fire({
+      text: "คุณต้องการ Upload รูปภาพใช่หรือไม่?",
+      icon: "question",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "ใช่ บันทึกข้อมูล",
+      cancelButtonText: "ยกเลิก"
+    }).then((result) => {
+      if (result.isConfirmed) {
+        if (this.selectedFile) {
+          this.dataService.uploadFile(this.selectedFile).subscribe((response: any) => {
+            Swal.fire({
+              title: "Success",
+              text: "Upload File เรียบร้อย",
+              icon: "success"
+            });
+          }, (error: any) => {
+            Swal.fire({
+              title: "Error",
+              text: error?.message,
+              icon: 'error'
+            });
+          });
+        }
+      }
+    });
   }
 }

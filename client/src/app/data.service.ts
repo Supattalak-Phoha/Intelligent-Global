@@ -41,7 +41,11 @@ export class DataService {
     return this.http.get<any>('/api/users');
   }
 
-  
+  getDataForImagesPage(): Observable<any> {
+    return this.http.get<any>('/api/images');
+  }
+
+
   updateDataForHomePage(data: any): Observable<any> {
     const httpOptions = {
       headers: new HttpHeaders({
@@ -94,5 +98,17 @@ export class DataService {
       })
     };
     return this.http.post<any>('/api/users', data, httpOptions);
+  }
+
+  uploadFile(file: File): Observable<any> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'multipart/form-data'
+      })
+    };
+
+    const formData = new FormData();
+    formData.append('file', file, file.name);
+    return this.http.post<any>('/api/uploadImage', formData);
   }
 }

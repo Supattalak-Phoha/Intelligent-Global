@@ -278,6 +278,62 @@
                 </div>
             </mat-tab>
 
+            <!-- ทีมของเรา -->
+            <mat-tab label="ทีมของเรา">
+                <div style="margin: 2%; text-align: right;">
+                    <div style="text-align: left;"><br>
+                        <h6>My Teams</h6>
+                    </div>
+                    <div *ngFor="let array of dataTeamUs; let i = index" class="edit-custom-css-002"
+                        style="text-align: left;">
+                        <mat-form-field appearance="outline" class="col-12">
+                            <mat-label>Username</mat-label>
+                            <input matInput [(ngModel)]="array.username">
+                        </mat-form-field>
+
+                        <mat-form-field appearance="outline" class="col-12">
+                            <mat-label>Password</mat-label>
+                            <input matInput [(ngModel)]="array.password">
+                        </mat-form-field>
+
+                        <mat-form-field appearance="outline" class="col-12">
+                            <mat-label>Name</mat-label>
+                            <input matInput [(ngModel)]="array.name">
+                        </mat-form-field>
+
+                        <mat-form-field appearance="outline" class="col-12">
+                            <mat-label>Description</mat-label>
+                            <input matInput [(ngModel)]="array.description">
+                        </mat-form-field>
+
+                        <mat-form-field appearance="outline" class="col-12">
+                            <mat-label>Image</mat-label>
+                            <input matInput [(ngModel)]="array.image">
+                        </mat-form-field>
+
+                        <img class="col-12" style="width: 30%; justify-content: center;" [src]="array.image" />
+                    </div>
+                    <br>
+                    <button mat-stroked-button (click)="updateData()">บันทึก</button>
+                </div>
+            </mat-tab>
+
+            <!-- รูปภาพ -->
+            <mat-tab label="รูปภาพ">
+                <div style="margin: 2%; text-align: center; display: flex; flex-wrap: wrap;">
+                    <div class="col-12">
+                        <form (ngSubmit)="uploadFile()" #fileUploadForm="ngForm" enctype="multipart/form-data">
+                            <input type="file" (change)="onFileChange($event)" />
+                            <button type="submit" style="margin-left: 5%;">Upload</button>
+                        </form>
+                    </div>
+                    <br>
+                    <div class="col-3" *ngFor="let image of dataImages?.images; let i = index">
+                        <img style="width: 100%; justify-content: center; padding: 3%;" [src]="image?.path" />
+                    </div>
+                </div>
+            </mat-tab>
+
             <!-- อื่นๆ -->
             <mat-tab label="อื่นๆ">
                 <div style="margin: 2%; text-align: right;">
@@ -392,46 +448,6 @@
                             <mat-label>Link</mat-label>
                             <input matInput [(ngModel)]="array.link">
                         </mat-form-field>
-                    </div>
-                    <br>
-                    <button mat-stroked-button (click)="updateData()">บันทึก</button>
-                </div>
-            </mat-tab>
-
-            <!-- ทีมของเรา -->
-            <mat-tab label="ทีมของเรา">
-                <div style="margin: 2%; text-align: right;">
-                    <div style="text-align: left;"><br>
-                        <h6>My Teams</h6>
-                    </div>
-                    <div *ngFor="let array of dataTeamUs; let i = index" class="edit-custom-css-002"
-                        style="text-align: left;">
-                        <mat-form-field appearance="outline" class="col-12">
-                            <mat-label>Username</mat-label>
-                            <input matInput [(ngModel)]="array.username">
-                        </mat-form-field>
-
-                        <mat-form-field appearance="outline" class="col-12">
-                            <mat-label>Password</mat-label>
-                            <input matInput [(ngModel)]="array.password">
-                        </mat-form-field>
-
-                        <mat-form-field appearance="outline" class="col-12">
-                            <mat-label>Name</mat-label>
-                            <input matInput [(ngModel)]="array.name">
-                        </mat-form-field>
-
-                        <mat-form-field appearance="outline" class="col-12">
-                            <mat-label>Description</mat-label>
-                            <input matInput [(ngModel)]="array.description">
-                        </mat-form-field>
-
-                        <mat-form-field appearance="outline" class="col-12">
-                            <mat-label>Image</mat-label>
-                            <input matInput [(ngModel)]="array.image">
-                        </mat-form-field>
-
-                        <img class="col-12" style="width: 30%; justify-content: center;" [src]="array.image" />
                     </div>
                     <br>
                     <button mat-stroked-button (click)="updateData()">บันทึก</button>
