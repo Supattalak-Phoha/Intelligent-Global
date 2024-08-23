@@ -39,5 +39,7 @@ export class AllServicesComponent {
       }).then(() => {
         window.scrollTo(0, 0); // เลื่อนหน้าไปที่ด้านบนสุด
       });
+
+    // window.open('/service-detail/' + element?.code, '_blank');
   }
 }

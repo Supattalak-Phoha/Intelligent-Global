@@ -18,6 +18,18 @@
                                     [href]="array.link">{{ array.name }}</a></li>
                             <li *ngIf="showAdminButton()" class="nav-item" (click)="logout()"><a
                                     class="nav-link">ออกจากระบบ</a></li>
+<!-- 
+                            <li class="nav-item" *ngFor="let array of arrays.array001">
+                                <button mat-button [matMenuTriggerFor]="menuServices" class="nav-link">{{ array.name
+                                    }}</button>
+                                <mat-menu #menuServices="matMenu">
+                                    <button mat-menu-item>Option 1</button>
+                                    <button mat-menu-item>Option 2</button>
+                                    <button mat-menu-item>Option 3</button>
+                                </mat-menu>
+                            </li>
+                            <li *ngIf="showAdminButton()" class="nav-item" (click)="logout()"><a
+                                    class="nav-link">ออกจากระบบ</a></li> -->
                         </ul>
                     </div>
                 </div>
@@ -44,7 +56,9 @@
                 <h3 class="section-subheading text-muted" style="color: #003CA6 !important;">{{ contents.content008 }}
                 </h3>
                 <div *ngFor="let array of arrays.array002" style="display: ruby-text;">
-                    <li><div class="app-custom-css-001" [innerHTML]="array.name" (click)="goToDetail(array)"></div></li>
+                    <li>
+                        <div class="app-custom-css-001" [innerHTML]="array.name" (click)="goToDetail(array)"></div>
+                    </li>
                 </div>
             </div>
             <div class="col-12 col-md-6 col-lg-3" style="text-align: left; padding: 2% 3%;">
