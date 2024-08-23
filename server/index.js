@@ -477,12 +477,6 @@ app.post('/api/app', (req, res) => {
   });
 });
 
-// const https = require('https');
-// const agent = new https.Agent({
-//   rejectUnauthorized: false,
-// });
-
-// process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
 app.post('/api/users', (req, res) => {
   fs.writeFile(dataFilePath + '/users.json', JSON.stringify(req.body, null, 2), (err) => {
     if (err) {
@@ -507,8 +501,7 @@ app.post('/api/users', (req, res) => {
         try {
           const response = await axios.get(fileUrl, {
             headers: {
-              Authorization: `token ${GITHUB_TOKEN}`,
-              // httpsAgent: agent, // Add this line
+              Authorization: `token ${GITHUB_TOKEN}`
             },
           });
           sha = response.data.sha;
