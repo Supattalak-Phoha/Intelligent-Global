@@ -477,6 +477,12 @@ app.post('/api/app', (req, res) => {
   });
 });
 
+// const https = require('https');
+// const agent = new https.Agent({
+//   rejectUnauthorized: false,
+// });
+
+// process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
 app.post('/api/users', (req, res) => {
   fs.writeFile(dataFilePath + '/users.json', JSON.stringify(req.body, null, 2), (err) => {
     if (err) {
@@ -502,6 +508,7 @@ app.post('/api/users', (req, res) => {
           const response = await axios.get(fileUrl, {
             headers: {
               Authorization: `token ${GITHUB_TOKEN}`,
+              // httpsAgent: agent, // Add this line
             },
           });
           sha = response.data.sha;
@@ -563,6 +570,7 @@ if (!fs.existsSync(uploadDir)) {
   fs.mkdirSync(uploadDir);
 }
 
+
 app.post('/api/uploadImage', upload.single('file'), (req, res) => {
   // Log file information
   console.log('File:', req.file); // Contains details about the uploaded file
@@ -572,9 +580,10 @@ app.post('/api/uploadImage', upload.single('file'), (req, res) => {
   console.log('Size:', req.file.size);
 
   const GITHUB_TOKEN = process.env.GITHUB_TOKEN; // Replace with your GitHub token
+  console.log(GITHUB_TOKEN)
   const REPO_OWNER = 'Supattalak-Phoha';
   const REPO_NAME = 'Intelligent-Global'; // Your repository name
-  const FILE_PATH = '../public/assets/images/'; // Local file path you want to upload
+  const FILE_PATH = '../client/public/assets/images/'; // Local file path you want to upload
   const COMMIT_MESSAGE = 'Update File';
   const TARGET_PATH = 'client/public/assets/images'; // Directory in the repository
 
@@ -583,7 +592,7 @@ app.post('/api/uploadImage', upload.single('file'), (req, res) => {
       const fileName = path.basename(FILE_PATH + req.file.filename);
       const fileContent = fs.readFileSync(FILE_PATH + req.file.filename, { encoding: 'base64' });
       const fileUrl = `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/contents/${TARGET_PATH}/${fileName}`;
-
+      
       // Check if the file already exists
       let sha = null;
       try {
@@ -622,7 +631,7 @@ app.post('/api/uploadImage', upload.single('file'), (req, res) => {
       // Respond to client
       res.send('File uploaded successfully');
     } catch (error) {
-      console.error('Error uploading file');
+      console.error(error);
       return res.status(500).send('Error writing data');
     }
   };
