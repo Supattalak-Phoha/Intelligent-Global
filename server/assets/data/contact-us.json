@@ -18,12 +18,12 @@
       },
       {
         "name": "ติดต่อ",
-        "description": "<p>เบอร์ 065-359-3544<br>อีเมล: Intelglobal789@<a href=\"gmail.com\" target=\"_blank\">gmail.com</a><br>LINE ID : @511ssiqs</p>",
+        "description": "<p>เบอร์ 065-359-3544<br>อีเมล: Intelglobal789@gmail.com<br>LINE ID : @511ssiqs</p>",
         "class": "fas fa-solid fa-phone fa-stack-1x fa-inverse"
       },
       {
         "name": "เวลาทำการ",
-        "description": "<p>เวลาทำการ จันทร์-ศุกร์  9.00-18.00 น</p>",
+        "description": "<p>เวลาทำการ จันทร์-ศุกร์ 9.00-18.00 น</p>",
         "class": "fas fa-solid fa-door-open fa-stack-1x fa-inverse"
       }
     ]
