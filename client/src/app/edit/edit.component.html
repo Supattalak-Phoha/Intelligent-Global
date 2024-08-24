@@ -173,40 +173,45 @@
                     <div style="text-align: left;"><br>
                         <h6>Array001</h6>
                     </div>
-                    <div *ngFor="let array of arraysServices?.array001; let i = index" class="edit-custom-css-002"
-                        style="text-align: left;">
-                        <mat-slide-toggle [(ngModel)]="array.enabled" style="margin-bottom: 30px;"
-                            class="col-12">Enabled</mat-slide-toggle>
 
-                        <mat-form-field appearance="outline" class="col-12">
-                            <mat-label>Name</mat-label>
-                            <input matInput [(ngModel)]="array.name">
-                        </mat-form-field>
+                    <mat-accordion *ngFor="let array of arraysServices?.array001; let i = index"
+                        class="edit-custom-css-002" style="text-align: left;">
+                        <mat-expansion-panel (opened)="false">
+                            <mat-expansion-panel-header>
+                                <mat-panel-title>{{array.name}}</mat-panel-title>
+                            </mat-expansion-panel-header>
 
-                        <mat-form-field appearance="outline" class="col-12">
-                            <mat-label>Description</mat-label>
-                            <input matInput [(ngModel)]="array.description">
-                        </mat-form-field>
+                            <mat-slide-toggle [(ngModel)]="array.enabled" style="margin-bottom: 30px;"
+                                class="col-12">Enabled</mat-slide-toggle>
 
-                        <div>
-                            <h6>Content</h6>
-                        </div>
-                        <div class="NgxEditor__Wrapper" style="margin-bottom: 20px;">
-                            <ngx-editor-menu [editor]="editorsServices[i]" [toolbar]="toolbar"> </ngx-editor-menu>
-                            <ngx-editor [editor]="editorsServices[i]" [(ngModel)]="array.content" [disabled]="false"
-                                [placeholder]="'กรอกข้อมูล...'"></ngx-editor>
-                        </div>
+                            <mat-form-field appearance="outline" class="col-12">
+                                <mat-label>Name</mat-label>
+                                <input matInput [(ngModel)]="array.name">
+                            </mat-form-field>
 
-                        <mat-form-field appearance="outline" class="col-12">
-                            <mat-label>Image</mat-label>
-                            <input matInput [(ngModel)]="array.image001">
-                        </mat-form-field>
+                            <mat-form-field appearance="outline" class="col-12">
+                                <mat-label>Description</mat-label>
+                                <input matInput [(ngModel)]="array.description">
+                            </mat-form-field>
 
-                        <img class="col-12" style="width: 30%; justify-content: center;" [src]="array.image001" />
+                            <div>
+                                <h6>Content</h6>
+                            </div>
+                            <div class="NgxEditor__Wrapper" style="margin-bottom: 20px;">
+                                <ngx-editor-menu [editor]="editorsServices[i]" [toolbar]="toolbar">
+                                </ngx-editor-menu>
+                                <ngx-editor [editor]="editorsServices[i]" [(ngModel)]="array.content" [disabled]="false"
+                                    [placeholder]="'กรอกข้อมูล...'"></ngx-editor>
+                            </div>
 
+                            <mat-form-field appearance="outline" class="col-12">
+                                <mat-label>Image</mat-label>
+                                <input matInput [(ngModel)]="array.image001">
+                            </mat-form-field>
 
-                        <br><br>
-                    </div>
+                            <img class="col-12" style="width: 30%; justify-content: center;" [src]="array.image001" />
+                        </mat-expansion-panel>
+                    </mat-accordion>
                     <br>
                     <button mat-stroked-button (click)="updateData()">บันทึก</button>
                 </div>
@@ -282,7 +287,8 @@
                 <div style="margin: 2%; text-align: right;">
                     <div style="text-align: left;"><br>
                         <h6>My Teams</h6>
-                        <button mat-stroked-button (click)="addUser()" style="float: right; margin-top: -4%;">เพิ่มผู้ใช้งาน</button>
+                        <button mat-stroked-button (click)="addUser()"
+                            style="float: right; margin-top: -4%;">เพิ่มผู้ใช้งาน</button>
                     </div>
                     <div *ngFor="let array of dataTeamUs; let i = index" class="edit-custom-css-002"
                         style="text-align: left;">
@@ -312,7 +318,8 @@
                         </mat-form-field>
 
                         <img class="col-12" style="width: 30%; justify-content: center;" [src]="array.image" />
-                        <button mat-stroked-button (click)="deleteUser(i)" style="float: right;"><i class="fa-solid fa-trash"></i></button>
+                        <button mat-stroked-button (click)="deleteUser(i)" style="float: right;"><i
+                                class="fa-solid fa-trash"></i></button>
                     </div>
                     <br>
                     <button mat-stroked-button (click)="updateData()">บันทึก</button>
@@ -338,7 +345,8 @@
                         <div style="text-align: left; font-size: 10px;">
                             File Name: {{image?.fileName}}
                         </div>
-                        <div style="text-align: left; font-size: 10px; float: right; cursor: pointer;" (click)="deleteImage(image?.fileName)">
+                        <div style="text-align: left; font-size: 10px; float: right; cursor: pointer;"
+                            (click)="deleteImage(image?.fileName)">
                             <i class="fa-solid fa-trash"></i>
                         </div>
                         <div style="text-align: left; font-size: 10px;">Path: assets/images/{{image?.fileName}}</div>

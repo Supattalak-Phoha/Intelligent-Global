@@ -22,6 +22,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { FormsModule } from '@angular/forms';
 import { NgxEditorModule } from 'ngx-editor';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle'; // นำเข้า MatSlideToggleModule
+import { MatExpansionModule } from '@angular/material/expansion';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle'; // นำ
     MatButtonModule,
     FormsModule,
     NgxEditorModule,
-    MatSlideToggleModule
+    MatSlideToggleModule,
+    MatExpansionModule
   ],
   providers: [
     provideAnimationsAsync()
