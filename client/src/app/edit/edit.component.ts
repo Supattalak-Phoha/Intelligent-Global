@@ -292,7 +292,7 @@ export class EditComponent implements OnInit, OnDestroy {
         reverseButtons: true
       }).then((result) => {
         if (result.isConfirmed) {
-          this.dataHome.contents.content003 = this.dataHome.contents.content003.replace(/&amp;nbsp;/g, '&nbsp;');
+          this.dataHome.contents.content003 = this.dataHome.contents.content003.replace(/#TAB/g, '&nbsp;&nbsp;&nbsp;&nbsp;');
           this.dataService.updateDataForHomePage(this?.dataHome).subscribe((response) => {
             Swal.fire({
               title: "Success",
@@ -323,8 +323,8 @@ export class EditComponent implements OnInit, OnDestroy {
         reverseButtons: true
       }).then((result) => {
         if (result.isConfirmed) {
-          console.log(this?.dataAboutUs)
-          this.dataAboutUs.contents.content003 = this.dataAboutUs.contents.content003.replace(/&amp;nbsp;/g, '&nbsp;');
+          this.dataAboutUs.contents.content003 = this.dataAboutUs.contents.content003.replace(/#TAB/g, '&nbsp;&nbsp;&nbsp;&nbsp;');
+          this.dataAboutUs.contents.content003 = this.dataAboutUs.contents.content003.replace(/#NEWLINE/g, '<br>');
           this.dataService.updateDataForAboutUsPage(this?.dataAboutUs).subscribe((response) => {
             Swal.fire({
               title: "Success",
@@ -356,7 +356,8 @@ export class EditComponent implements OnInit, OnDestroy {
       }).then((result) => {
         if (result.isConfirmed) {
           this?.dataServices?.arrays?.array001?.forEach((element: any) => {
-            element.content = element.content.replace(/&amp;nbsp;/g, '&nbsp;');
+            element.content = element.content.replace(/#TAB/g, '&nbsp;&nbsp;&nbsp;&nbsp;');
+            element.content = element.content.replace(/#NEWLINE/g, '<br>');
           });
           this.dataService.updateDataForServicePage(this?.dataServices).subscribe((response) => {
             Swal.fire({
@@ -389,7 +390,8 @@ export class EditComponent implements OnInit, OnDestroy {
       }).then((result) => {
         if (result.isConfirmed) {
           this?.dataContactUs?.arrays?.array001?.forEach((element: any) => {
-            element.description = element.description.replace(/&amp;nbsp;/g, '&nbsp;');
+            element.description = element.description.replace(/#TAB/g, '&nbsp;&nbsp;&nbsp;&nbsp;');
+            element.description = element.description.replace(/#NEWLINE/g, '<br>');
           });
 
           console.log(this?.dataContactUs)
@@ -423,11 +425,20 @@ export class EditComponent implements OnInit, OnDestroy {
         reverseButtons: true
       }).then((result) => {
         if (result.isConfirmed) {
-          this.dataOthers.contents.content010 = this.dataOthers.contents.content010.replace(/&amp;nbsp;/g, '&nbsp;');
-          this.dataOthers.contents.content011 = this.dataOthers.contents.content011.replace(/&amp;nbsp;/g, '&nbsp;');
-          this.dataOthers.contents.content012 = this.dataOthers.contents.content012.replace(/&amp;nbsp;/g, '&nbsp;');
-          this.dataOthers.contents.content013 = this.dataOthers.contents.content013.replace(/&amp;nbsp;/g, '&nbsp;');
-          this.dataOthers.contents.content014 = this.dataOthers.contents.content014.replace(/&amp;nbsp;/g, '&nbsp;');
+          this.dataOthers.contents.content010 = this.dataOthers.contents.content010.replace(/#TAB/g, '&nbsp;&nbsp;&nbsp;&nbsp;');
+          this.dataOthers.contents.content010 = this.dataOthers.contents.content010.replace(/#NEWLINE/g, '<br>');
+
+          this.dataOthers.contents.content011 = this.dataOthers.contents.content011.replace(/#TAB/g, '&nbsp;&nbsp;&nbsp;&nbsp;');
+          this.dataOthers.contents.content011 = this.dataOthers.contents.content011.replace(/#NEWLINE/g, '<br>');
+
+          this.dataOthers.contents.content012 = this.dataOthers.contents.content012.replace(/#TAB/g, '&nbsp;&nbsp;&nbsp;&nbsp;');
+          this.dataOthers.contents.content012 = this.dataOthers.contents.content012.replace(/#NEWLINE/g, '<br>');
+
+          this.dataOthers.contents.content013 = this.dataOthers.contents.content013.replace(/#TAB/g, '&nbsp;&nbsp;&nbsp;&nbsp;');
+          this.dataOthers.contents.content013 = this.dataOthers.contents.content013.replace(/#NEWLINE/g, '<br>');
+
+          this.dataOthers.contents.content014 = this.dataOthers.contents.content014.replace(/#TAB/g, '&nbsp;&nbsp;&nbsp;&nbsp;');
+          this.dataOthers.contents.content014 = this.dataOthers.contents.content014.replace(/#NEWLINE/g, '<br>');
           this.dataService.updateDataForOthersPage(this?.dataOthers).subscribe((response) => {
             Swal.fire({
               title: "Success",
