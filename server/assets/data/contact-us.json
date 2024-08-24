@@ -1,8 +1,8 @@
 {
   "contents": {
     "content001": "ติดต่อเรา",
-    "content002": "บริษัท อินเทลลิเจ้นท์ โกลบอล จำกัด",
-    "content003": "https://www.google.co.th/maps/search/INTELLIGENT+GLOBAL+CO.,+LTD./@13.8149871,100.5617152,14z/data=!3m1!4b1?entry=ttu"
+    "content002": "บริษัท อินเทลลิเจนท์ โกลบอล จำกัด",
+    "content003": "https://maps.app.goo.gl/8FrUNUTfugfTB1C86"
   },
   "images": {
     "image001": "assets/images/contact-us-001.jpg",
@@ -13,17 +13,17 @@
     "array001": [
       {
         "name": "ที่อยู่",
-        "description": "<p>บริษัท อินเทลลิเจ้นท์ โกลบอล จำกัด &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; เลขที่ 909/275 ซอย25 ถนนรังสิต-นครนายก ตำบลประชาธิปัตย์ อำเภอธัญบุรี จ.ปทุมธานี 1213055555555</p>",
+        "description": "<p>บริษัท อินเทลลิเจนท์ โกลบอล จำกัด<br>134/466 หมู่บ้านพลัสซิตี้ปาร์คสนามบินน้ำ ตำบลท่าทราย อำเภอเมืองนนทบุรี จังหวัดนนทบุรี 11000</p>",
         "class": "fas fa-solid fa-house fa-stack-1x fa-inverse"
       },
       {
         "name": "ติดต่อ",
-        "description": "<p>เบอร์โทร : 065-359-3544<br>Email : support&nbsp;&nbsp;&nbsp;&nbsp;@intelligentglobal.com5555555</p>",
+        "description": "<p>เบอร์ 065-359-3544<br>อีเมล: Intelglobal789@<a href=\"gmail.com\" target=\"_blank\">gmail.com</a><br>LINE ID : @511ssiqs</p>",
         "class": "fas fa-solid fa-phone fa-stack-1x fa-inverse"
       },
       {
         "name": "เวลาทำการ",
-        "description": "<p>วันจันทร์ – วันศุกร์: 8am to 6pm<br>Saturday: 9am to 5&nbsp;&nbsp;&nbsp;&nbsp;pm5555555</p>",
+        "description": "<p>เวลาทำการ จันทร์-ศุกร์  9.00-18.00 น</p>",
         "class": "fas fa-solid fa-door-open fa-stack-1x fa-inverse"
       }
     ]
