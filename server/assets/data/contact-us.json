@@ -23,7 +23,7 @@
       },
       {
         "name": "เวลาทำการ",
-        "description": "<p>เวลาทำการ จันทร์-ศุกร์ </p><p>เวลา 9.00 น. ถึง 18.00 น.</p>",
+        "description": "<p>เวลาทำการ วันจันทร์ ถึง วันศุกร์</p><p>เวลา 9.00 น. ถึง 18.00 น.</p>",
         "class": "fas fa-solid fa-door-open fa-stack-1x fa-inverse"
       }
     ]
