@@ -292,6 +292,7 @@ export class EditComponent implements OnInit, OnDestroy {
         reverseButtons: true
       }).then((result) => {
         if (result.isConfirmed) {
+          this.dataHome.contents.content003 = this.dataHome.contents.content003.replace(/&amp;nbsp;/g, '&nbsp;');
           this.dataService.updateDataForHomePage(this?.dataHome).subscribe((response) => {
             Swal.fire({
               title: "Success",
@@ -322,6 +323,8 @@ export class EditComponent implements OnInit, OnDestroy {
         reverseButtons: true
       }).then((result) => {
         if (result.isConfirmed) {
+          console.log(this?.dataAboutUs)
+          this.dataAboutUs.contents.content003 = this.dataAboutUs.contents.content003.replace(/&amp;nbsp;/g, '&nbsp;');
           this.dataService.updateDataForAboutUsPage(this?.dataAboutUs).subscribe((response) => {
             Swal.fire({
               title: "Success",
@@ -352,6 +355,9 @@ export class EditComponent implements OnInit, OnDestroy {
         reverseButtons: true
       }).then((result) => {
         if (result.isConfirmed) {
+          this?.dataServices?.arrays?.array001?.forEach((element: any) => {
+            element.content = element.content.replace(/&amp;nbsp;/g, '&nbsp;');
+          });
           this.dataService.updateDataForServicePage(this?.dataServices).subscribe((response) => {
             Swal.fire({
               title: "Success",
@@ -382,6 +388,11 @@ export class EditComponent implements OnInit, OnDestroy {
         reverseButtons: true
       }).then((result) => {
         if (result.isConfirmed) {
+          this?.dataContactUs?.arrays?.array001?.forEach((element: any) => {
+            element.description = element.description.replace(/&amp;nbsp;/g, '&nbsp;');
+          });
+
+          console.log(this?.dataContactUs)
           this.dataService.updateDataForContactUsPage(this?.dataContactUs).subscribe((response) => {
             Swal.fire({
               title: "Success",
@@ -412,6 +423,11 @@ export class EditComponent implements OnInit, OnDestroy {
         reverseButtons: true
       }).then((result) => {
         if (result.isConfirmed) {
+          this.dataOthers.contents.content010 = this.dataOthers.contents.content010.replace(/&amp;nbsp;/g, '&nbsp;');
+          this.dataOthers.contents.content011 = this.dataOthers.contents.content011.replace(/&amp;nbsp;/g, '&nbsp;');
+          this.dataOthers.contents.content012 = this.dataOthers.contents.content012.replace(/&amp;nbsp;/g, '&nbsp;');
+          this.dataOthers.contents.content013 = this.dataOthers.contents.content013.replace(/&amp;nbsp;/g, '&nbsp;');
+          this.dataOthers.contents.content014 = this.dataOthers.contents.content014.replace(/&amp;nbsp;/g, '&nbsp;');
           this.dataService.updateDataForOthersPage(this?.dataOthers).subscribe((response) => {
             Swal.fire({
               title: "Success",
