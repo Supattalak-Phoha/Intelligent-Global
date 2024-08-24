@@ -13,17 +13,17 @@
     "array001": [
       {
         "name": "ที่อยู่",
-        "description": "<p>บริษัท อินเทลลิเจ้นท์ โกลบอล จำกัด &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; เลขที่ 909/275 ซอย25 ถนนรังสิต-นครนายก ตำบลประชาธิปัตย์ อำเภอธัญบุรี จ.ปทุมธานี 1213055555555</p>",
+        "description": "<p>บริษัท อินเทลลิเจ้นท์ โกลบอล จำกัด &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; เลขที่ 909/275 ซอย25 ถนนรังสิต-นครนายก ตำบลประชาธิปัตย์ อำเภอธัญบุรี จ.ปทุมธานี 1213055555555</p>",
         "class": "fas fa-solid fa-house fa-stack-1x fa-inverse"
       },
       {
         "name": "ติดต่อ",
-        "description": "<p>เบอร์โทร : 065-359-3544<br>Email : support&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;@intelligentglobal.com5555555</p>",
+        "description": "<p>เบอร์โทร : 065-359-3544<br>Email : support&nbsp;&nbsp;&nbsp;&nbsp;@intelligentglobal.com5555555</p>",
         "class": "fas fa-solid fa-phone fa-stack-1x fa-inverse"
       },
       {
         "name": "เวลาทำการ",
-        "description": "<p>วันจันทร์ – วันศุกร์: 8am to 6pm<br>Saturday: 9am to 5&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;pm5555555</p>",
+        "description": "<p>วันจันทร์ – วันศุกร์: 8am to 6pm<br>Saturday: 9am to 5&nbsp;&nbsp;&nbsp;&nbsp;pm5555555</p>",
         "class": "fas fa-solid fa-door-open fa-stack-1x fa-inverse"
       }
     ]
