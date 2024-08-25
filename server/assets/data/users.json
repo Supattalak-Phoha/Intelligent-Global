@@ -4,23 +4,23 @@
     "username": "admin01",
     "password": "admin01",
     "name": "สุภัทธลักษณ์ โพธิ์หา",
-    "description": "การศึกษา : (บช.บ.) เชี่ยวชาญงานยื่นเอกสาร ติดต่อราชการ งานด้านทะเบียนเอกสารสิทธิบัตร เครื่องหมายการค้า ลิขสิทธิ์",
+    "description": "CEO",
     "image": "assets/images/home-002.jpg"
   },
   {
     "id": 2,
-    "username": "admin02",
-    "password": "admin02",
-    "name": "สุภัทธลักษณ์ โพธิ์หา",
+    "username": "Supattalak",
+    "password": "Supattalak1234",
+    "name": "Supattalak Phoha",
     "description": "Software Developer",
     "image": "assets/images/home-002.jpg"
   },
   {
     "id": 3,
-    "username": "admin03",
-    "password": "admin03",
-    "name": "สุภัทธลักษณ์ โพธิ์หา",
-    "description": "การศึกษา : (บช.บ.) เชี่ยวชาญงานยื่นเอกสาร ติดต่อราชการ งานด้านทะเบียนเอกสารสิทธิบัตร เครื่องหมายการค้า ลิขสิทธิ์",
+    "username": "Thanathanin",
+    "password": "Thanathanin1234",
+    "name": "Thanathanin Pimsiri",
+    "description": "Project Manager",
     "image": "assets/images/home-002.jpg"
   }
 ]
