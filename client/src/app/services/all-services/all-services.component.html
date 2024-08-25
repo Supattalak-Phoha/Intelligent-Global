@@ -32,10 +32,10 @@
             <div *ngFor="let array of getAllService()" class="col-12 col-md-6 col-lg-4 services-custom-css-009">
                 <div class="services-custom-css-006" (click)="goToDetail(array)">
                     <img class="" [src]="array.image001"
-                        style="border: solid #003CA6; width: 100%; height: auto; display: block;" />
+                        style="border: solid #003CA6; width: 100%; height: auto; display: block; padding: 5%; background: #ffc800;" />
                     <div class="services-custom-css-007 services-custom-css-008">
-                        <div class="portfolio-caption-heading">{{ array.name }}</div>
-                        <div class="portfolio-caption-subheading text-muted">{{ array.description }}</div>
+                        <div class="portfolio-caption-heading" style="padding: 5% 2%;">{{ array.name }}</div>
+                        <!-- <div class="portfolio-caption-subheading text-muted">{{ array.description }}</div> -->
                     </div>
                 </div>
             </div>
