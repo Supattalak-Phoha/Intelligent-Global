@@ -13,7 +13,7 @@
     "password": "Supattalak1234",
     "name": "Supattalak Phoha",
     "description": "Software Developer",
-    "image": "assets/images/home-002.jpg"
+    "image": "assets/images/Profile.png"
   },
   {
     "id": 3,
@@ -21,6 +21,6 @@
     "password": "Thanathanin1234",
     "name": "Thanathanin Pimsiri",
     "description": "Project Manager",
-    "image": "assets/images/home-002.jpg"
+    "image": "assets/images/Profile.png"
   }
 ]
