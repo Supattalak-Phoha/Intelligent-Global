@@ -68,7 +68,7 @@ export class AppComponent {
         this.images = this.data?.images
         this.arrays = this.data?.arrays
         this.arrays.array001 = this.showAdminButton() ? this.arrays?.array001 : this.arrays?.array001?.filter?.((x: any) => x?.name !== 'การจัดการข้อมูล')
-        this.arrays.array003?.forEach((element: any) => {
+        this.arrays.array002?.forEach((element: any) => {
           element.name = '<li>' + element?.name + '</li>'
         });
 
